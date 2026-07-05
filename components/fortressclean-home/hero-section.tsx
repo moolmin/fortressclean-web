@@ -1,13 +1,12 @@
 import {
   HouseLine,
-  ListChecks,
   PhoneCall,
   ShieldCheck,
   Sparkle,
-  Users,
 } from "./icons";
-import { PHONE_NUMBER } from "./constants";
+import { HERO_HIGHLIGHTS } from "./content";
 import { PhosphorIcon } from "./phosphor-icon";
+import { PhoneLink } from "./shared";
 
 export function HeroSection() {
   return (
@@ -43,42 +42,22 @@ export function HeroSection() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-gray-500">예약 및 상담</p>
-                  <p className="text-3xl font-black tracking-wide text-brand-900">
-                    {PHONE_NUMBER}
-                  </p>
+                  <PhoneLink className="text-3xl font-black tracking-wide text-brand-900" />
                 </div>
               </div>
               <div className="my-2 flex flex-wrap gap-6">
-                <div className="flex items-center gap-2">
-                  <PhosphorIcon
-                    icon={Users}
-                    weight="fill"
-                    className="text-brand-600"
-                  />
-                  <span className="text-sm font-bold text-gray-600">
-                    직영 전문인력
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <PhosphorIcon
-                    icon={ListChecks}
-                    weight="fill"
-                    className="text-brand-600"
-                  />
-                  <span className="text-sm font-bold text-gray-600">
-                    체계적인 작업 과정
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <PhosphorIcon
-                    icon={ShieldCheck}
-                    weight="fill"
-                    className="text-brand-600"
-                  />
-                  <span className="text-sm font-bold text-gray-600">
-                    책임감 있는 사후 관리
-                  </span>
-                </div>
+                {HERO_HIGHLIGHTS.map((item) => (
+                  <div key={item.label} className="flex items-center gap-2">
+                    <PhosphorIcon
+                      icon={item.icon}
+                      weight={item.weight}
+                      className="text-brand-600"
+                    />
+                    <span className="text-sm font-bold text-gray-600">
+                      {item.label}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

@@ -1,10 +1,13 @@
-import { CheckCircle, ShieldCheck } from "./icons";
+import { CheckCircle } from "./icons";
 import {
+  COMPREHENSIVE_INTRO,
   COMPREHENSIVE_ITEMS,
   FEATURE_ITEMS,
+  HOME_CARE_INTRO,
   HOME_CARE_SERVICES,
-} from "./constants";
+} from "./content";
 import { PhosphorIcon } from "./phosphor-icon";
+import { SectionHeading } from "./shared";
 
 export function FeaturesSection() {
   return (
@@ -14,38 +17,41 @@ export function FeaturesSection() {
           {FEATURE_ITEMS.map((item) => (
             <div
               key={item.title}
-              className="flex flex-col items-center rounded-3xl bg-gray-50 p-6 text-center transition-colors hover:bg-brand-50"
+              className={`flex flex-col items-center rounded-3xl p-6 text-center transition-colors hover:bg-brand-50 ${
+                item.emphasized ? "bg-brand-900 text-white" : "bg-gray-50"
+              }`}
             >
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white text-brand-900 shadow-sm">
+              <div
+                className={`mb-4 flex h-16 w-16 items-center justify-center rounded-full shadow-sm ${
+                  item.emphasized
+                    ? "bg-white/10 text-white"
+                    : "bg-white text-brand-900"
+                }`}
+              >
                 <PhosphorIcon
                   icon={item.icon}
                   weight={item.weight}
                   className="text-3xl"
                 />
               </div>
-              <h3 className="mb-2 font-bold text-gray-900">{item.title}</h3>
-              <p className="text-sm leading-snug text-gray-500">
-                {item.line1}
+              <h3
+                className={`mb-2 font-bold ${
+                  item.emphasized ? "text-white" : "text-gray-900"
+                }`}
+              >
+                {item.title}
+              </h3>
+              <p
+                className={`text-sm leading-snug ${
+                  item.emphasized ? "text-brand-100" : "text-gray-500"
+                }`}
+              >
+                {item.description[0]}
                 <br />
-                {item.line2}
+                {item.description[1]}
               </p>
             </div>
           ))}
-          <div className="col-span-2 flex flex-col items-center rounded-3xl bg-gray-50 p-6 text-center transition-colors hover:bg-brand-50 lg:col-span-1">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-900 text-white shadow-sm">
-              <PhosphorIcon
-                icon={ShieldCheck}
-                weight="fill"
-                className="text-3xl"
-              />
-            </div>
-            <h3 className="mb-2 font-bold text-brand-900">30일 A/S 보증</h3>
-            <p className="text-sm leading-snug text-gray-500">
-              작업 후 문제 발생 시
-              <br />
-              확실하게 책임집니다
-            </p>
-          </div>
         </div>
       </div>
     </section>
@@ -56,18 +62,7 @@ export function HomeCareSection() {
   return (
     <section id="services" className="relative bg-white py-24">
       <div className="mx-auto max-w-[1200px] px-6">
-        <div className="mb-16 text-center">
-          <span className="mb-3 block text-sm font-bold tracking-wider text-brand-600">
-            HOME CARE
-          </span>
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
-            가전 홈케어 서비스
-          </h2>
-          <p className="text-gray-500">
-            완전 분해 청소로 가전제품의 수명을 늘리고 쾌적한 실내 공기를
-            만듭니다.
-          </p>
-        </div>
+        <SectionHeading {...HOME_CARE_INTRO} />
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {HOME_CARE_SERVICES.map((service) => (
             <div
@@ -108,21 +103,13 @@ export function HomeCareSection() {
 
 export function ComprehensiveSection() {
   return (
-    <section id="comprehensive" className="relative overflow-hidden bg-brand-50 py-24">
+    <section
+      id="comprehensive"
+      className="relative overflow-hidden bg-brand-50 py-24"
+    >
       <div className="curve-top absolute top-0 h-[80px] w-full"></div>
       <div className="relative z-10 mx-auto max-w-[1200px] px-6 pt-8">
-        <div className="mb-16 text-center">
-          <span className="mb-3 block text-sm font-bold tracking-wider text-brand-600">
-            COMPREHENSIVE CLEANING
-          </span>
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
-            종합 청소 서비스
-          </h2>
-          <p className="text-gray-500">
-            주거공간부터 상업공간까지, 전문 장비와 약품으로 쾌적한 환경을
-            조성합니다.
-          </p>
-        </div>
+        <SectionHeading {...COMPREHENSIVE_INTRO} />
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {COMPREHENSIVE_ITEMS.map((item) => (
             <div

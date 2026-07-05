@@ -3,8 +3,9 @@
 import { useState } from "react";
 
 import { Minus, Plus } from "./icons";
-import { FAQ_ITEMS } from "./constants";
+import { FAQ_INTRO, FAQ_ITEMS } from "./content";
 import { PhosphorIcon } from "./phosphor-icon";
+import { SectionHeading } from "./shared";
 
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -12,14 +13,7 @@ export function FAQSection() {
   return (
     <section id="faq" className="bg-gray-50 py-24">
       <div className="mx-auto max-w-[800px] px-6">
-        <div className="mb-16 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900">
-            자주 묻는 질문
-          </h2>
-          <p className="text-gray-500">
-            고객님들께서 가장 많이 궁금해하시는 내용을 모았습니다.
-          </p>
-        </div>
+        <SectionHeading {...FAQ_INTRO} />
         <div className="space-y-4">
           {FAQ_ITEMS.map((faq, index) => {
             const panelId = `faq-panel-${index}`;

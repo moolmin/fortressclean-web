@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { NAV_ITEMS, PHONE_NUMBER } from "./constants";
+import { NAV_ITEMS } from "./content";
 import { LogoMark } from "./logo-mark";
+import { PhoneLink } from "./shared";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -48,9 +49,7 @@ export function SiteHeader() {
             <span className="text-xs font-medium text-gray-500">
               예약 및 문의
             </span>
-            <span className="text-lg font-bold text-brand-900">
-              {PHONE_NUMBER}
-            </span>
+            <PhoneLink className="text-lg font-bold text-brand-900" />
           </div>
           <a
             href="#contact"

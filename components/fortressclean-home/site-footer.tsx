@@ -1,7 +1,8 @@
 import { Clock, Phone } from "./icons";
-import { NAV_ITEMS, PHONE_NUMBER } from "./constants";
+import { NAV_ITEMS } from "./content";
 import { LogoMark } from "./logo-mark";
 import { PhosphorIcon } from "./phosphor-icon";
+import { PhoneLink } from "./shared";
 
 const FOOTER_SERVICE_LINKS = [
   { href: "#services", label: "가전 홈케어" },
@@ -56,7 +57,7 @@ export function SiteFooter() {
                   weight="fill"
                   className="mt-0.5 text-gray-500"
                 />
-                <span className="font-bold text-white">{PHONE_NUMBER}</span>
+                <PhoneLink className="font-bold text-white" />
               </li>
               <li className="flex items-start gap-2">
                 <PhosphorIcon

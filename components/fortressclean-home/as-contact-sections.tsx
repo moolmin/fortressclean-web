@@ -1,6 +1,9 @@
-import { Headset, MapPin, ShieldCheck } from "./icons";
-import { PHONE_NUMBER } from "./constants";
+import { Fragment } from "react";
+
+import { Headset } from "./icons";
+import { ASSURANCE_ITEMS } from "./content";
 import { PhosphorIcon } from "./phosphor-icon";
+import { PhoneLink } from "./shared";
 
 export function ASSection() {
   return (
@@ -15,46 +18,32 @@ export function ASSection() {
           >
             <path d="M200 0C100 100 50 250 200 400V0Z" />
           </svg>
-          <div className="relative z-10 w-full flex-1">
-            <div className="mb-4 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10">
-                <PhosphorIcon
-                  icon={MapPin}
-                  weight="fill"
-                  className="text-2xl"
-                />
+          {ASSURANCE_ITEMS.map((item, index) => (
+            <Fragment key={item.title}>
+              <div className="relative z-10 w-full flex-1">
+                <div className="mb-4 flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10">
+                    <PhosphorIcon
+                      icon={item.icon}
+                      weight={item.weight}
+                      className="text-2xl"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold">{item.title}</h3>
+                </div>
+                <p className="ml-16 text-lg text-brand-100">
+                  {item.description}
+                </p>
+                <p className="ml-16 mt-2 text-sm text-brand-200">{item.note}</p>
               </div>
-              <h3 className="text-2xl font-bold">서비스 가능 지역</h3>
-            </div>
-            <p className="ml-16 text-lg text-brand-100">
-              서울 남부 및 경기, 인천 등{" "}
-              <strong className="text-white">수도권역 전역</strong>
-            </p>
-            <p className="ml-16 mt-2 text-sm text-brand-200">
-              *상세 지역은 상담 시 확인 가능합니다.
-            </p>
-          </div>
-          <div className="relative z-10 hidden h-24 w-px bg-white/20 lg:block"></div>
-          <div className="relative z-10 block h-px w-full bg-white/20 lg:hidden"></div>
-          <div className="relative z-10 w-full flex-1">
-            <div className="mb-4 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10">
-                <PhosphorIcon
-                  icon={ShieldCheck}
-                  weight="fill"
-                  className="text-2xl"
-                />
-              </div>
-              <h3 className="text-2xl font-bold">포트리스 30일 안심 A/S</h3>
-            </div>
-            <p className="ml-16 text-lg text-brand-100">
-              작업 <strong className="text-white">다음날로부터 30일까지</strong>{" "}
-              무상 보증
-            </p>
-            <p className="ml-16 mt-2 text-sm text-brand-200">
-              *고객 과실 제외, 청소 불량 및 장비 이상 발생 시
-            </p>
-          </div>
+              {index < ASSURANCE_ITEMS.length - 1 ? (
+                <>
+                  <div className="relative z-10 hidden h-24 w-px bg-white/20 lg:block"></div>
+                  <div className="relative z-10 block h-px w-full bg-white/20 lg:hidden"></div>
+                </>
+              ) : null}
+            </Fragment>
+          ))}
         </div>
       </div>
     </section>
@@ -90,9 +79,7 @@ export function ContactSection() {
           <p className="mb-2 text-sm font-bold text-brand-600">
             예약 및 상담 번호
           </p>
-          <p className="text-4xl font-black tracking-wider text-brand-900 lg:text-5xl">
-            {PHONE_NUMBER}
-          </p>
+          <PhoneLink className="text-4xl font-black tracking-wider text-brand-900 lg:text-5xl" />
           <p className="mt-4 text-sm text-gray-500">
             상담 시간: 매일 09:00 ~ 20:00 (주말/공휴일 가능)
           </p>

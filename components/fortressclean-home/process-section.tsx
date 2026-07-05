@@ -1,19 +1,13 @@
 import { CaretDown } from "./icons";
-import { PROCESS_STEPS } from "./constants";
+import { PROCESS_INTRO, PROCESS_STEPS } from "./content";
 import { PhosphorIcon } from "./phosphor-icon";
+import { SectionHeading } from "./shared";
 
 export function ProcessSection() {
   return (
     <section id="process" className="bg-white py-24">
       <div className="mx-auto max-w-[1200px] px-6">
-        <div className="mb-16 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900">
-            체계적인 작업 과정
-          </h2>
-          <p className="text-gray-500">
-            상담부터 사후 관리까지 투명하고 꼼꼼하게 진행됩니다.
-          </p>
-        </div>
+        <SectionHeading {...PROCESS_INTRO} />
         <div className="relative flex flex-col items-center justify-between lg:flex-row">
           <div className="absolute left-[5%] right-[5%] top-12 z-0 hidden h-0.5 bg-gray-100 lg:block"></div>
           {PROCESS_STEPS.map((step, index) => (
