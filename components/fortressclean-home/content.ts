@@ -129,34 +129,36 @@ export const FEATURE_ITEMS = [
 export const HOME_CARE_INTRO: SectionIntro = {
   eyebrow: "HOME CARE",
   title: "가전 홈케어 서비스",
-  description:
-    "완전 분해 청소로 가전제품의 수명을 늘리고 쾌적한 실내 공기를 만듭니다.",
+  description: "완전 분해 청소로 가전제품의 수명을 늘리고 쾌적하게 관리합니다.",
 };
 
 export const HOME_CARE_SERVICES = [
   {
     icon: Wind,
-    title: "에어컨 관리",
+    title: "에어컨 청소",
     desc: "내부 곰팡이와 먼지를 고압 세척으로 완벽하게 제거하여 맑은 바람을 찾아드립니다.",
-    features: ["벽걸이/스탠드/시스템", "완전 분해 고압 세척"],
+    features: [
+      "벽걸이 / 스탠드 / 시스템 에어컨",
+      "필터, 커버, 송풍구 주변 세척",
+    ],
   },
   {
     icon: WashingMachine,
     title: "세탁기 관리",
-    desc: "보이지 않는 세탁조 안팎의 찌든 때와 유해 세균을 살균 소독하여 세탁 품질을 높입니다.",
-    features: ["통돌이/드럼 세탁기", "이물질 완벽 제거"],
+    desc: "눈에 보이지 않는 세탁조 내부 오염과 세제 찌꺼기를 확인하여 세탁 품질을 높입니다.",
+    features: ["통돌이 / 드럼 세탁기", "세탁조, 가스켓, 세제통 세척"],
   },
   {
     icon: Fan,
-    title: "공기청정기 관리",
-    desc: "필터 교체만으로는 부족한 내부 팬과 센서의 오염을 정밀하게 청소합니다.",
-    features: ["내부 부품 분해 세척", "성능 저하 방지"],
+    title: "공기청정기 청소",
+    desc: "공기가 지나가는 내부 부품과 필터 주변의 먼지를 정리해 쾌적한 실내 환경을 돕습니다.",
+    features: ["필터 주변 먼지 제거", "내부 팬, 흡입구, 토출구 관리"],
   },
   {
     icon: ThermometerCold,
-    title: "냉장고 관리",
-    desc: "음식물 냄새와 얼룩, 고무패킹의 곰팡이를 스팀 살균하여 위생적인 보관 환경을 만듭니다.",
-    features: ["내부 스팀 살균", "선반/서랍 탈거 세척"],
+    title: "냉장고 청소",
+    desc: "음식물이 닿는 내부 공간과 고무패킹 오염을 관리해 위생적인 보관 환경을 만듭니다.",
+    features: ["선반, 서랍, 고무패킹 세척", "내부 오염 및 냄새 관리"],
   },
 ] as const satisfies readonly ServiceItem[];
 
