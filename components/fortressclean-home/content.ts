@@ -242,8 +242,9 @@ export const PROCESS_STEPS = [
 ] as const satisfies readonly ProcessStep[];
 
 export const QUOTE_INTRO: SectionIntro = {
-  title: "편리한 견적 안내",
-  description: "고객님의 편의를 위해 서비스별 맞춤 견적 방식을 제공합니다.",
+  title: "간편한 견적 안내내",
+  description:
+    "서비스 유형과 현장 상황에 맞춰 사진 견적 또는 방문 견적으로 안내드립니다.",
 };
 
 export const QUOTE_METHODS = [
@@ -254,20 +255,20 @@ export const QUOTE_METHODS = [
     badgeClassName: "bg-brand-100 text-brand-900",
     title: "사진 견적 가능",
     description:
-      "에어컨, 세탁기 등 가전제품은 제품의 전체 사진과 모델명이 보이는 라벨 사진을 보내주시면 빠르고 정확하게 견적을 안내해 드립니다.",
-    detailTitle: "사진 2장 전송",
-    detailText: "제품 전면 사진 + 모델명 라벨 사진",
+      "에어컨, 세탁기 등 가전 청소는 제품 전체 사진과 모델명 라벨 사진을 보내주시면 확인 후 견적을 안내드립니다.",
+    detailTitle: "사진 전송 안내",
+    detailText: "제품 전체 사진 + 모델명 라벨 사진",
   },
   {
     icon: MapPinLine,
     weight: "fill",
-    badge: "종합/건물 청소",
+    badge: "종합·시설 청소",
     badgeClassName: "bg-gray-200 text-gray-700",
-    title: "무료 방문 견적",
+    title: "방문 견적 가능",
     description:
-      "오염도와 평수에 따라 비용이 달라지는 종합청소, 정기청소 등은 전문가가 직접 현장을 방문하여 정확한 견적을 산출해 드립니다.",
-    detailTitle: "일정 조율 후 방문",
-    detailText: "현장 상황 파악 및 투명한 견적 제시",
+      "종합청소, 정기청소, 건물청소 등은 현장 규모와 오염 상태에 따라 작업 범위가 달라질 수 있어 방문 견적으로 안내드립니다.",
+    detailTitle: "방문 견적 안내",
+    detailText: "일정 조율 후 현장 확인",
   },
 ] as const satisfies readonly QuoteMethod[];
 
