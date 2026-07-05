@@ -785,22 +785,6 @@ const ContactSection = () => (
           상담 시간: 매일 09:00 ~ 20:00 (주말/공휴일 가능)
         </p>
       </div>
-      <div className="flex flex-col justify-center gap-4 sm:flex-row">
-        <a
-          href="tel:010-8115-9256"
-          className="btn-glow flex w-full items-center justify-center gap-3 rounded-2xl bg-brand-900 px-8 py-5 text-lg font-bold text-white transition-all hover:bg-brand-800 hover:shadow-xl sm:w-auto"
-        >
-          <i className="ph-fill ph-phone-call text-2xl"></i>
-          전화로 문의하기
-        </a>
-        <a
-          href="sms:010-8115-9256"
-          className="btn-glow flex w-full items-center justify-center gap-3 rounded-2xl border-2 border-brand-100 bg-white px-8 py-5 text-lg font-bold text-brand-900 transition-all hover:border-brand-300 hover:bg-gray-50 hover:shadow-lg sm:w-auto"
-        >
-          <i className="ph-fill ph-chat-teardrop-text text-2xl"></i>
-          문자로 문의하기
-        </a>
-      </div>
     </div>
   </section>
 );
@@ -931,24 +915,8 @@ const Footer = () => (
           </ul>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-between gap-4 border-t border-gray-800 pt-8 text-sm md:flex-row">
+      <div className="flex flex-col items-center gap-4 border-t border-gray-800 pt-8 text-sm md:flex-row">
         <p>© 포트리스 클린. All rights reserved.</p>
-        <div className="flex gap-4">
-          <a
-            href="#"
-            onClick={(e) => e.preventDefault()}
-            className="transition-colors hover:text-white"
-          >
-            이용약관
-          </a>
-          <a
-            href="#"
-            onClick={(e) => e.preventDefault()}
-            className="font-bold transition-colors hover:text-white"
-          >
-            개인정보처리방침
-          </a>
-        </div>
       </div>
     </div>
   </footer>
