@@ -42,6 +42,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 .curve-bg {
@@ -91,7 +92,7 @@ html {
     transform 0.3s ease;
 }
 
-.faq-details[open] {
+.faq-details.open {
   box-shadow: 0 10px 40px -10px rgba(30, 58, 138, 0.12);
   border-color: #cdd7f0;
   transform: translateY(-2px);

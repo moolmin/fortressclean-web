@@ -1,0 +1,133 @@
+import {
+  COMPREHENSIVE_ITEMS,
+  FEATURE_ITEMS,
+  HOME_CARE_SERVICES,
+} from "./constants";
+
+export function FeaturesSection() {
+  return (
+    <section className="bg-white py-16">
+      <div className="mx-auto max-w-[1200px] px-6">
+        <div className="grid grid-cols-2 gap-6 lg:grid-cols-5">
+          {FEATURE_ITEMS.map((item) => (
+            <div
+              key={item.title}
+              className="flex flex-col items-center rounded-3xl bg-gray-50 p-6 text-center transition-colors hover:bg-brand-50"
+            >
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white text-brand-900 shadow-sm">
+                <i className={`${item.icon} text-3xl`}></i>
+              </div>
+              <h3 className="mb-2 font-bold text-gray-900">{item.title}</h3>
+              <p className="text-sm leading-snug text-gray-500">
+                {item.line1}
+                <br />
+                {item.line2}
+              </p>
+            </div>
+          ))}
+          <div className="col-span-2 flex flex-col items-center rounded-3xl bg-gray-50 p-6 text-center transition-colors hover:bg-brand-50 lg:col-span-1">
+            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-900 text-white shadow-sm">
+              <i className="ph-fill ph-shield-check text-3xl"></i>
+            </div>
+            <h3 className="mb-2 font-bold text-brand-900">30일 A/S 보증</h3>
+            <p className="text-sm leading-snug text-gray-500">
+              작업 후 문제 발생 시
+              <br />
+              확실하게 책임집니다
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function HomeCareSection() {
+  return (
+    <section id="services" className="relative bg-white py-24">
+      <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mb-16 text-center">
+          <span className="mb-3 block text-sm font-bold tracking-wider text-brand-600">
+            HOME CARE
+          </span>
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
+            가전 홈케어 서비스
+          </h2>
+          <p className="text-gray-500">
+            완전 분해 청소로 가전제품의 수명을 늘리고 쾌적한 실내 공기를
+            만듭니다.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {HOME_CARE_SERVICES.map((service) => (
+            <div
+              key={service.title}
+              className="reveal rounded-[2rem] border border-gray-100 bg-white p-8 shadow-soft transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+            >
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-50 text-brand-900">
+                <i className={`${service.icon} text-4xl`}></i>
+              </div>
+              <h3 className="mb-3 text-xl font-bold text-gray-900">
+                {service.title}
+              </h3>
+              <p className="mb-6 text-sm leading-relaxed text-gray-500">
+                {service.desc}
+              </p>
+              <ul className="space-y-2">
+                {service.features.map((feature) => (
+                  <li
+                    key={feature}
+                    className="flex items-center gap-2 text-sm text-gray-600"
+                  >
+                    <i className="ph-fill ph-check-circle text-brand-500"></i>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function ComprehensiveSection() {
+  return (
+    <section id="comprehensive" className="relative overflow-hidden bg-brand-50 py-24">
+      <div className="curve-top absolute top-0 h-[80px] w-full"></div>
+      <div className="relative z-10 mx-auto max-w-[1200px] px-6 pt-8">
+        <div className="mb-16 text-center">
+          <span className="mb-3 block text-sm font-bold tracking-wider text-brand-600">
+            COMPREHENSIVE CLEANING
+          </span>
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
+            종합 청소 서비스
+          </h2>
+          <p className="text-gray-500">
+            주거공간부터 상업공간까지, 전문 장비와 약품으로 쾌적한 환경을
+            조성합니다.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {COMPREHENSIVE_ITEMS.map((item) => (
+            <div
+              key={item.title}
+              className="flex items-start gap-5 rounded-3xl border border-gray-100 bg-white p-6 shadow-sm"
+            >
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-900">
+                <i className={`${item.icon} text-2xl`}></i>
+              </div>
+              <div>
+                <h3 className="mb-1 text-lg font-bold text-gray-900">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-gray-500">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
