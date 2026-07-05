@@ -77,7 +77,7 @@ export function HeroSection() {
               </div>
               <div>
                 <p className="text-xs text-gray-500">믿을 수 있는</p>
-                <p className="font-bold text-gray-900">30일 A/S 보증</p>
+                <p className="font-bold text-gray-900">직영 전문인력</p>
               </div>
             </div>
           </div>

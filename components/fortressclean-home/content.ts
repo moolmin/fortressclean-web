@@ -89,9 +89,9 @@ export const NAV_ITEMS = [
 ] as const;
 
 export const HERO_HIGHLIGHTS = [
-  { icon: ShieldCheck, weight: "fill", label: "30일 A/S 보증" },
-  { icon: CheckCircle, weight: "fill", label: "사전 점검 체크리스트" },
-  { icon: Headset, weight: "fill", label: "상담부터 완료 확인까지 응대" },
+  { icon: ShieldCheck, weight: "fill", label: "직영 전문인력" },
+  { icon: CheckCircle, weight: "fill", label: "체계적인 작업 과정" },
+  { icon: Headset, weight: "fill", label: "책임감 있는 사후 관리" },
 ] as const satisfies readonly (IconItem & { label: string })[];
 
 export const FEATURE_ITEMS = [
