@@ -34,13 +34,13 @@ export function SiteHeader() {
 
         <nav className="hidden items-center gap-8 lg:flex">
           {NAV_ITEMS.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className="font-medium text-gray-600 transition-colors hover:text-brand-900"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 

@@ -79,13 +79,11 @@ export const PHONE_NUMBER = "010-8115-9256";
 export const PHONE_HREF = `tel:${PHONE_NUMBER.replaceAll("-", "")}`;
 
 export const NAV_ITEMS = [
-  { href: "#services", label: "서비스" },
-  { href: "#process", label: "작업과정" },
-  { href: "#gallery", label: "작업사진" },
-  { href: "#reviews", label: "후기" },
-  { href: "#quote", label: "견적안내" },
-  { href: "#as", label: "A/S" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/intro", label: "소개" },
+  { href: "/scope", label: "작업범위" },
+  { href: "/cases", label: "작업사례" },
+  { href: "/quote-guide", label: "견적안내" },
+  { href: "/faq", label: "FAQ" },
 ] as const;
 
 export const HERO_HIGHLIGHTS = [

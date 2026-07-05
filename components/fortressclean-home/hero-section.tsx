@@ -10,7 +10,10 @@ import { PhoneLink } from "./shared";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-brand-50 pb-32 pt-40">
+    <section
+      id="intro"
+      className="relative overflow-hidden bg-brand-50 pb-32 pt-40"
+    >
       <div className="relative z-10 mx-auto max-w-[1200px] px-6">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <div className="max-w-2xl">

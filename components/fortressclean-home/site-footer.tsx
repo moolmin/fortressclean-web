@@ -1,16 +1,10 @@
+import Link from "next/link";
+
 import { Clock, Phone } from "./icons";
 import { NAV_ITEMS } from "./content";
 import { LogoMark } from "./logo-mark";
 import { PhosphorIcon } from "./phosphor-icon";
 import { PhoneLink } from "./shared";
-
-const FOOTER_SERVICE_LINKS = [
-  { href: "#services", label: "가전 홈케어" },
-  { href: "#comprehensive", label: "종합 청소 서비스" },
-  ...NAV_ITEMS.filter((item) =>
-    ["#process", "#gallery", "#quote"].includes(item.href),
-  ),
-] as const;
 
 export function SiteFooter() {
   return (
@@ -36,14 +30,14 @@ export function SiteFooter() {
           <div>
             <h4 className="mb-4 font-bold text-white">서비스 메뉴</h4>
             <ul className="space-y-3 text-sm">
-              {FOOTER_SERVICE_LINKS.map((item) => (
+              {NAV_ITEMS.map((item) => (
                 <li key={item.href}>
-                  <a
+                  <Link
                     href={item.href}
                     className="transition-colors hover:text-white"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
