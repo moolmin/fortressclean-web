@@ -1,5 +1,3 @@
-import Script from "next/script";
-
 import { ContactSection, ASSection } from "./as-contact-sections";
 import { FAQSection } from "./faq-section";
 import { HeroSection } from "./hero-section";
@@ -21,10 +19,6 @@ import { SiteHeader } from "./site-header";
 export default function FortressCleanHome() {
   return (
     <>
-      <Script
-        src="https://unpkg.com/@phosphor-icons/web"
-        strategy="afterInteractive"
-      />
       <RevealObserver />
       <div className="bg-white font-sans text-gray-800 antialiased">
         <SiteHeader />

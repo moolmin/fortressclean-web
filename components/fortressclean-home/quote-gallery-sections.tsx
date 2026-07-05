@@ -1,4 +1,13 @@
+import {
+  CaretRight,
+  Image,
+  ImageBroken,
+  MapPinLine,
+  Sparkle,
+  Star,
+} from "./icons";
 import { GALLERY_ITEMS, REVIEW_ITEMS } from "./constants";
+import { PhosphorIcon } from "./phosphor-icon";
 
 export function QuoteSection() {
   return (
@@ -28,7 +37,7 @@ export function QuoteSection() {
             </div>
             <div className="flex items-center gap-4 rounded-2xl bg-gray-50 p-4">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-brand-900 shadow-sm">
-                <i className="ph-fill ph-image text-xl"></i>
+                <PhosphorIcon icon={Image} weight="fill" className="text-xl" />
               </div>
               <div>
                 <p className="text-sm font-bold text-gray-900">사진 2장 전송</p>
@@ -53,7 +62,11 @@ export function QuoteSection() {
             </div>
             <div className="flex items-center gap-4 rounded-2xl bg-gray-50 p-4">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-brand-900 shadow-sm">
-                <i className="ph-fill ph-map-pin-line text-xl"></i>
+                <PhosphorIcon
+                  icon={MapPinLine}
+                  weight="fill"
+                  className="text-xl"
+                />
               </div>
               <div>
                 <p className="text-sm font-bold text-gray-900">
@@ -89,11 +102,12 @@ export function TestimonialSection() {
             >
               <div className="mb-4 flex gap-1 text-yellow-400">
                 {Array.from({ length: 5 }).map((_, index) => (
-                  <i
+                  <PhosphorIcon
                     key={index}
-                    className="ph-fill ph-star"
-                    aria-hidden="true"
-                  ></i>
+                    icon={Star}
+                    weight="fill"
+                    className="text-base"
+                  />
                 ))}
               </div>
               <p className="mb-6 leading-relaxed text-gray-700">
@@ -140,13 +154,16 @@ export function GallerySection() {
             >
               <div className="relative flex h-64 bg-gray-100">
                 <div className="relative flex h-full w-1/2 flex-col items-center justify-center border-r border-white/50 bg-gray-200 text-gray-400">
-                  <i className="ph ph-image-broken mb-2 text-4xl"></i>
+                  <PhosphorIcon
+                    icon={ImageBroken}
+                    className="mb-2 text-4xl"
+                  />
                   <span className="absolute left-4 top-4 rounded bg-gray-800 px-2 py-1 text-xs text-white">
                     작업 전
                   </span>
                 </div>
                 <div className="relative flex h-full w-1/2 flex-col items-center justify-center bg-brand-50 text-brand-300">
-                  <i className="ph ph-sparkle mb-2 text-4xl"></i>
+                  <PhosphorIcon icon={Sparkle} className="mb-2 text-4xl" />
                   <span className="absolute left-4 top-4 rounded bg-brand-900 px-2 py-1 text-xs text-white">
                     작업 후
                   </span>
@@ -161,7 +178,7 @@ export function GallerySection() {
                     type="button"
                     className="flex items-center gap-1 text-sm font-bold text-brand-600 transition-colors hover:text-brand-800"
                   >
-                    자세히 보기 <i className="ph ph-caret-right"></i>
+                    자세히 보기 <PhosphorIcon icon={CaretRight} />
                   </button>
                 </div>
                 <p className="text-sm text-gray-500">{item.desc}</p>

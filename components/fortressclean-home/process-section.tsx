@@ -1,4 +1,6 @@
+import { CaretDown } from "./icons";
 import { PROCESS_STEPS } from "./constants";
+import { PhosphorIcon } from "./phosphor-icon";
 
 export function ProcessSection() {
   return (
@@ -20,7 +22,11 @@ export function ProcessSection() {
                 <div
                   className={`mb-4 flex h-24 w-24 items-center justify-center rounded-full border-4 shadow-sm transition-all duration-300 ${step.active ? "border-brand-100 bg-brand-900 text-white shadow-md group-hover:scale-110 group-hover:shadow-xl" : "border-gray-50 bg-white text-brand-900 group-hover:scale-110 group-hover:border-brand-200 group-hover:shadow-lg"}`}
                 >
-                  <i className={`${step.icon} text-4xl`}></i>
+                  <PhosphorIcon
+                    icon={step.icon}
+                    weight={step.weight}
+                    className="text-4xl"
+                  />
                 </div>
                 <span className="mb-1 text-sm font-bold text-brand-600">
                   {step.step}
@@ -29,7 +35,11 @@ export function ProcessSection() {
               </div>
               {index < PROCESS_STEPS.length - 1 && (
                 <div className="mb-8 block text-gray-300 lg:hidden">
-                  <i className="ph-bold ph-caret-down text-2xl"></i>
+                  <PhosphorIcon
+                    icon={CaretDown}
+                    weight="bold"
+                    className="text-2xl"
+                  />
                 </div>
               )}
             </div>

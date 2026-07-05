@@ -1,8 +1,10 @@
+import { CheckCircle, ShieldCheck } from "./icons";
 import {
   COMPREHENSIVE_ITEMS,
   FEATURE_ITEMS,
   HOME_CARE_SERVICES,
 } from "./constants";
+import { PhosphorIcon } from "./phosphor-icon";
 
 export function FeaturesSection() {
   return (
@@ -15,7 +17,11 @@ export function FeaturesSection() {
               className="flex flex-col items-center rounded-3xl bg-gray-50 p-6 text-center transition-colors hover:bg-brand-50"
             >
               <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white text-brand-900 shadow-sm">
-                <i className={`${item.icon} text-3xl`}></i>
+                <PhosphorIcon
+                  icon={item.icon}
+                  weight={item.weight}
+                  className="text-3xl"
+                />
               </div>
               <h3 className="mb-2 font-bold text-gray-900">{item.title}</h3>
               <p className="text-sm leading-snug text-gray-500">
@@ -27,7 +33,11 @@ export function FeaturesSection() {
           ))}
           <div className="col-span-2 flex flex-col items-center rounded-3xl bg-gray-50 p-6 text-center transition-colors hover:bg-brand-50 lg:col-span-1">
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-900 text-white shadow-sm">
-              <i className="ph-fill ph-shield-check text-3xl"></i>
+              <PhosphorIcon
+                icon={ShieldCheck}
+                weight="fill"
+                className="text-3xl"
+              />
             </div>
             <h3 className="mb-2 font-bold text-brand-900">30일 A/S 보증</h3>
             <p className="text-sm leading-snug text-gray-500">
@@ -65,7 +75,7 @@ export function HomeCareSection() {
               className="reveal rounded-[2rem] border border-gray-100 bg-white p-8 shadow-soft transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
             >
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-50 text-brand-900">
-                <i className={`${service.icon} text-4xl`}></i>
+                <PhosphorIcon icon={service.icon} className="text-4xl" />
               </div>
               <h3 className="mb-3 text-xl font-bold text-gray-900">
                 {service.title}
@@ -79,7 +89,11 @@ export function HomeCareSection() {
                     key={feature}
                     className="flex items-center gap-2 text-sm text-gray-600"
                   >
-                    <i className="ph-fill ph-check-circle text-brand-500"></i>
+                    <PhosphorIcon
+                      icon={CheckCircle}
+                      weight="fill"
+                      className="text-brand-500"
+                    />
                     {feature}
                   </li>
                 ))}
@@ -116,7 +130,11 @@ export function ComprehensiveSection() {
               className="flex items-start gap-5 rounded-3xl border border-gray-100 bg-white p-6 shadow-sm"
             >
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-900">
-                <i className={`${item.icon} text-2xl`}></i>
+                <PhosphorIcon
+                  icon={item.icon}
+                  weight={item.weight}
+                  className="text-2xl"
+                />
               </div>
               <div>
                 <h3 className="mb-1 text-lg font-bold text-gray-900">

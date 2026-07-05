@@ -1,4 +1,6 @@
+import { Headset, MapPin, ShieldCheck } from "./icons";
 import { PHONE_NUMBER } from "./constants";
+import { PhosphorIcon } from "./phosphor-icon";
 
 export function ASSection() {
   return (
@@ -16,7 +18,11 @@ export function ASSection() {
           <div className="relative z-10 w-full flex-1">
             <div className="mb-4 flex items-center gap-4">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10">
-                <i className="ph-fill ph-map-pin text-2xl"></i>
+                <PhosphorIcon
+                  icon={MapPin}
+                  weight="fill"
+                  className="text-2xl"
+                />
               </div>
               <h3 className="text-2xl font-bold">서비스 가능 지역</h3>
             </div>
@@ -33,7 +39,11 @@ export function ASSection() {
           <div className="relative z-10 w-full flex-1">
             <div className="mb-4 flex items-center gap-4">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10">
-                <i className="ph-fill ph-shield-check text-2xl"></i>
+                <PhosphorIcon
+                  icon={ShieldCheck}
+                  weight="fill"
+                  className="text-2xl"
+                />
               </div>
               <h3 className="text-2xl font-bold">포트리스 30일 안심 A/S</h3>
             </div>
@@ -64,7 +74,11 @@ export function ContactSection() {
       </svg>
       <div className="mx-auto max-w-[800px] px-6 text-center">
         <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-brand-100 text-brand-900 shadow-sm">
-          <i className="ph-fill ph-headset text-4xl"></i>
+          <PhosphorIcon
+            icon={Headset}
+            weight="fill"
+            className="text-4xl"
+          />
         </div>
         <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl">
           깨끗한 공간, 지금 바로 문의하세요

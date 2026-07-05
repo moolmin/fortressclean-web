@@ -1,3 +1,32 @@
+import type { Icon, IconWeight } from "./icons";
+import {
+  BellRinging,
+  Broom,
+  Buildings,
+  CalendarCheck,
+  CalendarPlus,
+  Camera,
+  CheckCircle,
+  CheckSquareOffset,
+  Fan,
+  Headset,
+  HouseLine,
+  MagnifyingGlass,
+  OfficeChair,
+  Package,
+  Sparkle,
+  Stairs,
+  ThermometerCold,
+  Trash,
+  WashingMachine,
+  Wind,
+} from "./icons";
+
+type IconItem = {
+  icon: Icon;
+  weight?: IconWeight;
+};
+
 export const PHONE_NUMBER = "010-8115-9256";
 
 export const NAV_ITEMS = [
@@ -12,119 +41,145 @@ export const NAV_ITEMS = [
 
 export const FEATURE_ITEMS = [
   {
-    icon: "ph-fill ph-magnifying-glass",
+    icon: MagnifyingGlass,
+    weight: "fill",
     title: "꼼꼼한 작업",
     line1: "보이지 않는 곳까지",
     line2: "철저하게 청소합니다",
   },
   {
-    icon: "ph-fill ph-package",
+    icon: Package,
+    weight: "fill",
     title: "제품 보호",
     line1: "가전 및 주변 환경을",
     line2: "안전하게 보호합니다",
   },
   {
-    icon: "ph-fill ph-bell-ringing",
+    icon: BellRinging,
+    weight: "fill",
     title: "사전 안내",
     line1: "방문 전 일정과",
     line2: "주의사항을 안내합니다",
   },
   {
-    icon: "ph-fill ph-check-square-offset",
+    icon: CheckSquareOffset,
+    weight: "fill",
     title: "작업 후 확인",
     line1: "고객님과 함께",
     line2: "최종 결과를 확인합니다",
   },
-] as const;
+] as const satisfies readonly (IconItem & {
+  title: string;
+  line1: string;
+  line2: string;
+})[];
 
 export const HOME_CARE_SERVICES = [
   {
-    icon: "ph ph-wind",
+    icon: Wind,
     title: "에어컨 관리",
     desc: "내부 곰팡이와 먼지를 고압 세척으로 완벽하게 제거하여 맑은 바람을 찾아드립니다.",
     features: ["벽걸이/스탠드/시스템", "완전 분해 고압 세척"],
   },
   {
-    icon: "ph ph-washing-machine",
+    icon: WashingMachine,
     title: "세탁기 관리",
     desc: "보이지 않는 세탁조 안팎의 찌든 때와 유해 세균을 살균 소독하여 세탁 품질을 높입니다.",
     features: ["통돌이/드럼 세탁기", "이물질 완벽 제거"],
   },
   {
-    icon: "ph ph-fan",
+    icon: Fan,
     title: "공기청정기 관리",
     desc: "필터 교체만으로는 부족한 내부 팬과 센서의 오염을 정밀하게 청소합니다.",
     features: ["내부 부품 분해 세척", "성능 저하 방지"],
   },
   {
-    icon: "ph ph-thermometer-cold",
+    icon: ThermometerCold,
     title: "냉장고 관리",
     desc: "음식물 냄새와 얼룩, 고무패킹의 곰팡이를 스팀 살균하여 위생적인 보관 환경을 만듭니다.",
     features: ["내부 스팀 살균", "선반/서랍 탈거 세척"],
   },
-] as const;
+] as const satisfies readonly (IconItem & {
+  title: string;
+  desc: string;
+  features: readonly string[];
+})[];
 
 export const COMPREHENSIVE_ITEMS = [
   {
-    icon: "ph-fill ph-sparkle",
+    icon: Sparkle,
+    weight: "fill",
     title: "종합청소",
     desc: "공간 전체의 오염을 제거하는 맞춤형 대청소 서비스",
   },
   {
-    icon: "ph-fill ph-calendar-check",
+    icon: CalendarCheck,
+    weight: "fill",
     title: "정기청소",
     desc: "주/월 단위로 방문하여 항상 청결한 상태를 유지",
   },
   {
-    icon: "ph-fill ph-buildings",
+    icon: Buildings,
+    weight: "fill",
     title: "건물청소",
     desc: "상가, 빌라 등 건물 내외부 공용 공간 위생 관리",
   },
   {
-    icon: "ph-fill ph-house-line",
+    icon: HouseLine,
+    weight: "fill",
     title: "입주·이사·거주청소",
     desc: "새집증후군 완화 및 묵은 때 제거로 안전한 입주 준비",
   },
   {
-    icon: "ph-fill ph-office-chair",
+    icon: OfficeChair,
+    weight: "fill",
     title: "사무실·병원·학원",
     desc: "업무 및 진료 환경에 맞는 전문적인 살균 청소",
   },
   {
-    icon: "ph-fill ph-stairs",
+    icon: Stairs,
+    weight: "fill",
     title: "계단·아파트·공장·외벽",
     desc: "특수 장비가 필요한 대형 공간 및 고난이도 구역 청소",
   },
-] as const;
+] as const satisfies readonly (IconItem & {
+  title: string;
+  desc: string;
+})[];
 
 export const PROCESS_STEPS = [
-  { step: "STEP 01", icon: "ph ph-headset", title: "상담", active: false },
+  { step: "STEP 01", icon: Headset, title: "상담", active: false },
   {
     step: "STEP 02",
-    icon: "ph ph-camera",
+    icon: Camera,
     title: "사진/방문 견적",
     active: false,
   },
   {
     step: "STEP 03",
-    icon: "ph ph-calendar-plus",
+    icon: CalendarPlus,
     title: "일정 예약",
     active: false,
   },
   {
     step: "STEP 04",
-    icon: "ph-fill ph-broom",
+    icon: Broom,
+    weight: "fill",
     title: "방문 작업",
     active: true,
   },
-  { step: "STEP 05", icon: "ph ph-trash", title: "정리", active: false },
+  { step: "STEP 05", icon: Trash, title: "정리", active: false },
   {
     step: "STEP 06",
-    icon: "ph ph-check-circle",
+    icon: CheckCircle,
     title: "작업 후 확인",
     active: false,
   },
-] as const;
+] as const satisfies readonly (IconItem & {
+  step: string;
+  title: string;
+  active: boolean;
+})[];
 
 export const GALLERY_ITEMS = [
   {

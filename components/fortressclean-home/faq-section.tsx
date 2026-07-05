@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 
+import { Minus, Plus } from "./icons";
 import { FAQ_ITEMS } from "./constants";
+import { PhosphorIcon } from "./phosphor-icon";
 
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -42,12 +44,14 @@ export function FAQSection() {
                     {faq.q}
                   </span>
                   <span className="relative h-5 w-5 shrink-0">
-                    <i
-                      className={`ph ph-plus absolute inset-0 text-xl text-gray-400 transition duration-300 ${isOpen ? "opacity-0" : "opacity-100"}`}
-                    ></i>
-                    <i
-                      className={`ph ph-minus absolute inset-0 text-xl text-brand-900 transition duration-300 ${isOpen ? "opacity-100" : "opacity-0"}`}
-                    ></i>
+                    <PhosphorIcon
+                      icon={Plus}
+                      className={`absolute inset-0 text-xl text-gray-400 transition duration-300 ${isOpen ? "opacity-0" : "opacity-100"}`}
+                    />
+                    <PhosphorIcon
+                      icon={Minus}
+                      className={`absolute inset-0 text-xl text-brand-900 transition duration-300 ${isOpen ? "opacity-100" : "opacity-0"}`}
+                    />
                   </span>
                 </button>
                 {isOpen ? (

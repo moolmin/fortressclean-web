@@ -1,5 +1,7 @@
+import { Clock, Phone } from "./icons";
 import { NAV_ITEMS, PHONE_NUMBER } from "./constants";
 import { LogoMark } from "./logo-mark";
+import { PhosphorIcon } from "./phosphor-icon";
 
 const FOOTER_SERVICE_LINKS = [
   { href: "#services", label: "가전 홈케어" },
@@ -49,11 +51,19 @@ export function SiteFooter() {
             <h4 className="mb-4 font-bold text-white">고객센터</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
-                <i className="ph-fill ph-phone mt-0.5 text-gray-500"></i>
+                <PhosphorIcon
+                  icon={Phone}
+                  weight="fill"
+                  className="mt-0.5 text-gray-500"
+                />
                 <span className="font-bold text-white">{PHONE_NUMBER}</span>
               </li>
               <li className="flex items-start gap-2">
-                <i className="ph-fill ph-clock mt-0.5 text-gray-500"></i>
+                <PhosphorIcon
+                  icon={Clock}
+                  weight="fill"
+                  className="mt-0.5 text-gray-500"
+                />
                 <span>
                   매일 09:00 - 20:00
                   <br />
