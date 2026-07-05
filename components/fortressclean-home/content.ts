@@ -162,52 +162,59 @@ export const HOME_CARE_SERVICES = [
 
 export const COMPREHENSIVE_INTRO: SectionIntro = {
   eyebrow: "COMPREHENSIVE CLEANING",
-  title: "종합 청소 서비스",
+  title: "공간·시설 청소 서비스",
   description:
-    "주거공간부터 상업공간까지, 전문 장비와 약품으로 쾌적한 환경을 조성합니다.",
+    "가정부터 시설까지, 공간마다 필요한 청소는 다릅니다.\n포트리스 클린은 현장 환경을 먼저 확인하고, 깨끗함이 유지될 수 있도록 책임감 있게 관리합니다.",
 };
 
 export const COMPREHENSIVE_ITEMS = [
   {
+    icon: HouseLine,
+    weight: "fill",
+    title: "주거 청소",
+    desc: "거주 중 쌓인 먼지와 생활 오염을 정리해 쾌적한 생활 공간을 유지합니다.",
+  },
+  {
     icon: Sparkle,
     weight: "fill",
-    title: "종합청소",
-    desc: "공간 전체의 오염을 제거하는 맞춤형 대청소 서비스",
+    title: "입주·이사 청소",
+    desc: "입주 전후, 이사 전후 공간의 먼지와 오염을 정리해 깨끗한 시작을 돕습니다.",
   },
   {
     icon: CalendarCheck,
     weight: "fill",
-    title: "정기청소",
-    desc: "주/월 단위로 방문하여 항상 청결한 상태를 유지",
-  },
-  {
-    icon: Buildings,
-    weight: "fill",
-    title: "건물청소",
-    desc: "상가, 빌라 등 건물 내외부 공용 공간 위생 관리",
-  },
-  {
-    icon: HouseLine,
-    weight: "fill",
-    title: "입주·이사·거주청소",
-    desc: "새집증후군 완화 및 묵은 때 제거로 안전한 입주 준비",
+    title: "정기 관리 청소",
+    desc: "주기적인 방문 관리로 사무실, 매장, 공용 공간의 청결한 상태를 유지합니다.",
   },
   {
     icon: OfficeChair,
     weight: "fill",
-    title: "사무실·병원·학원",
-    desc: "업무 및 진료 환경에 맞는 전문적인 살균 청소",
+    title: "상업 공간 청소",
+    desc: "사무실, 병원, 학원, 상가 등 이용자가 많은 공간을 쾌적하게 관리합니다.",
+  },
+  {
+    icon: Buildings,
+    weight: "fill",
+    title: "건물·공용공간 청소",
+    desc: "계단, 아파트, 건물 내외부 등 반복 관리가 필요한 공용 공간을 체계적으로 청소합니다.",
   },
   {
     icon: Stairs,
     weight: "fill",
-    title: "계단·아파트·공장·외벽",
-    desc: "특수 장비가 필요한 대형 공간 및 고난이도 구역 청소",
+    title: "시설·단체 청소",
+    desc: "지하주차장·군부대·공장 등 규모 있는 현장도 책임감 있게 진행합니다.",
   },
 ] as const satisfies readonly (IconItem & {
   title: string;
   desc: string;
 })[];
+
+export const COMPREHENSIVE_BADGES = [
+  "정기 관리 가능",
+  "방문 견적 가능",
+  "대량 작업 문의 가능",
+  "수도권 작업 가능",
+] as const;
 
 export const PROCESS_INTRO: SectionIntro = {
   title: "체계적인 작업 과정",

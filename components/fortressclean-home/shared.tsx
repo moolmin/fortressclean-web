@@ -34,7 +34,7 @@ export function SectionHeading({
       <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
         {title}
       </h2>
-      <p className="text-gray-500">{description}</p>
+      <p className="whitespace-pre-line text-gray-500">{description}</p>
     </div>
   );
 }

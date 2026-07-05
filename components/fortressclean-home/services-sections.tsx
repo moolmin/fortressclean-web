@@ -1,5 +1,6 @@
 import { CheckCircle } from "./icons";
 import {
+  COMPREHENSIVE_BADGES,
   COMPREHENSIVE_INTRO,
   COMPREHENSIVE_ITEMS,
   FEATURE_ITEMS,
@@ -112,6 +113,16 @@ export function ComprehensiveSection() {
                 <p className="text-sm text-gray-500">{item.desc}</p>
               </div>
             </div>
+          ))}
+        </div>
+        <div className="mt-10 flex flex-wrap justify-center gap-3">
+          {COMPREHENSIVE_BADGES.map((badge) => (
+            <span
+              key={badge}
+              className="rounded-full border border-brand-100 bg-brand-100/70 px-4 py-2 text-sm font-medium tracking-tight text-brand-700"
+            >
+              #{badge}
+            </span>
           ))}
         </div>
       </div>
