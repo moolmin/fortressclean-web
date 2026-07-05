@@ -121,9 +121,8 @@ export const FEATURE_ITEMS = [
     weight: "fill",
     title: "30일 A/S 보증",
     description: ["작업 후 문제 발생 시", "확실하게 책임집니다"],
-    emphasized: true,
   },
-] as const satisfies readonly (FeatureItem & { emphasized?: boolean })[];
+] as const satisfies readonly FeatureItem[];
 
 export const HOME_CARE_INTRO: SectionIntro = {
   eyebrow: "HOME CARE",
@@ -212,7 +211,8 @@ export const COMPREHENSIVE_ITEMS = [
 
 export const PROCESS_INTRO: SectionIntro = {
   title: "체계적인 작업 과정",
-  description: "상담부터 작업 후 확인까지, 단계별로 투명하고 꼼꼼하게 진행합니다.",
+  description:
+    "상담부터 작업 후 확인까지, 단계별로 투명하고 꼼꼼하게 진행합니다.",
 };
 
 export const PROCESS_STEPS = [
