@@ -26,7 +26,7 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-2">
-          <div className="relative h-8 w-8 overflow-hidden">
+          <div className="relative h-6 w-6 overflow-hidden">
             <Image
               src="/logo.svg"
               alt="포트리스 클린 로고"

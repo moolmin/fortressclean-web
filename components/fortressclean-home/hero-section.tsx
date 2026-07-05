@@ -19,16 +19,16 @@ export function HeroSection() {
                 weight="fill"
                 className="text-brand-500"
               />
-              종합 환경 & 홈케어 솔루션
+              종합 환경·홈케어 솔루션
             </div>
             <h1 className="mb-6 text-5xl leading-[1.3] font-bold tracking-tight text-gray-900 lg:text-6xl">
-              생활 공간과 가전을
+              가정부터 시설까지
               <br />
-              <span className="text-brand-900">깨끗하고 안전하게</span>
+              <span className="text-brand-900">깨끗하게, 책임 있게</span>
             </h1>
             <p className="mb-10 text-lg leading-relaxed text-gray-600">
               포트리스 클린은 가전 홈케어부터 종합청소, 정기청소, 건물청소까지
-              꼼꼼하게 관리하는 종합 환경·홈케어 솔루션입니다.
+              공간에 맞는 방식으로 꼼꼼하게 관리합니다.
             </p>
             <div className="flex flex-col gap-5">
               <div className="flex items-center gap-4">
