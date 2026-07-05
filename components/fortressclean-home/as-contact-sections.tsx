@@ -2,7 +2,7 @@ import { PHONE_NUMBER } from "./constants";
 
 export function ASSection() {
   return (
-    <section id="as" className="bg-white py-16">
+    <section id="as" className="bg-gray-50 py-16">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="reveal relative flex flex-col items-center justify-between gap-12 overflow-hidden rounded-[2.5rem] bg-brand-900 p-10 text-white transition-all duration-500 hover:shadow-2xl hover:shadow-brand-900/30 lg:flex-row lg:p-16">
           <svg
@@ -73,7 +73,9 @@ export function ContactSection() {
           친절하고 상세하게 상담해 드리겠습니다.
         </p>
         <div className="mb-10 rounded-3xl border-2 border-brand-100 bg-white p-8 shadow-lg shadow-brand-900/5">
-          <p className="mb-2 text-sm font-bold text-brand-600">예약 및 상담 번호</p>
+          <p className="mb-2 text-sm font-bold text-brand-600">
+            예약 및 상담 번호
+          </p>
           <p className="text-4xl font-black tracking-wider text-brand-900 lg:text-5xl">
             {PHONE_NUMBER}
           </p>

@@ -4,7 +4,11 @@ import { ContactSection, ASSection } from "./as-contact-sections";
 import { FAQSection } from "./faq-section";
 import { HeroSection } from "./hero-section";
 import { ProcessSection } from "./process-section";
-import { GallerySection, QuoteSection } from "./quote-gallery-sections";
+import {
+  GallerySection,
+  QuoteSection,
+  TestimonialSection,
+} from "./quote-gallery-sections";
 import { RevealObserver } from "./reveal-observer";
 import {
   ComprehensiveSection,
@@ -32,6 +36,7 @@ export default function FortressCleanHome() {
           <ProcessSection />
           <QuoteSection />
           <GallerySection />
+          <TestimonialSection />
           <ASSection />
           <FAQSection />
           <ContactSection />

@@ -4,6 +4,7 @@ export const NAV_ITEMS = [
   { href: "#services", label: "서비스" },
   { href: "#process", label: "작업과정" },
   { href: "#gallery", label: "작업사진" },
+  { href: "#reviews", label: "후기" },
   { href: "#quote", label: "견적안내" },
   { href: "#as", label: "A/S" },
   { href: "#faq", label: "FAQ" },
@@ -141,6 +142,30 @@ export const GALLERY_ITEMS = [
   {
     title: "주방 후드 기름때 제거",
     desc: "거주 청소 시 주방 후드망의 굳은 기름때 완전 분해",
+  },
+] as const;
+
+export const REVIEW_ITEMS = [
+  {
+    initial: "김",
+    name: "김OO 고객님",
+    service: "스탠드 에어컨 청소",
+    text:
+      "작업 전에 상태를 하나씩 설명해 주시고 분해 과정도 깔끔했습니다. 청소 후 냄새가 확실히 줄어서 바로 체감됐어요.",
+  },
+  {
+    initial: "박",
+    name: "박OO 고객님",
+    service: "입주 청소",
+    text:
+      "눈에 잘 안 보이는 창틀과 욕실 모서리까지 꼼꼼하게 봐주셨습니다. 마감 확인까지 같이 해줘서 믿음이 갔습니다.",
+  },
+  {
+    initial: "이",
+    name: "이OO 고객님",
+    service: "세탁기 분해 청소",
+    text:
+      "세탁조 안쪽 오염을 직접 보여주고 작업해 주셔서 좋았습니다. 예약 시간도 잘 지켜주셨고 뒷정리도 깔끔했습니다.",
   },
 ] as const;
 

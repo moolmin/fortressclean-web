@@ -1,4 +1,4 @@
-import { GALLERY_ITEMS } from "./constants";
+import { GALLERY_ITEMS, REVIEW_ITEMS } from "./constants";
 
 export function QuoteSection() {
   return (
@@ -65,6 +65,53 @@ export function QuoteSection() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function TestimonialSection() {
+  return (
+    <section id="reviews" className="bg-gray-50 py-24">
+      <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-gray-900">고객 후기</h2>
+          <p className="text-gray-500">
+            실제 이용 고객님들의 생생한 후기를 확인하세요.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {REVIEW_ITEMS.map((review) => (
+            <div
+              key={`${review.name}-${review.service}`}
+              className="reveal rounded-3xl border border-gray-100 bg-white p-8 shadow-sm"
+            >
+              <div className="mb-4 flex gap-1 text-yellow-400">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <i
+                    key={index}
+                    className="ph-fill ph-star"
+                    aria-hidden="true"
+                  ></i>
+                ))}
+              </div>
+              <p className="mb-6 leading-relaxed text-gray-700">
+                {review.text}
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-100 text-sm font-bold text-brand-900">
+                  {review.initial}
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-gray-900">
+                    {review.name}
+                  </p>
+                  <p className="text-xs text-gray-500">{review.service}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
