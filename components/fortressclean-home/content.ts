@@ -50,7 +50,6 @@ type ServiceItem = IconItem & {
 type ProcessStep = IconItem & {
   step: string;
   title: string;
-  active: boolean;
 };
 
 type Testimonial = {
@@ -213,36 +212,32 @@ export const COMPREHENSIVE_ITEMS = [
 
 export const PROCESS_INTRO: SectionIntro = {
   title: "체계적인 작업 과정",
-  description: "상담부터 사후 관리까지 투명하고 꼼꼼하게 진행됩니다.",
+  description: "상담부터 작업 후 확인까지, 단계별로 투명하고 꼼꼼하게 진행합니다.",
 };
 
 export const PROCESS_STEPS = [
-  { step: "STEP 01", icon: Headset, title: "상담", active: false },
+  { step: "STEP 01", icon: Headset, title: "상담 접수" },
   {
     step: "STEP 02",
     icon: Camera,
-    title: "사진/방문 견적",
-    active: false,
+    title: "사진·방문 견적",
   },
   {
     step: "STEP 03",
     icon: CalendarPlus,
-    title: "일정 예약",
-    active: false,
+    title: "일정 확정",
   },
   {
     step: "STEP 04",
     icon: Broom,
     weight: "fill",
     title: "방문 작업",
-    active: true,
   },
-  { step: "STEP 05", icon: Trash, title: "정리", active: false },
+  { step: "STEP 05", icon: Trash, title: "현장 정리" },
   {
     step: "STEP 06",
     icon: CheckCircle,
     title: "작업 후 확인",
-    active: false,
   },
 ] as const satisfies readonly ProcessStep[];
 
