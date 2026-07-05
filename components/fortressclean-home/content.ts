@@ -249,7 +249,7 @@ export const PROCESS_STEPS = [
 ] as const satisfies readonly ProcessStep[];
 
 export const QUOTE_INTRO: SectionIntro = {
-  title: "간편한 견적 안내내",
+  title: "간편한 견적 안내",
   description:
     "서비스 유형과 현장 상황에 맞춰 사진 견적 또는 방문 견적으로 안내드립니다.",
 };
