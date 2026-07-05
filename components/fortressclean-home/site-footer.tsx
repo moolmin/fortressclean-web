@@ -1,8 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { Clock, Phone } from "./icons";
 import { NAV_ITEMS } from "./content";
-import { LogoMark } from "./logo-mark";
 import { PhosphorIcon } from "./phosphor-icon";
 import { PhoneLink } from "./shared";
 
@@ -13,12 +13,16 @@ export function SiteFooter() {
         <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
             <div className="mb-6 flex items-center gap-3">
-              <LogoMark
-                className="h-8 w-8"
-                stroke="white"
-                circleClassName="text-gray-700"
-              />
-              <span className="text-xl font-bold tracking-tight text-white">
+              <div className="relative h-6 w-6 overflow-hidden">
+                <Image
+                  src="/logo.svg"
+                  alt="포트리스 클린 로고"
+                  fill
+                  sizes="32px"
+                  className="scale-[1.28] object-contain brightness-0 invert"
+                />
+              </div>
+              <span className="text-xl font-bold tracking-tight text-white pt-1">
                 포트리스 클린
               </span>
             </div>
@@ -69,7 +73,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="flex flex-col items-center gap-4 border-t border-gray-800 pt-8 text-sm md:flex-row">
-          <p>© 포트리스 클린. All rights reserved.</p>
+          <p>© Fortressclean. All rights reserved.</p>
         </div>
       </div>
     </footer>

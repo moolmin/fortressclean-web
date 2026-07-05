@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { NAV_ITEMS } from "./content";
-import { LogoMark } from "./logo-mark";
 import { PhoneLink } from "./shared";
 
 export function SiteHeader() {
@@ -25,9 +25,18 @@ export function SiteHeader() {
       className={`fixed top-0 z-50 w-full border-b border-gray-100 bg-white/95 backdrop-blur-sm transition-all duration-300 ${scrolled ? "header-scrolled" : ""}`}
     >
       <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6">
-        <Link href="/" className="flex items-center gap-3">
-          <LogoMark className="h-10 w-10 text-[#e6ebf7]" circleClassName="text-[#e6ebf7]" />
-          <span className="text-xl font-bold tracking-tight text-brand-900">
+        <Link href="/" className="flex items-center gap-2">
+          <div className="relative h-8 w-8 overflow-hidden">
+            <Image
+              src="/logo.svg"
+              alt="포트리스 클린 로고"
+              fill
+              sizes="40px"
+              className="scale-[1.28] object-contain"
+              priority
+            />
+          </div>
+          <span className="text-xl font-bold tracking-tight text-brand-900 pt-1">
             포트리스 클린
           </span>
         </Link>
