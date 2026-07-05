@@ -24,7 +24,9 @@ export function HeroSection() {
             <h1 className="mb-6 text-5xl leading-[1.3] font-bold tracking-tight text-gray-900 lg:text-6xl">
               가정부터 시설까지
               <br />
-              <span className="text-brand-900">깨끗하게, 책임 있게</span>
+              <span className="hero-highlight-sweep text-brand-900">
+                깨끗하게, 책임 있게
+              </span>
             </h1>
             <p className="mb-10 text-lg leading-relaxed text-gray-600">
               포트리스 클린은 가전 홈케어부터 종합청소, 정기청소, 건물청소까지
