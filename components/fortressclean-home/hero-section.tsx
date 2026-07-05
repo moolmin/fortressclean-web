@@ -1,10 +1,6 @@
-import {
-  HouseLine,
-  PhoneCall,
-  ShieldCheck,
-  Sparkle,
-} from "./icons";
+import { PhoneCall, Broom, Sparkle } from "./icons";
 import { HERO_HIGHLIGHTS } from "./content";
+import { HeroImageRotator } from "./hero-image-rotator";
 import { PhosphorIcon } from "./phosphor-icon";
 import { PhoneLink } from "./shared";
 
@@ -44,7 +40,9 @@ export function HeroSection() {
                   />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-gray-500">예약 및 상담</p>
+                  <p className="text-sm font-medium text-gray-500">
+                    예약 및 상담
+                  </p>
                   <PhoneLink className="text-3xl font-black tracking-wide text-brand-900" />
                 </div>
               </div>
@@ -66,21 +64,14 @@ export function HeroSection() {
           </div>
 
           <div className="relative hidden h-[500px] w-full overflow-hidden rounded-[2.5rem] border-8 border-white bg-gray-200 shadow-2xl shadow-brand-900/10 lg:block">
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-tr from-brand-100 to-gray-50 text-brand-300">
-              <PhosphorIcon icon={HouseLine} className="mb-4 text-8xl" />
-              <span className="text-lg font-medium">쾌적한 공간 이미지</span>
-            </div>
+            <HeroImageRotator />
             <div className="absolute left-8 top-8 flex items-center gap-3 rounded-2xl bg-white/90 p-4 shadow-sm backdrop-blur">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-100 text-brand-900">
-                <PhosphorIcon
-                  icon={ShieldCheck}
-                  weight="fill"
-                  className="text-2xl"
-                />
+                <PhosphorIcon icon={Broom} weight="fill" className="text-2xl" />
               </div>
               <div>
-                <p className="text-xs text-gray-500">믿을 수 있는</p>
-                <p className="font-bold text-gray-900">직영 전문인력</p>
+                <p className="text-xs text-gray-500">공간에 맞춘</p>
+                <p className="font-bold text-gray-900">전문 청소 솔루션</p>
               </div>
             </div>
           </div>
