@@ -97,7 +97,7 @@ html {
   height: 0.48em;
   background:
     linear-gradient(90deg, rgba(115, 156, 213, 0.08) 0%, rgba(78, 126, 197, 0.24) 16%, rgba(78, 126, 197, 0.34) 78%, rgba(45, 80, 137, 0.18) 100%);
-  clip-path: polygon(0 20%, 100% 0, 100% 85%, 0 100%);
+  clip-path: inset(4% 0 0 0 round 0.18em);
   transform: scaleX(0);
   transform-origin: left center;
   animation: hero-highlight-sweep 1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s
