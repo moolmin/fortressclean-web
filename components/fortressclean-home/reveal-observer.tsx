@@ -4,22 +4,22 @@ import { useEffect } from "react";
 
 export function RevealObserver() {
   useEffect(() => {
-    const elements = Array.from(
-      document.querySelectorAll<HTMLElement>(".reveal"),
-    );
-
-    if (!elements.length) {
-      return;
-    }
-
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
+    const activateAll = () => {
+      document
+        .querySelectorAll<HTMLElement>(".reveal")
+        .forEach((element) => element.classList.add("active"));
+    };
+
     if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-      elements.forEach((element) => element.classList.add("active"));
+      activateAll();
       return;
     }
+
+    const observed = new WeakSet<HTMLElement>();
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -33,9 +33,32 @@ export function RevealObserver() {
       { threshold: 0.1 },
     );
 
-    elements.forEach((element) => observer.observe(element));
+    const observeRevealElements = () => {
+      document.querySelectorAll<HTMLElement>(".reveal").forEach((element) => {
+        if (observed.has(element)) {
+          return;
+        }
 
-    return () => observer.disconnect();
+        observed.add(element);
+        observer.observe(element);
+      });
+    };
+
+    observeRevealElements();
+
+    const mutationObserver = new MutationObserver(() => {
+      observeRevealElements();
+    });
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    return () => {
+      mutationObserver.disconnect();
+      observer.disconnect();
+    };
   }, []);
 
   return null;

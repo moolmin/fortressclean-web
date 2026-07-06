@@ -15,6 +15,7 @@ import {
   Wind,
 } from "@/components/fortressclean-home/icons";
 import { PhosphorIcon } from "@/components/fortressclean-home/phosphor-icon";
+import { RevealObserver } from "@/components/fortressclean-home/reveal-observer";
 import { SiteFooter } from "@/components/fortressclean-home/site-footer";
 import { SiteHeader } from "@/components/fortressclean-home/site-header";
 
@@ -192,15 +193,20 @@ function ServiceCard({
   title,
   desc,
   features,
+  delay = 0,
 }: {
   icon: (typeof HOME_CARE_ITEMS)[number]["icon"];
   imageSrc: string;
   title: string;
   desc: string;
   features: readonly string[];
+  delay?: number;
 }) {
   return (
-    <div className="flex flex-col overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+    <div
+      className="reveal flex flex-col overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+      style={{ transitionDelay: `${delay}s` }}
+    >
       <div className="relative h-44 overflow-hidden border-b border-gray-100 bg-gray-50">
         <Image
           src={imageSrc}
@@ -242,179 +248,197 @@ export default function ScopePage() {
   const [activeTab, setActiveTab] = useState<"homecare" | "space">("homecare");
 
   return (
-    <div className="bg-white font-sans text-gray-800 antialiased">
-      <SiteHeader />
-      <main>
-        <section
-          id="scope-hero"
-          className="relative overflow-hidden bg-brand-900 pb-32 pt-40"
-        >
-          <div className="relative z-10 mx-auto max-w-[1200px] px-6">
-            <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-              <div className="max-w-2xl">
-                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-700 bg-brand-800/50 px-4 py-1.5 text-sm font-bold text-brand-100 backdrop-blur-sm">
-                  <PhosphorIcon
-                    icon={Sparkle}
-                    weight="fill"
-                    className="text-brand-300"
-                  />
-                  종합 환경·홈케어 솔루션
+    <>
+      <RevealObserver />
+      <div className="bg-white font-sans text-gray-800 antialiased">
+        <SiteHeader />
+        <main>
+          <section
+            id="scope-hero"
+            className="relative overflow-hidden bg-brand-900 pb-32 pt-40"
+          >
+            <div
+              aria-hidden="true"
+              className="scope-orb scope-orb-left absolute top-24 left-[8%] h-40 w-40 rounded-full bg-brand-300/12 blur-3xl"
+            />
+            <div
+              aria-hidden="true"
+              className="scope-orb scope-orb-right absolute right-[10%] bottom-24 h-52 w-52 rounded-full bg-white/10 blur-3xl"
+            />
+            <div className="relative z-10 mx-auto max-w-[1200px] px-6">
+              <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+                <div className="reveal active max-w-2xl">
+                  <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-700 bg-brand-800/50 px-4 py-1.5 text-sm font-bold text-brand-100 backdrop-blur-sm">
+                    <PhosphorIcon
+                      icon={Sparkle}
+                      weight="fill"
+                      className="text-brand-300"
+                    />
+                    종합 환경·홈케어 솔루션
+                  </div>
+                  <h1 className="mb-6 text-5xl leading-[1.3] font-bold tracking-tight text-white lg:text-6xl">
+                    작업범위
+                  </h1>
+                  <p className="mb-10 text-xl leading-relaxed font-medium text-brand-100">
+                    가전 홈케어부터 공간·시설 청소까지,
+                    <br />
+                    현장에 맞는 방식으로 꼼꼼하게 관리합니다.
+                  </p>
                 </div>
-                <h1 className="mb-6 text-5xl leading-[1.3] font-bold tracking-tight text-white lg:text-6xl">
-                  작업범위
-                </h1>
-                <p className="mb-10 text-xl leading-relaxed font-medium text-brand-100">
-                  가전 홈케어부터 공간·시설 청소까지,
-                  <br />
-                  현장에 맞는 방식으로 꼼꼼하게 관리합니다.
+
+                <div
+                  className="reveal relative hidden h-[500px] w-full overflow-hidden rounded-[2.5rem] border-8 border-white bg-brand-950 shadow-2xl shadow-black/20 lg:block"
+                  style={{ transitionDelay: "0.2s" }}
+                >
+                  <Image
+                    src="/images/scope/scope-hero.jpg"
+                    alt="포트리스 클린 작업범위 대표 이미지"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="curve-bg absolute bottom-0 h-[120px] w-full" />
+          </section>
+
+          <section className="bg-white py-18">
+            <div className="mx-auto max-w-[1200px] px-6">
+              <div className="reveal mb-16 flex flex-col items-center">
+                <h2 className="mb-3 block text-sm font-bold tracking-wider text-brand-600 uppercase">
+                  Service Categories
+                </h2>
+                <div className="relative inline-flex w-full rounded-full border border-gray-200 bg-gray-50 p-1.5 shadow-sm md:w-auto">
+                  <div
+                    aria-hidden="true"
+                    className={`absolute top-1.5 bottom-1.5 w-[calc(50%-0.375rem)] rounded-full bg-brand-900 shadow-md transition-transform duration-300 ease-out ${
+                      activeTab === "homecare"
+                        ? "translate-x-0"
+                        : "translate-x-[calc(100%+0.25rem)]"
+                    }`}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab("homecare")}
+                    className={`relative z-10 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[17px] font-bold transition-colors duration-300 md:flex-none md:w-64 ${
+                      activeTab === "homecare"
+                        ? "text-white"
+                        : "text-gray-500 hover:text-gray-900"
+                    }`}
+                  >
+                    가전 홈케어
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab("space")}
+                    className={`relative z-10 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[17px] font-bold transition-colors duration-300 md:flex-none md:w-64 ${
+                      activeTab === "space"
+                        ? "text-white"
+                        : "text-gray-500 hover:text-gray-900"
+                    }`}
+                  >
+                    공간·시설 청소
+                  </button>
+                </div>
+              </div>
+
+              <div
+                className={`grid grid-cols-1 gap-6 ${
+                  activeTab === "homecare"
+                    ? "md:grid-cols-2 lg:grid-cols-4"
+                    : "md:grid-cols-2 lg:grid-cols-3"
+                }`}
+              >
+                {(activeTab === "homecare" ? HOME_CARE_ITEMS : SPACE_ITEMS).map(
+                  (item, index) => (
+                    <ServiceCard
+                      key={item.title}
+                      {...item}
+                      delay={Math.min(index * 0.08, 0.32)}
+                    />
+                  ),
+                )}
+              </div>
+            </div>
+          </section>
+
+          <section className="border-t border-gray-100 bg-white py-24">
+            <div className="mx-auto max-w-[1200px] px-6">
+              <div className="reveal mb-12">
+                <h3 className="mb-2 text-3xl font-bold tracking-tight text-gray-900">
+                  서비스 범위 요약
+                </h3>
+                <p className="text-md text-gray-500">
+                  상담을 통해 현장에 맞는 상세 작업 범위를 확인하실 수 있습니다.
                 </p>
               </div>
 
-              <div className="relative hidden h-[500px] w-full overflow-hidden rounded-[2.5rem] border-8 border-white bg-brand-950 shadow-2xl shadow-black/20 lg:block">
-                <Image
-                  src="/images/scope/scope-hero.jpg"
-                  alt="포트리스 클린 작업범위 대표 이미지"
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="curve-bg absolute bottom-0 h-[120px] w-full" />
-        </section>
-
-        <section className="bg-white py-18">
-          <div className="mx-auto max-w-[1200px] px-6">
-            <div className="mb-16 flex flex-col items-center">
-              <h2 className="mb-3 block text-sm font-bold tracking-wider text-brand-600 uppercase">
-                Service Categories
-              </h2>
-              <div className="relative inline-flex w-full rounded-full border border-gray-200 bg-gray-50 p-1.5 shadow-sm md:w-auto">
-                <div
-                  aria-hidden="true"
-                  className={`absolute top-1.5 bottom-1.5 w-[calc(50%-0.375rem)] rounded-full bg-brand-900 shadow-md transition-transform duration-300 ease-out ${
-                    activeTab === "homecare"
-                      ? "translate-x-0"
-                      : "translate-x-[calc(100%+0.25rem)]"
-                  }`}
-                />
-                <button
-                  type="button"
-                  onClick={() => setActiveTab("homecare")}
-                  className={`relative z-10 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[17px] font-bold transition-colors duration-300 md:flex-none md:w-64 ${
-                    activeTab === "homecare"
-                      ? "text-white"
-                      : "text-gray-500 hover:text-gray-900"
-                  }`}
-                >
-                  가전 홈케어
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setActiveTab("space")}
-                  className={`relative z-10 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[17px] font-bold transition-colors duration-300 md:flex-none md:w-64 ${
-                    activeTab === "space"
-                      ? "text-white"
-                      : "text-gray-500 hover:text-gray-900"
-                  }`}
-                >
-                  공간·시설 청소
-                </button>
-              </div>
-            </div>
-
-            <div
-              className={`grid grid-cols-1 gap-6 ${
-                activeTab === "homecare"
-                  ? "md:grid-cols-2 lg:grid-cols-4"
-                  : "md:grid-cols-2 lg:grid-cols-3"
-              }`}
-            >
-              {(activeTab === "homecare" ? HOME_CARE_ITEMS : SPACE_ITEMS).map(
-                (item) => (
-                  <ServiceCard key={item.title} {...item} />
-                ),
-              )}
-            </div>
-          </div>
-        </section>
-
-        <section className="border-t border-gray-100 bg-white py-24">
-          <div className="mx-auto max-w-[1200px] px-6">
-            <div className="mb-12">
-              <h3 className="mb-2 text-3xl font-bold tracking-tight text-gray-900">
-                서비스 범위 요약
-              </h3>
-              <p className="text-md text-gray-500">
-                상담을 통해 현장에 맞는 상세 작업 범위를 확인하실 수 있습니다.
-              </p>
-            </div>
-
-            <div className="space-y-4 md:hidden">
-              {SCOPE_SUMMARY_COLUMNS.map((column) => (
-                <div
-                  key={column.title}
-                  className="rounded-2xl border border-gray-200 bg-white p-5"
-                >
-                  <h4 className="mb-4 text-sm font-bold tracking-wider text-brand-900 uppercase">
-                    {column.title}
-                  </h4>
-                  <div className="space-y-3 text-sm text-gray-700">
-                    {column.items.map((item) => (
-                      <div key={item} className="flex items-start gap-2">
-                        <PhosphorIcon
-                          icon={CheckCircle}
-                          weight="fill"
-                          className="mt-0.5 text-xs text-brand-700"
-                        />
-                        <span>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="hidden overflow-x-auto border-y border-gray-200 md:block">
-              <div className="min-w-[900px]">
-                <div className="grid grid-cols-5 border-b border-gray-200 bg-gray-50 text-sm font-bold tracking-wider text-gray-500 uppercase">
-                  {SCOPE_SUMMARY_COLUMNS.map((column) => (
-                    <div
-                      key={column.title}
-                      className="border-r border-gray-200/60 px-6 py-4 last:border-r-0"
-                    >
+              <div className="space-y-4 md:hidden">
+                {SCOPE_SUMMARY_COLUMNS.map((column) => (
+                  <div
+                    key={column.title}
+                    className="reveal rounded-2xl border border-gray-200 bg-white p-5"
+                  >
+                    <h4 className="mb-4 text-sm font-bold tracking-wider text-brand-900 uppercase">
                       {column.title}
-                    </div>
-                  ))}
-                </div>
-
-                <div className="grid grid-cols-5 text-sm text-gray-700">
-                  {SCOPE_SUMMARY_COLUMNS.map((column) => (
-                    <div
-                      key={column.title}
-                      className="space-y-3 border-r border-gray-100 px-6 py-6 last:border-r-0"
-                    >
+                    </h4>
+                    <div className="space-y-3 text-sm text-gray-700">
                       {column.items.map((item) => (
-                        <div key={item} className="flex items-center gap-2">
+                        <div key={item} className="flex items-start gap-2">
                           <PhosphorIcon
                             icon={CheckCircle}
                             weight="fill"
-                            className="text-xs text-brand-700"
+                            className="mt-0.5 text-xs text-brand-700"
                           />
                           <span>{item}</span>
                         </div>
                       ))}
                     </div>
-                  ))}
+                  </div>
+                ))}
+              </div>
+
+              <div className="reveal hidden overflow-x-auto border-y border-gray-200 md:block">
+                <div className="min-w-[900px]">
+                  <div className="grid grid-cols-5 border-b border-gray-200 bg-gray-50 text-sm font-bold tracking-wider text-gray-500 uppercase">
+                    {SCOPE_SUMMARY_COLUMNS.map((column) => (
+                      <div
+                        key={column.title}
+                        className="border-r border-gray-200/60 px-6 py-4 last:border-r-0"
+                      >
+                        {column.title}
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="grid grid-cols-5 text-sm text-gray-700">
+                    {SCOPE_SUMMARY_COLUMNS.map((column) => (
+                      <div
+                        key={column.title}
+                        className="space-y-3 border-r border-gray-100 px-6 py-6 last:border-r-0"
+                      >
+                        {column.items.map((item) => (
+                          <div key={item} className="flex items-center gap-2">
+                            <PhosphorIcon
+                              icon={CheckCircle}
+                              weight="fill"
+                              className="text-xs text-brand-700"
+                            />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-      </main>
-      <SiteFooter />
-    </div>
+          </section>
+        </main>
+        <SiteFooter />
+      </div>
+    </>
   );
 }
