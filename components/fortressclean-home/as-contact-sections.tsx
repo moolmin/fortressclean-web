@@ -63,17 +63,14 @@ export function ContactSection() {
       </svg>
       <div className="mx-auto max-w-[800px] px-6 text-center">
         <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-brand-100 text-brand-900 shadow-sm">
-          <PhosphorIcon
-            icon={Headset}
-            weight="fill"
-            className="text-4xl"
-          />
+          <PhosphorIcon icon={Headset} weight="fill" className="text-4xl" />
         </div>
         <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl">
-          깨끗한 공간, 지금 바로 문의하세요
+          깨끗한 공간을 위한 상담
         </h2>
         <p className="mb-10 text-lg text-gray-600">
-          친절하고 상세하게 상담해 드리겠습니다.
+          서비스 범위와 현장 상황을 확인한 뒤 <br /> 필요한 작업을 친절하게
+          안내해드립니다.
         </p>
         <div className="mb-10 rounded-3xl border-2 border-brand-100 bg-white p-8 shadow-lg shadow-brand-900/5">
           <p className="mb-2 text-sm font-bold text-brand-600">
@@ -81,7 +78,7 @@ export function ContactSection() {
           </p>
           <PhoneLink className="text-4xl font-black tracking-wider text-brand-900 lg:text-5xl" />
           <p className="mt-4 text-sm text-gray-500">
-            상담 시간: 매일 09:00 ~ 20:00 (주말/공휴일 가능)
+            상담 시간: 매일 09:00 ~ 20:00 (주말·공휴일 가능)
           </p>
         </div>
       </div>

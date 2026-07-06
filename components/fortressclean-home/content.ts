@@ -301,37 +301,37 @@ export const QUOTE_METHODS = [
 
 export const GALLERY_INTRO: SectionIntro = {
   title: "실제 작업 사례",
-  description: "포트리스 클린의 확실한 변화를 확인하세요.",
+  description: "포트리스 클린의 작업 전후 변화를 확인해보세요.",
 };
 
 export const GALLERY_ITEMS = [
   {
-    title: "세탁기 완전 분해 청소",
-    desc: "세탁조 외부의 찌든 때와 곰팡이 완벽 제거",
+    title: "세탁기 분해 세척",
+    desc: "세탁조 내부에 쌓인 오염과 찌든 때를 꼼꼼하게 제거했습니다.",
     beforeSrc: washerBeforeImage,
     beforeAlt: "세탁기 완전 분해 청소 작업 전 임시 이미지",
     afterSrc: washerAfterImage,
     afterAlt: "세탁기 완전 분해 청소 작업 후 임시 이미지",
   },
   {
-    title: "에어컨 내부 고압 세척",
-    desc: "냉각핀 사이의 먼지와 세균층 고압 살균 세척",
+    title: "에어컨 내부 세척",
+    desc: "냉각핀과 내부 부품 사이의 먼지, 오염을 세척해 쾌적한 바람을 돕습니다.",
     beforeSrc: airconBeforeImage,
     beforeAlt: "에어컨 내부 고압 세척 작업 전 임시 이미지",
     afterSrc: airconAfterImage,
     afterAlt: "에어컨 내부 고압 세척 작업 후 임시 이미지",
   },
   {
-    title: "주차장 바닥 찌든 때 제거",
-    desc: "건물 주차장 바닥의 오랜 오일 마크 및 오염 제거",
+    title: "주차장 바닥 청소",
+    desc: "오래 쌓인 바닥 오염과 자국을 정리해 깨끗한 주차 환경을 만들었습니다.",
     beforeSrc: parkingBeforeImage,
     beforeAlt: "주차장 바닥 찌든 때 제거 작업 전 임시 이미지",
     afterSrc: parkingAfterImage,
     afterAlt: "주차장 바닥 찌든 때 제거 작업 후 임시 이미지",
   },
   {
-    title: "주방 후드 기름때 제거",
-    desc: "거주 청소 시 주방 후드망의 굳은 기름때 완전 분해",
+    title: "주방 후드 청소",
+    desc: "후드망과 내부에 쌓인 기름때를 제거해 위생적인 주방 환경을 관리했습니다.",
     beforeSrc: hoodBeforeImage,
     beforeAlt: "주방 후드 기름때 제거 작업 전 임시 이미지",
     afterSrc: hoodAfterImage,
@@ -340,8 +340,8 @@ export const GALLERY_ITEMS = [
 ] as const satisfies readonly GalleryItem[];
 
 export const REVIEW_INTRO: SectionIntro = {
-  title: "고객 후기",
-  description: "실제 이용 고객님들의 생생한 후기를 확인하세요.",
+  title: "고객 만족 후기",
+  description: "실제 작업 과정에서 고객님이 느낀 안심과 만족을 확인해보세요.",
 };
 
 export const REVIEW_ITEMS = [
@@ -376,32 +376,32 @@ export const ASSURANCE_ITEMS = [
   {
     icon: ShieldCheck,
     weight: "fill",
-    title: "포트리스 30일 안심 A/S",
+    title: "30일 안심 A/S",
     description: "작업 다음날로부터 30일까지 무상 보증",
-    note: "*고객 과실 제외, 청소 불량 및 장비 이상 발생 시",
+    note: "*고객 과실 제외, 작업 관련 문제 발생 시 적용됩니다.",
   },
 ] as const satisfies readonly AssuranceItem[];
 
 export const FAQ_INTRO: SectionIntro = {
   title: "자주 묻는 질문",
-  description: "고객님들께서 가장 많이 궁금해하시는 내용을 모았습니다.",
+  description: "상담 전 고객님들께서 자주 궁금해하시는 내용을 정리했습니다.",
 };
 
 export const FAQ_ITEMS = [
   {
     q: "예약은 어떻게 진행하나요?",
-    a: `전화(${PHONE_NUMBER}) 또는 문자 메시지로 원하시는 서비스와 일정을 남겨주시면, 담당자가 확인 후 신속하게 상담 및 예약을 도와드립니다.`,
+    a: `전화(${PHONE_NUMBER}) 또는 원하시는 서비스와 희망 일정을 알려주시면, 담당자가 확인 후 상담과 예약을 도와드립니다.`,
   },
   {
     q: "가전 청소 시간은 얼마나 걸리나요?",
-    a: "제품의 종류와 오염도에 따라 다릅니다만, 일반적으로 벽걸이 에어컨은 1시간~1시간 30분, 스탠드 에어컨은 1시간 30분~2시간, 드럼 세탁기는 2시간~3시간 정도 소요됩니다.",
+    a: "제품 종류와 오염도에 따라 다르지만, 일반적으로 벽걸이 에어컨은 약 1시간~1시간 30분, 스탠드 에어컨은 약 1시간 30분~2시간, 드럼 세탁기는 약 2~3시간 정도 소요됩니다.",
   },
   {
-    q: "결제는 언제 어떻게 하나요?",
-    a: "모든 청소 작업이 완료된 후, 고객님과 함께 현장을 꼼꼼히 확인하고 이상이 없을 시 전액 후불 결제로 진행됩니다. 계좌이체 등 편리한 방법으로 결제 가능합니다.",
+    q: "결제는 언제 진행하나요?",
+    a: "모든 작업이 완료된 후 고객님과 함께 현장을 확인하고, 이상이 없을 경우 결제를 진행합니다. 결제 방식은 상담 시 안내드립니다.",
   },
   {
     q: "주말이나 공휴일에도 작업이 가능한가요?",
-    a: "네, 고객님의 일정에 맞춰 주말 및 공휴일에도 예약 및 작업이 가능합니다. 단, 주말 예약은 조기 마감될 수 있으니 미리 연락 주시면 감사하겠습니다.",
+    a: "네, 일정 조율 후 주말 및 공휴일 작업도 가능합니다. 다만 주말 예약은 예약이 빠르게 마감될 수 있어 미리 연락 주시면 감사하겠습니다.",
   },
 ] as const;
