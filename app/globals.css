@@ -39,10 +39,8 @@ html {
 }
 
 .curve-bg {
-  background-image: url("data:image/svg+xml,%3Csvg width='1440' height='120' viewBox='0 0 1440 120' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0C320 80 420 -40 1440 40V120H0V0Z' fill='%23ffffff'/%3E%3C/svg%3E");
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: #ffffff;
+  clip-path: ellipse(105% 86% at 50% 100%);
 }
 
 .curve-top {
