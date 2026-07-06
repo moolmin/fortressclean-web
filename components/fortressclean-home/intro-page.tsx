@@ -80,7 +80,8 @@ function GreetingSection() {
                 className="mb-4 text-4xl text-brand-200"
               />
               <p className="font-medium leading-relaxed text-gray-700">
-                우리는 보이지 않는 곳의 청결이 공간의 가치를 만든다고 믿습니다.
+                깨끗한 공간은 보이는 곳보다 보이지 않는 곳을 살피는 마음에서
+                시작됩니다.
               </p>
             </div>
           </div>

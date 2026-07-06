@@ -72,8 +72,20 @@ export function SiteFooter() {
             </ul>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-4 border-t border-gray-800 pt-8 text-sm md:flex-row">
+        <div className="flex flex-col gap-4 border-t border-gray-800 pt-8 text-sm md:flex-row md:items-start md:justify-between">
           <p>© Fortressclean. All rights reserved.</p>
+          <div className="space-y-1 text-gray-500 md:text-right">
+            <p>
+              <a
+                href="mailto:thefortressclean@gmail.com"
+                className="transition-colors hover:text-white"
+              >
+                thefortressclean@gmail.com
+              </a>
+            </p>
+            <p>경기도 부천시 원미구 소향로 239</p>
+            <p>사업자 번호: 216-35-01265</p>
+          </div>
         </div>
       </div>
     </footer>
