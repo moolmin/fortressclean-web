@@ -66,7 +66,7 @@ export function ContactSection() {
           <PhosphorIcon icon={Headset} weight="fill" className="text-4xl" />
         </div>
         <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl">
-          깨끗한 공간을 위한 상담
+          상담·예약 문의
         </h2>
         <p className="mb-10 text-lg text-gray-600">
           서비스 범위와 현장 상황을 확인한 뒤 <br /> 필요한 작업을 친절하게
