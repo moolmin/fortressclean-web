@@ -26,7 +26,7 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-2">
-          <div className="relative h-6 w-6 overflow-hidden">
+          <div className="relative size-8 overflow-hidden">
             <Image
               src="/logo.svg"
               alt="포트리스 클린 로고"
@@ -36,7 +36,7 @@ export function SiteHeader() {
               priority
             />
           </div>
-          <span className="text-xl font-bold tracking-tight text-brand-900 pt-1">
+          <span className="pt-1 text-[1.4rem] font-extrabold tracking-tight text-brand-900">
             포트리스 클린
           </span>
         </Link>
@@ -46,9 +46,12 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="font-medium text-gray-600 transition-colors hover:text-brand-900"
+              className="group relative -mx-2 rounded-full px-2 py-2 text-[0.97rem] font-semibold text-gray-600 transition-all duration-300 hover:text-brand-900"
             >
-              {item.label}
+              <span className="relative block">
+                {item.label}
+                <span className="absolute -bottom-1 left-0 h-[2px] w-full origin-left scale-x-0 rounded-full bg-gradient-to-r from-brand-400 via-brand-600 to-brand-900 opacity-90 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+              </span>
             </Link>
           ))}
         </nav>
