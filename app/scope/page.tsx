@@ -285,7 +285,7 @@ export default function ScopePage() {
           <div className="curve-bg absolute bottom-0 h-[120px] w-full" />
         </section>
 
-        <section className="bg-white py-24">
+        <section className="bg-white py-18">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="mb-16 flex flex-col items-center">
               <h2 className="mb-3 block text-sm font-bold tracking-wider text-brand-600 uppercase">
@@ -303,7 +303,7 @@ export default function ScopePage() {
                 <button
                   type="button"
                   onClick={() => setActiveTab("homecare")}
-                  className={`relative z-10 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[16px] font-bold transition-colors duration-300 md:flex-none md:w-64 ${
+                  className={`relative z-10 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[17px] font-bold transition-colors duration-300 md:flex-none md:w-64 ${
                     activeTab === "homecare"
                       ? "text-white"
                       : "text-gray-500 hover:text-gray-900"
@@ -314,7 +314,7 @@ export default function ScopePage() {
                 <button
                   type="button"
                   onClick={() => setActiveTab("space")}
-                  className={`relative z-10 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[15px] font-bold transition-colors duration-300 md:flex-none md:w-64 ${
+                  className={`relative z-10 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[17px] font-bold transition-colors duration-300 md:flex-none md:w-64 ${
                     activeTab === "space"
                       ? "text-white"
                       : "text-gray-500 hover:text-gray-900"
@@ -344,10 +344,10 @@ export default function ScopePage() {
         <section className="border-t border-gray-100 bg-white py-24">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="mb-12">
-              <h3 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+              <h3 className="mb-2 text-3xl font-bold tracking-tight text-gray-900">
                 서비스 범위 요약
               </h3>
-              <p className="text-sm text-gray-500">
+              <p className="text-md text-gray-500">
                 상담을 통해 현장에 맞는 상세 작업 범위를 확인하실 수 있습니다.
               </p>
             </div>
