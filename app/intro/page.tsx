@@ -1,5 +1,5 @@
-import { SimpleTextPage } from "@/components/fortressclean-home/simple-text-page";
+import { IntroPageContent } from "@/components/fortressclean-home/intro-page";
 
 export default function IntroPage() {
-  return <SimpleTextPage text="소개" />;
+  return <IntroPageContent />;
 }
