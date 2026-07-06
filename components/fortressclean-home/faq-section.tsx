@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import { Minus, Plus } from "./icons";
-import { FAQ_INTRO, FAQ_ITEMS } from "./content";
+import { FAQ_INTRO, HOME_FAQ_ITEMS } from "./content";
 import { PhosphorIcon } from "./phosphor-icon";
 import { SectionHeading } from "./shared";
 
@@ -15,7 +15,7 @@ export function FAQSection() {
       <div className="mx-auto max-w-[800px] px-6">
         <SectionHeading {...FAQ_INTRO} />
         <div className="space-y-4">
-          {FAQ_ITEMS.map((faq, index) => {
+          {HOME_FAQ_ITEMS.map((faq, index) => {
             const panelId = `faq-panel-${index}`;
             const isOpen = openIndex === index;
 
