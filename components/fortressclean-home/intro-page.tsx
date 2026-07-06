@@ -34,29 +34,32 @@ function GreetingSection() {
               대표 인사말
             </div>
             <h1 className="mb-8 text-4xl leading-[1.4] font-bold tracking-tight text-gray-900 lg:text-5xl">
-              고객님의 공간을 지키는
+              깨끗한 공간을 위한
               <br />
-              <span className="text-brand-900">가장 든든한 요새(Fortress)</span>
+              <span className="text-brand-900">든든한 청소 파트너</span>
             </h1>
             <div className="space-y-6 text-lg leading-relaxed text-gray-600">
-              <p>안녕하십니까, 포트리스 클린입니다.</p>
+              <p>안녕하십니까, 포트리스 클린 대표 김산하입니다.</p>
               <p>
-                우리가 머무는 공간은 단순한 물리적 장소를 넘어, 가족의 행복이
-                깃들고 내일의 에너지를 충전하는 소중한 안식처입니다. 포트리스
-                클린은 그 소중한 공간을 유해 환경으로부터 보호하는
-                &apos;요새&apos;가 되겠다는 약속을 담아 시작되었습니다.
+                우리가 머무는 공간은 단순한 장소가 아니라, 가족의 일상과 건강이
+                이어지는 소중한 환경입니다. 포트리스 클린은 그 공간이 더
+                깨끗하고 안전하게 유지될 수 있도록, 기본에 충실한 청소 서비스를
+                제공하고 있습니다.
               </p>
               <p>
-                단순한 청소를 넘어 고객님의 건강과 삶의 질을 높이는 프리미엄
-                케어를 지향합니다. 정직한 마음과 숙련된 기술로 믿음을 드리는
-                파트너가 되겠습니다.
+                가전 홈케어부터 종합청소, 정기청소, 건물청소까지 현장마다 필요한
+                작업은 다릅니다. 저희는 작업 전 상태를 꼼꼼히 확인하고, 공간과
+                제품에 맞는 방식으로 책임감 있게 진행합니다.
+              </p>
+              <p>
+                빠르게 끝내는 청소보다, 믿고 맡길 수 있는 청소를 지향합니다.
+                앞으로도 정직한 마음과 숙련된 기술로 고객님의 공간을 깨끗하게
+                지키는 파트너가 되겠습니다.
               </p>
             </div>
             <div className="mt-10 border-t border-brand-200 pt-8">
-              <p className="mb-1 text-sm text-gray-500">
-                포트리스 클린 임직원 일동
-              </p>
-              <p className="text-xl font-bold text-brand-900">대표 김산하</p>
+              <p className="mb-1 text-sm text-gray-500">포트리스 클린 대표</p>
+              <p className="text-xl font-bold text-brand-900">김산하</p>
             </div>
           </div>
 
@@ -67,18 +70,17 @@ function GreetingSection() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-[3rem] border-8 border-white bg-gray-200 shadow-2xl">
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-tr from-brand-200 to-gray-100 text-brand-300">
                 <PhosphorIcon icon={Buildings} className="mb-4 text-9xl" />
-                <span className="text-lg font-medium">브랜드 대표 이미지</span>
+                <span className="text-lg font-medium">대표 이미지</span>
               </div>
             </div>
-            <div className="absolute -right-6 -bottom-6 max-w-xs rounded-3xl bg-white p-8 shadow-xl">
+            <div className="absolute -right-6 -bottom-6 max-w-xs rounded-3xl bg-white p-6 shadow-xl">
               <PhosphorIcon
                 icon={Quotes}
                 weight="fill"
                 className="mb-4 text-4xl text-brand-200"
               />
               <p className="font-medium leading-relaxed text-gray-700">
-                &quot;우리는 보이지 않는 곳의 청결이 공간의 가치를 결정한다고
-                믿습니다.&quot;
+                우리는 보이지 않는 곳의 청결이 공간의 가치를 만든다고 믿습니다.
               </p>
             </div>
           </div>
@@ -93,21 +95,21 @@ function PhilosophySection() {
   const items = [
     {
       icon: Heart,
-      title: "정직 (Honesty)",
+      title: "정직",
       description:
-        "고객이 보지 않는 곳까지 정량의 약품과 정해진 공정을 엄격히 준수하여 투명한 서비스를 제공합니다.",
+        "보이지 않는 곳까지 소홀히 하지 않고, 필요한 작업과 과정을 투명하게 안내합니다.",
     },
     {
       icon: Medal,
-      title: "전문성 (Expertise)",
+      title: "전문성",
       description:
-        "지속적인 기술 교육과 최신 장비 도입을 통해 환경과 가전을 가장 안전하게 케어하는 전문가 집단을 지향합니다.",
+        "가전과 공간의 구조를 이해하고, 현장에 맞는 안전한 방식으로 꼼꼼하게 작업합니다.",
     },
     {
       icon: ShieldCheck,
-      title: "책임 (Responsibility)",
+      title: "책임",
       description:
-        "한 번 맺은 인연을 소중히 여깁니다. 철저한 사후 관리를 통해 고객님의 만족을 끝까지 책임집니다.",
+        "작업 완료 후 확인과 사후관리까지 이어가며, 고객님의 공간을 끝까지 책임집니다.",
     },
   ] as const;
 
@@ -119,7 +121,7 @@ function PhilosophySection() {
             PHILOSOPHY & VALUES
           </span>
           <h2 className="mb-6 text-3xl font-bold text-gray-900 lg:text-4xl">
-            포트리스 클린의 경영철학
+            포트리스 클린의 약속
           </h2>
           <div className="mx-auto h-1 w-16 rounded-full bg-brand-900" />
         </div>
@@ -128,16 +130,18 @@ function PhilosophySection() {
           {items.map((item, index) => (
             <div
               key={item.title}
-              className="reveal group rounded-[2.5rem] bg-gray-50 p-10 transition-all hover:bg-brand-900 hover:text-white"
+              className="reveal"
               style={{ transitionDelay: `${0.1 * (index + 1)}s` }}
             >
-              <div className="icon-box mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-brand-900 shadow-sm transition-transform duration-500 group-hover:scale-110 group-hover:rotate-[5deg]">
-                <PhosphorIcon icon={item.icon} className="text-4xl" />
+              <div className="group rounded-[2.5rem] bg-gray-50 p-10 transition-all hover:bg-brand-900 hover:text-white">
+                <div className="icon-box mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-brand-900 shadow-sm transition-transform duration-500 group-hover:scale-110 group-hover:rotate-[5deg]">
+                  <PhosphorIcon icon={item.icon} className="text-4xl" />
+                </div>
+                <h3 className="mb-4 text-2xl font-bold">{item.title}</h3>
+                <p className="leading-relaxed text-gray-500 group-hover:text-brand-100">
+                  {item.description}
+                </p>
               </div>
-              <h3 className="mb-4 text-2xl font-bold">{item.title}</h3>
-              <p className="leading-relaxed text-gray-500 group-hover:text-brand-100">
-                {item.description}
-              </p>
             </div>
           ))}
         </div>
@@ -157,18 +161,21 @@ function WhySection() {
   const strengths = [
     {
       icon: UsersThree,
-      title: "직영 전문 인력 운용",
-      description: "하청을 주지 않고 검증된 직영 팀이 직접 현장을 관리합니다.",
+      title: "직영 전문 인력 운영",
+      description:
+        "하청에 맡기지 않고, 검증된 인력이 직접 현장을 확인하고 작업합니다.",
     },
     {
       icon: ListNumbers,
-      title: "표준화된 시스템 프로세스",
-      description: "체계적인 매뉴얼에 따라 일관된 고품질 서비스를 보장합니다.",
+      title: "체계적인 작업 과정",
+      description:
+        "상담부터 견적, 작업, 마무리 확인까지 단계별로 꼼꼼하게 진행합니다.",
     },
     {
       icon: Handshake,
-      title: "30일 안심 책임 보증",
-      description: "작업 후 발생하는 문제에 대해 끝까지 추적하여 해결합니다.",
+      title: "30일 안심 A/S",
+      description:
+        "작업 완료 다음 날부터 30일간, 작업 관련 문제를 책임감 있게 확인합니다.",
     },
   ] as const;
 
@@ -210,8 +217,8 @@ function WhySection() {
               포트리스 클린을 선택할까요?
             </h2>
             <p className="mb-10 text-lg leading-relaxed text-gray-600">
-              포트리스 클린만의 3대 핵심 경쟁력은 고객님의 소중한 공간을 대하는
-              우리의 진심에서 나옵니다.
+              포트리스 클린은 빠르게 끝내는 청소보다, 공간과 제품을 이해하고
+              책임감 있게 마무리하는 청소를 지향합니다.
             </p>
 
             <div className="space-y-4">
