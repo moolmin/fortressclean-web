@@ -28,7 +28,7 @@ export function HeroSection() {
                 깨끗하게, 책임 있게
               </span>
             </h1>
-            <p className="mb-10 text-lg leading-relaxed text-gray-600">
+            <p className="mb-10 text-lg leading-relaxed font-medium text-gray-600">
               포트리스 클린은 가전 홈케어부터 종합청소, 정기청소, 건물청소까지
               공간에 맞는 방식으로 꼼꼼하게 관리합니다.
             </p>

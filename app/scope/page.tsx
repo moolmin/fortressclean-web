@@ -264,7 +264,7 @@ export default function ScopePage() {
                 <h1 className="mb-6 text-5xl leading-[1.3] font-bold tracking-tight text-white lg:text-6xl">
                   작업범위
                 </h1>
-                <p className="mb-10 text-xl leading-relaxed font-light text-brand-100">
+                <p className="mb-10 text-xl leading-relaxed font-medium text-brand-100">
                   가전 홈케어부터 공간·시설 청소까지,
                   <br />
                   현장에 맞는 방식으로 꼼꼼하게 관리합니다.
@@ -304,7 +304,7 @@ export default function ScopePage() {
                 <button
                   type="button"
                   onClick={() => setActiveTab("homecare")}
-                  className={`relative z-10 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[15px] font-bold transition-colors duration-300 md:flex-none md:w-64 ${
+                  className={`relative z-10 flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[16px] font-bold transition-colors duration-300 md:flex-none md:w-64 ${
                     activeTab === "homecare"
                       ? "text-white"
                       : "text-gray-500 hover:text-gray-900"
