@@ -109,7 +109,7 @@ export function ProcessSection() {
                   >
                     <PhosphorIcon
                       icon={step.icon}
-                      weight={step.weight}
+                      weight={"weight" in step ? step.weight : undefined}
                       className={`text-4xl transition-transform duration-300 ${
                         isPrimaryStep || isVisible ? "scale-100" : "scale-90"
                       }`}

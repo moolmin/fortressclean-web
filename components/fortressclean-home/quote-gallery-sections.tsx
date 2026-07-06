@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Star } from "./icons";
 import {
   GALLERY_INTRO,
@@ -104,12 +106,12 @@ export function GallerySection() {
             >
               <div className="relative flex h-64 bg-gray-100">
                 <div className="relative h-full w-1/2 overflow-hidden border-r border-white/50">
-                  {/* Cases gallery images are intentionally plain img so replaced PNG files show immediately without image optimizer cache. */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={item.beforeSrc}
                     alt={item.beforeAlt}
-                    className="absolute inset-0 h-full w-full object-cover"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 300px"
+                    className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gray-950/18" />
                   <span className="absolute left-4 top-4 rounded bg-gray-800 px-2 py-1 text-xs text-white">
@@ -117,11 +119,12 @@ export function GallerySection() {
                   </span>
                 </div>
                 <div className="relative h-full w-1/2 overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={item.afterSrc}
                     alt={item.afterAlt}
-                    className="absolute inset-0 h-full w-full object-cover"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 300px"
+                    className="object-cover"
                   />
                   <div className="absolute inset-0 bg-brand-950/10" />
                   <span className="absolute left-4 top-4 rounded bg-brand-900 px-2 py-1 text-xs text-white">
