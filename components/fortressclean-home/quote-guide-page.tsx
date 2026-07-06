@@ -4,7 +4,6 @@ import {
   CheckCircle,
   HouseLine,
   Info,
-  Image,
   MapPinLine,
   Package,
   Sparkle,
