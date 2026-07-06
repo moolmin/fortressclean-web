@@ -23,48 +23,48 @@ const HOME_CARE_ITEMS = [
     icon: Wind,
     imageSrc: "/images/scope/homecare-aircon.jpg",
     title: "에어컨 청소",
-    desc: "내부 부품 분해 및 고압 세척을 통해 필터와 열교환기의 찌든 오염을 관리합니다.",
+    desc: "내부 오염 상태를 확인하고, 필터와 열교환기 주변을 제품 구조에 맞춰 세척합니다.",
     features: [
-      "부품 완전 분해 및 조립",
-      "친환경 전용 세제 도포",
-      "열교환기 고압수 세척",
-      "작동 및 풍속 점검",
+      "분해 가능한 부품 분리 세척",
+      "필터 및 커버 오염 제거",
+      "열교환기 주변 고압 세척",
+      "작동 상태 및 송풍 확인",
     ],
   },
   {
     icon: WashingMachine,
     imageSrc: "/images/scope/homecare-washing-machine.jpg",
     title: "세탁기 청소",
-    desc: "세탁조 외부와 내부 부품에 쌓인 찌꺼기를 물리적으로 분해하여 세척합니다.",
+    desc: "세탁조와 내부 부품 주변에 쌓인 세제 찌꺼기와 오염을 꼼꼼하게 세척합니다.",
     features: [
-      "세탁조 및 회전판 분해",
-      "세탁조 외부 찌든 때 제거",
+      "세탁조 및 분해 가능 부품 세척",
+      "세탁조 외부 오염 제거",
       "배수 필터 및 고무패킹 세척",
-      "수평 및 탈수 기능 테스트",
+      "수평 및 탈수 기능 확인",
     ],
   },
   {
     icon: Broom,
     imageSrc: "/images/scope/homecare-air-purifier.jpg",
     title: "공기청정기 청소",
-    desc: "내부 팬과 센서에 쌓인 먼지를 제거하여 기기 본연의 공기 순환 효율을 회복합니다.",
+    desc: "공기가 지나가는 내부 부품과 필터 주변 먼지를 정리해 쾌적한 사용 환경을 돕습니다.",
     features: [
       "외부 커버 및 프리필터 세척",
       "내부 송풍 팬 먼지 제거",
-      "먼지 센서 클리닝",
-      "본체 내·외부 살균 닦기",
+      "먼지 센서 주변 클리닝",
+      "본체 내·외부 닦아 마감",
     ],
   },
   {
     icon: ThermometerCold,
     imageSrc: "/images/scope/homecare-refrigerator.jpg",
     title: "냉장고 청소",
-    desc: "선반 분리 세척 및 내부 성에 제거를 통해 위생적인 식품 보관 환경을 조성합니다.",
+    desc: "음식물이 닿는 내부 공간과 고무패킹 오염을 관리해 위생적인 보관 환경을 만듭니다.",
     features: [
       "선반 및 서랍장 분리 세척",
-      "내벽 오염물질 및 얼룩 제거",
-      "고무패킹(도어) 이물질 청소",
-      "스팀 기기를 활용한 마감",
+      "내부 오염 및 얼룩 제거",
+      "고무패킹 이물질 청소",
+      "내부 정리 및 마감 클리닝",
     ],
   },
 ] as const;
@@ -74,9 +74,9 @@ const SPACE_ITEMS = [
     icon: HouseLine,
     imageSrc: "/images/scope/space-home-cleaning.jpg",
     title: "주거 청소",
-    desc: "거주 중인 공간의 일상적인 묵은 때와 먼지를 구역별로 나누어 꼼꼼히 관리합니다.",
+    desc: "거주 중인 공간의 먼지와 생활 오염을 구역별로 나누어 꼼꼼하게 관리합니다.",
     features: [
-      "욕실 물때 및 환풍기 청소",
+      "욕실 물때 및 환풍기 주변 청소",
       "주방 후드 및 기름때 제거",
       "창틀 및 방충망 먼지 제거",
     ],
@@ -85,55 +85,55 @@ const SPACE_ITEMS = [
     icon: Sparkle,
     imageSrc: "/images/scope/space-move-cleaning.jpg",
     title: "입주·이사 청소",
-    desc: "비어있는 상태에서 이전 거주자의 흔적이나 신축 공사 분진을 집중적으로 제거합니다.",
+    desc: "입주 전후, 이사 전후 공간에 남은 먼지와 오염을 정리해 깨끗한 시작을 돕습니다.",
     features: [
-      "공사 분진 및 도배풀 제거",
-      "붙박이장 탈거 및 내부 청소",
-      "전등 커버 및 몰딩 먼지 제거",
+      "공사 분진 및 생활 오염 제거",
+      "붙박이장 내부 및 수납공간 청소",
+      "전등 커버, 몰딩, 창틀 먼지 제거",
     ],
   },
   {
     icon: Broom,
     imageSrc: "/images/scope/space-regular-cleaning.jpg",
     title: "정기 관리 청소",
-    desc: "계약된 주기에 맞춰 방문하여 공간의 청결도를 일정하게 유지하는 맞춤형 서비스입니다.",
+    desc: "정해진 주기에 맞춰 방문하여 공간의 청결한 상태를 꾸준히 유지합니다.",
     features: [
-      "바닥 청소 및 쓰레기 수거",
+      "바닥 청소 및 쓰레기 정리",
       "공용 구역 일상 먼지 관리",
-      "고객 맞춤형 집중 관리 구역 설정",
+      "요청 구역 중심의 맞춤 관리",
     ],
   },
   {
     icon: OfficeChair,
     imageSrc: "/images/scope/space-commercial-cleaning.jpg",
     title: "상업 공간 청소",
-    desc: "카페, 식당, 매장 등 고객 방문이 잦은 상업 공간의 위생 상태를 전문적으로 개선합니다.",
+    desc: "카페, 식당, 매장 등 고객 방문이 잦은 공간을 쾌적하게 관리합니다.",
     features: [
       "집기류 외부 먼지 및 오염 제거",
-      "바닥 재질에 따른 맞춤 세정",
-      "유리창 및 쇼윈도 투명도 복원",
+      "바닥 재질에 맞는 세정 관리",
+      "유리창 및 쇼윈도 오염 관리",
     ],
   },
   {
     icon: Buildings,
     imageSrc: "/images/scope/space-common-area-cleaning.jpg",
     title: "건물·공용공간 청소",
-    desc: "빌딩 로비, 계단, 화장실 등 다수가 이용하는 공용 구역을 쾌적하게 관리합니다.",
+    desc: "빌딩 로비, 계단, 화장실 등 여러 사람이 이용하는 공용 공간을 체계적으로 관리합니다.",
     features: [
       "승강기 내·외부 오염 제거",
       "계단 논슬립 및 난간대 청소",
-      "공용 화장실 악취 및 물때 제거",
+      "공용 화장실 물때 및 오염 관리",
     ],
   },
   {
     icon: Buildings,
     imageSrc: "/images/scope/space-facility-cleaning.jpg",
     title: "시설·단체 청소",
-    desc: "학교, 병원, 학원 등 특수 목적 시설의 규격과 요구사항에 맞춘 대규모 청소를 진행합니다.",
+    desc: "학교, 병원, 학원, 군부대, 지하주차장 등 규모 있는 현장도 작업 환경에 맞춰 진행합니다.",
     features: [
       "대면적 바닥 기계 세척",
       "시설 내 집기 및 설비 먼지 제거",
-      "폐기물 집하장 주변 정리",
+      "폐기물 집하장 및 주변 공간 정리",
     ],
   },
 ] as const;
@@ -142,46 +142,46 @@ const SCOPE_SUMMARY_COLUMNS = [
   {
     title: "가전 홈케어",
     items: [
-      "부품 완전 분해 세척",
-      "열교환기/필터 고압수",
-      "전용 친환경 세제 적용",
-      "조립 후 작동 테스트",
+      "분해 가능한 부품 세척",
+      "필터 및 열교환기 주변 세척",
+      "제품별 오염 상태 확인",
+      "조립 후 작동 확인",
     ],
   },
   {
     title: "주거 청소",
     items: [
-      "방/거실 바닥 및 벽면",
-      "주방 기름때 및 후드",
-      "욕실 물때 및 배수구",
-      "창틀 및 내측 유리",
+      "방, 거실 바닥 및 벽면 관리",
+      "주방 후드 및 기름때 관리",
+      "욕실 물때 및 배수구 청소",
+      "창틀 및 내부 유리 청소",
     ],
   },
   {
     title: "상업 공간",
     items: [
-      "매장 집기류 겉면 먼지",
-      "쇼윈도 및 출입문 유리",
-      "바닥 재질별 맞춤 세척",
-      "창고/비품실 바닥 정리",
+      "매장 집기류 겉면 먼지 제거",
+      "쇼윈도 및 출입문 유리 관리",
+      "바닥 재질에 맞춘 세정",
+      "창고 및 비품실 바닥 정리",
     ],
   },
   {
     title: "공용 공간",
     items: [
-      "건물 로비 및 현관",
+      "건물 로비 및 현관 청소",
       "승강기 내·외부 클리닝",
-      "계단실 논슬립 및 난간",
-      "층별 공용 화장실",
+      "계단 논슬립 및 난간 청소",
+      "층별 공용 화장실 관리",
     ],
   },
   {
     title: "대형 시설",
     items: [
-      "대면적 바닥 장비 세척",
-      "강당/체육관 전문 관리",
-      "시설 내 설비 외부 먼지",
-      "폐기물 집하 구역 정리",
+      "대면적 바닥 기계 세척",
+      "강당 등 넓은 공간 관리",
+      "시설 내 및 설비 먼지 제거",
+      "폐기물 집하장 주변 정리",
     ],
   },
 ] as const;
@@ -219,15 +219,14 @@ function ServiceCard({
             {title}
           </h3>
         </div>
-        <p className="mb-5 text-sm leading-relaxed text-gray-500">{desc}</p>
-        <div className="mt-auto border-t border-gray-50 pt-5">
-          <ul className="space-y-2.5 text-[13px] font-medium text-gray-600">
+        <p className="mb-5 text-md leading-relaxed text-gray-500">{desc}</p>
+        <div className="mt-auto border-t border-gray-100 pt-5">
+          <ul className="space-y-2.5 text-sm font-medium text-gray-600">
             {features.map((feature) => (
               <li key={feature} className="flex items-start gap-2">
-                <PhosphorIcon
-                  icon={CheckCircle}
-                  weight="fill"
-                  className="mt-0.5 text-xs text-brand-700"
+                <span
+                  aria-hidden="true"
+                  className="mt-[0.45rem] size-1 rounded-full bg-brand-700"
                 />
                 <span>{feature}</span>
               </li>
