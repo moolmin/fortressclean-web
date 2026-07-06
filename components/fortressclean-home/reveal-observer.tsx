@@ -11,7 +11,9 @@ export function RevealObserver() {
     const activateAll = () => {
       document
         .querySelectorAll<HTMLElement>(".reveal")
-        .forEach((element) => element.classList.add("active"));
+        .forEach((element) => {
+          element.dataset.revealed = "true";
+        });
     };
 
     if (prefersReducedMotion || !("IntersectionObserver" in window)) {
@@ -25,7 +27,9 @@ export function RevealObserver() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("active");
+            if (entry.target instanceof HTMLElement) {
+              entry.target.dataset.revealed = "true";
+            }
             observer.unobserve(entry.target);
           }
         });

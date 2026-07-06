@@ -1,5 +1,5 @@
-import { SimpleTextPage } from "@/components/fortressclean-home/simple-text-page";
+import { FAQPageContent } from "@/components/fortressclean-home/faq-page";
 
 export default function FaqPage() {
-  return <SimpleTextPage text="FAQ" />;
+  return <FAQPageContent />;
 }
