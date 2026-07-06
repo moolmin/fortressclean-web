@@ -12,7 +12,7 @@ type SectionHeadingProps = {
 
 type PhoneLinkProps = {
   className?: string;
-  label?: string;
+  label?: ReactNode;
 };
 
 export function SectionHeading({

@@ -5,7 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { NAV_ITEMS } from "./content";
+import { NAV_ITEMS, PHONE_NUMBER } from "./content";
+import { PhoneCall } from "./icons";
+import { PhosphorIcon } from "./phosphor-icon";
 import { PhoneLink } from "./shared";
 
 export function SiteHeader() {
@@ -22,7 +24,9 @@ export function SiteHeader() {
   }, []);
 
   const isActivePath = (href: string) =>
-    href === "/" ? pathname === href : pathname === href || pathname.startsWith(`${href}/`);
+    href === "/"
+      ? pathname === href
+      : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <header
@@ -72,19 +76,22 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
-          <div className="flex flex-col items-end">
-            <span className="text-xs font-medium text-gray-500">
-              예약 및 문의
-            </span>
-            <PhoneLink className="text-lg font-bold text-brand-900" />
-          </div>
-          <a
-            href="#contact"
-            className="rounded-full bg-brand-900 px-5 py-2.5 font-medium text-white shadow-md shadow-brand-900/20 transition-colors hover:bg-brand-800"
-          >
-            문의하기
-          </a>
+        <div className="hidden items-center lg:flex">
+          <PhoneLink
+            className="inline-flex items-center justify-center gap-1 rounded-full bg-brand-900 px-5 py-2.5 font-semibold leading-none text-white shadow-md shadow-brand-900/20 transition-colors hover:bg-brand-800"
+            label={
+              <>
+                <PhosphorIcon
+                  icon={PhoneCall}
+                  weight="fill"
+                  className="block align-middle text-lg"
+                />
+                <span className="inline-flex items-center leading-none pt-1">
+                  {PHONE_NUMBER}
+                </span>
+              </>
+            }
+          />
         </div>
       </div>
     </header>
