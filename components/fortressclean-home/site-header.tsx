@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { NAV_ITEMS, PHONE_NUMBER } from "./content";
-import { ListChecks, PhoneCall } from "./icons";
+import { PhoneCall } from "./icons";
 import { PhosphorIcon } from "./phosphor-icon";
 import { PhoneLink } from "./shared";
 
@@ -112,18 +112,46 @@ export function SiteHeader() {
             aria-controls="mobile-site-nav"
             aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
             onClick={() => setMenuOpen((current) => !current)}
-            className="inline-flex h-11 items-center gap-2 rounded-full border border-gray-200 bg-white px-4 text-sm font-semibold text-gray-700"
+            className={`group relative inline-flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-300 ${
+              menuOpen
+                ? "border-brand-200 bg-brand-900 text-white shadow-lg shadow-brand-900/20"
+                : "border-gray-200 bg-white text-brand-900 shadow-sm hover:border-brand-200 hover:bg-brand-50"
+            }`}
           >
-            <PhosphorIcon icon={ListChecks} className="text-lg" />
-            {menuOpen ? "닫기" : "메뉴"}
+            <span className="sr-only">{menuOpen ? "닫기" : "메뉴"}</span>
+            <span
+              className={`absolute h-0.5 w-5 rounded-full bg-current transition-transform duration-300 ${
+                menuOpen ? "translate-y-0 rotate-45" : "-translate-y-1.5"
+              }`}
+            />
+            <span
+              className={`absolute h-0.5 w-5 rounded-full bg-current transition-opacity duration-200 ${
+                menuOpen ? "opacity-0" : "opacity-100"
+              }`}
+            />
+            <span
+              className={`absolute h-0.5 w-5 rounded-full bg-current transition-transform duration-300 ${
+                menuOpen ? "translate-y-0 -rotate-45" : "translate-y-1.5"
+              }`}
+            />
           </button>
         </div>
       </div>
 
-      {menuOpen ? (
+      <div
+        id="mobile-site-nav"
+        aria-hidden={!menuOpen}
+        inert={!menuOpen ? true : undefined}
+        className={`overflow-hidden border-t border-gray-100 bg-white transition-all duration-300 ease-out lg:hidden ${
+          menuOpen
+            ? "max-h-[520px] opacity-100"
+            : "max-h-0 border-transparent opacity-0"
+        }`}
+      >
         <div
-          id="mobile-site-nav"
-          className="border-t border-gray-100 bg-white px-6 py-4 lg:hidden"
+          className={`px-6 py-4 transition-transform duration-300 ease-out ${
+            menuOpen ? "translate-y-0" : "-translate-y-3"
+          }`}
         >
           <nav className="flex flex-col gap-2">
             {NAV_ITEMS.map((item) => (
@@ -132,17 +160,17 @@ export function SiteHeader() {
                 href={item.href}
                 aria-current={isActivePath(item.href) ? "page" : undefined}
                 onClick={() => setMenuOpen(false)}
-                className={`rounded-2xl px-4 py-3 font-semibold ${
+                className={`rounded-xl px-4 py-3 font-semibold transition-colors ${
                   isActivePath(item.href)
                     ? "bg-brand-50 text-brand-900"
-                    : "text-gray-700"
+                    : "text-gray-700 hover:bg-gray-50 hover:text-brand-900"
                 }`}
               >
                 {item.label}
               </Link>
             ))}
           </nav>
-          <div className="mt-4 rounded-2xl bg-gray-50 p-4">
+          <div className="mt-4 rounded-xl border border-brand-100 bg-brand-50 p-4">
             <p className="text-xs font-bold tracking-wide text-brand-600">
               빠른 상담
             </p>
@@ -150,7 +178,7 @@ export function SiteHeader() {
             <p className="mt-1 text-sm text-gray-500">매일 09:00 - 20:00</p>
           </div>
         </div>
-      ) : null}
+      </div>
     </header>
   );
 }
