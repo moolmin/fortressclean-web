@@ -1,8 +1,4 @@
-import {
-  ImageBroken,
-  Sparkle,
-  Star,
-} from "./icons";
+import { Star } from "./icons";
 import {
   GALLERY_INTRO,
   GALLERY_ITEMS,
@@ -40,9 +36,7 @@ export function QuoteSection() {
                     <p className="text-sm font-bold text-gray-900">
                       {method.detailTitle}
                     </p>
-                    <p className="text-xs text-gray-500">
-                      {method.detailText}
-                    </p>
+                    <p className="text-xs text-gray-500">{method.detailText}</p>
                   </div>
                 </div>
               }
@@ -109,17 +103,27 @@ export function GallerySection() {
               className="reveal group overflow-hidden rounded-3xl border border-gray-100 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
             >
               <div className="relative flex h-64 bg-gray-100">
-                <div className="relative flex h-full w-1/2 flex-col items-center justify-center border-r border-white/50 bg-gray-200 text-gray-400">
-                  <PhosphorIcon
-                    icon={ImageBroken}
-                    className="mb-2 text-4xl"
+                <div className="relative h-full w-1/2 overflow-hidden border-r border-white/50">
+                  {/* Cases gallery images are intentionally plain img so replaced PNG files show immediately without image optimizer cache. */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={item.beforeSrc}
+                    alt={item.beforeAlt}
+                    className="absolute inset-0 h-full w-full object-cover"
                   />
+                  <div className="absolute inset-0 bg-gray-950/18" />
                   <span className="absolute left-4 top-4 rounded bg-gray-800 px-2 py-1 text-xs text-white">
                     작업 전
                   </span>
                 </div>
-                <div className="relative flex h-full w-1/2 flex-col items-center justify-center bg-brand-50 text-brand-300">
-                  <PhosphorIcon icon={Sparkle} className="mb-2 text-4xl" />
+                <div className="relative h-full w-1/2 overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={item.afterSrc}
+                    alt={item.afterAlt}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-brand-950/10" />
                   <span className="absolute left-4 top-4 rounded bg-brand-900 px-2 py-1 text-xs text-white">
                     작업 후
                   </span>

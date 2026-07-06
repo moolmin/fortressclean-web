@@ -74,6 +74,15 @@ type AssuranceItem = IconItem & {
   note: string;
 };
 
+type GalleryItem = {
+  title: string;
+  desc: string;
+  beforeSrc: string;
+  beforeAlt: string;
+  afterSrc: string;
+  afterAlt: string;
+};
+
 export const PHONE_NUMBER = "010-8115-9256";
 export const PHONE_HREF = `tel:${PHONE_NUMBER.replaceAll("-", "")}`;
 
@@ -288,20 +297,36 @@ export const GALLERY_ITEMS = [
   {
     title: "세탁기 완전 분해 청소",
     desc: "세탁조 외부의 찌든 때와 곰팡이 완벽 제거",
+    beforeSrc: "/images/cases/washer-before.png",
+    beforeAlt: "세탁기 완전 분해 청소 작업 전 임시 이미지",
+    afterSrc: "/images/cases/washer-after.png",
+    afterAlt: "세탁기 완전 분해 청소 작업 후 임시 이미지",
   },
   {
     title: "에어컨 내부 고압 세척",
     desc: "냉각핀 사이의 먼지와 세균층 고압 살균 세척",
+    beforeSrc: "/images/cases/aircon-before.png",
+    beforeAlt: "에어컨 내부 고압 세척 작업 전 임시 이미지",
+    afterSrc: "/images/cases/aircon-after.png",
+    afterAlt: "에어컨 내부 고압 세척 작업 후 임시 이미지",
   },
   {
     title: "주차장 바닥 찌든 때 제거",
     desc: "건물 주차장 바닥의 오랜 오일 마크 및 오염 제거",
+    beforeSrc: "/images/cases/parking-before.png",
+    beforeAlt: "주차장 바닥 찌든 때 제거 작업 전 임시 이미지",
+    afterSrc: "/images/cases/parking-after.png",
+    afterAlt: "주차장 바닥 찌든 때 제거 작업 후 임시 이미지",
   },
   {
     title: "주방 후드 기름때 제거",
     desc: "거주 청소 시 주방 후드망의 굳은 기름때 완전 분해",
+    beforeSrc: "/images/cases/hood-before.png",
+    beforeAlt: "주방 후드 기름때 제거 작업 전 임시 이미지",
+    afterSrc: "/images/cases/hood-after.png",
+    afterAlt: "주방 후드 기름때 제거 작업 후 임시 이미지",
   },
-] as const;
+] as const satisfies readonly GalleryItem[];
 
 export const REVIEW_INTRO: SectionIntro = {
   title: "고객 후기",
