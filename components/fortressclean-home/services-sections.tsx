@@ -18,7 +18,9 @@ export function FeaturesSection() {
           {FEATURE_ITEMS.map((item) => (
             <div
               key={item.title}
-              className="flex flex-col items-center rounded-3xl bg-gray-50 p-6 text-center transition-colors hover:bg-brand-50"
+              className={`flex flex-col items-center rounded-3xl bg-gray-50 p-6 text-center transition-colors hover:bg-brand-50 ${
+                item.title === "사전 안내" ? "hidden md:flex" : ""
+              }`}
             >
               <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white text-brand-900 shadow-sm">
                 <PhosphorIcon
