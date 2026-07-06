@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { NAV_ITEMS } from "./content";
@@ -9,6 +10,7 @@ import { PhoneLink } from "./shared";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -18,6 +20,9 @@ export function SiteHeader() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const isActivePath = (href: string) =>
+    href === "/" ? pathname === href : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <header
@@ -46,11 +51,22 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="group relative -mx-2 rounded-full px-2 py-2 text-[0.97rem] font-semibold text-gray-600 transition-all duration-300 hover:text-brand-900"
+              aria-current={isActivePath(item.href) ? "page" : undefined}
+              className={`group relative -mx-2 rounded-full px-2 py-2 text-[0.97rem] font-semibold transition-all duration-300 ${
+                isActivePath(item.href)
+                  ? "text-brand-900"
+                  : "text-gray-600 hover:text-brand-900"
+              }`}
             >
               <span className="relative block">
                 {item.label}
-                <span className="absolute -bottom-1 left-0 h-[2px] w-full origin-left scale-x-0 rounded-full bg-gradient-to-r from-brand-400 via-brand-600 to-brand-900 opacity-90 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                <span
+                  className={`absolute -bottom-1 left-0 h-[2px] w-full origin-left rounded-full bg-gradient-to-r from-brand-400 via-brand-600 to-brand-900 opacity-90 transition-transform duration-300 ease-out ${
+                    isActivePath(item.href)
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
               </span>
             </Link>
           ))}
