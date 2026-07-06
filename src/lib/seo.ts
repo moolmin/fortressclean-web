@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 
-const DEFAULT_SITE_URL = "http://localhost:3000";
-
 export const SITE_NAME = "포트리스 클린";
 export const SITE_NAME_EN = "Fortress Clean";
 export const DEFAULT_OG_IMAGE = "/images/main/1.png";
@@ -35,18 +33,25 @@ export function getSiteUrl() {
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL ??
     process.env.VERCEL_PROJECT_PRODUCTION_URL ??
-    process.env.VERCEL_URL ??
-    DEFAULT_SITE_URL;
+    process.env.VERCEL_URL;
+
+  if (!siteUrl) {
+    return undefined;
+  }
 
   return withProtocol(siteUrl).replace(/\/$/, "");
 }
 
 export function getMetadataBase() {
-  return new URL(getSiteUrl());
+  const siteUrl = getSiteUrl();
+
+  return siteUrl ? new URL(siteUrl) : undefined;
 }
 
 export function getAbsoluteUrl(path = "/") {
-  return new URL(path, getMetadataBase()).toString();
+  const metadataBase = getMetadataBase();
+
+  return metadataBase ? new URL(path, metadataBase).toString() : path;
 }
 
 export function buildMetadata({

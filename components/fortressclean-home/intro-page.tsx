@@ -5,11 +5,11 @@ import {
   Medal,
   Quotes,
   ShieldCheck,
-  Star,
   UsersThree,
   Clock,
   Buildings,
   Handshake,
+  MapPinLine,
 } from "./icons";
 import { PhosphorIcon } from "./phosphor-icon";
 import { RevealObserver } from "./reveal-observer";
@@ -152,11 +152,15 @@ function PhilosophySection() {
 }
 
 function WhySection() {
-  const stats = [
-    { icon: Star, value: "98%", label: "고객 만족도" },
-    { icon: UsersThree, value: "100%", label: "직영 인력" },
+  const facts = [
+    {
+      icon: MapPinLine,
+      value: "수도권 방문",
+      label: "서울 · 경기 · 인천",
+    },
+    { icon: Clock, value: "09:00 - 20:00", label: "매일 상담 가능" },
     { icon: ShieldCheck, value: "30일", label: "A/S 무상 보증" },
-    { icon: Clock, value: "3년+", label: "평균 업무 경력" },
+    { icon: ListNumbers, value: "사진·방문", label: "상황별 견적 안내" },
   ] as const;
 
   const strengths = [
@@ -188,7 +192,7 @@ function WhySection() {
             className="reveal order-2 grid grid-cols-2 gap-4 lg:order-1 lg:w-1/2"
             style={{ transitionDelay: "0.2s" }}
           >
-            {stats.map((item) => (
+            {facts.map((item) => (
               <div
                 key={item.label}
                 className="rounded-[2rem] border border-brand-200 bg-white p-8 text-center shadow-soft"
@@ -200,7 +204,7 @@ function WhySection() {
                     className="text-2xl"
                   />
                 </div>
-                <p className="mb-2 text-4xl font-black text-brand-900">
+                <p className="mb-2 text-3xl font-black text-brand-900">
                   {item.value}
                 </p>
                 <p className="font-bold text-gray-600">{item.label}</p>

@@ -6,12 +6,13 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { NAV_ITEMS, PHONE_NUMBER } from "./content";
-import { PhoneCall } from "./icons";
+import { ListChecks, PhoneCall } from "./icons";
 import { PhosphorIcon } from "./phosphor-icon";
 import { PhoneLink } from "./shared";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -93,7 +94,63 @@ export function SiteHeader() {
             }
           />
         </div>
+
+        <div className="flex items-center gap-2 lg:hidden">
+          <PhoneLink
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand-900 text-white shadow-md shadow-brand-900/20"
+            label={
+              <PhosphorIcon
+                icon={PhoneCall}
+                weight="fill"
+                className="text-xl"
+              />
+            }
+          />
+          <button
+            type="button"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-site-nav"
+            aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
+            onClick={() => setMenuOpen((current) => !current)}
+            className="inline-flex h-11 items-center gap-2 rounded-full border border-gray-200 bg-white px-4 text-sm font-semibold text-gray-700"
+          >
+            <PhosphorIcon icon={ListChecks} className="text-lg" />
+            {menuOpen ? "닫기" : "메뉴"}
+          </button>
+        </div>
       </div>
+
+      {menuOpen ? (
+        <div
+          id="mobile-site-nav"
+          className="border-t border-gray-100 bg-white px-6 py-4 lg:hidden"
+        >
+          <nav className="flex flex-col gap-2">
+            {NAV_ITEMS.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={isActivePath(item.href) ? "page" : undefined}
+                onClick={() => setMenuOpen(false)}
+                className={`rounded-2xl px-4 py-3 font-semibold ${
+                  isActivePath(item.href)
+                    ? "bg-brand-50 text-brand-900"
+                    : "text-gray-700"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="mt-4 rounded-2xl bg-gray-50 p-4">
+            <p className="text-xs font-bold tracking-wide text-brand-600">
+              빠른 상담
+            </p>
+            <PhoneLink className="mt-1 block text-2xl font-black text-brand-900" />
+            <p className="mt-1 text-sm text-gray-500">매일 09:00 - 20:00</p>
+          </div>
+        </div>
+      ) : null}
     </header>
   );
 }
