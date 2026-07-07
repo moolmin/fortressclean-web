@@ -143,6 +143,15 @@ export default function CasesPage() {
         <SiteHeader />
         <main>
           <section className="relative overflow-hidden bg-brand-900 px-6 pt-40 pb-24 text-white">
+            <Image
+              src="/images/main/2.png"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover opacity-25"
+            />
+            <div className="absolute inset-0 bg-brand-950/55" />
             <div className="relative z-10 mx-auto max-w-300">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-700 bg-brand-800/50 px-4 py-2 text-sm font-bold text-brand-100 backdrop-blur-sm">
                 <PhosphorIcon
