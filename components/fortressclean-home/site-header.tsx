@@ -46,7 +46,7 @@ export function SiteHeader() {
               priority
             />
           </div>
-          <span className="pt-1 text-[1.4rem] font-extrabold tracking-tight text-brand-900">
+          <span className="pt-1 text-[1.4rem] font-black tracking-tight text-brand-900">
             포트리스 클린
           </span>
         </Link>
