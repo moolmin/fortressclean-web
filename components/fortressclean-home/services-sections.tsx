@@ -13,7 +13,7 @@ import { SectionHeading } from "./shared";
 export function FeaturesSection() {
   return (
     <section className="bg-white py-16">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-300 px-6">
         <div className="grid grid-cols-2 gap-6 lg:grid-cols-5">
           {FEATURE_ITEMS.map((item) => (
             <div
@@ -46,7 +46,7 @@ export function FeaturesSection() {
 export function HomeCareSection() {
   return (
     <section id="services" className="relative bg-white py-24">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-300 px-6">
         <SectionHeading {...HOME_CARE_INTRO} />
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {HOME_CARE_SERVICES.map((service) => (
@@ -93,7 +93,7 @@ export function ComprehensiveSection() {
       className="relative overflow-hidden bg-brand-50 py-24"
     >
       <div className="curve-top absolute top-0 h-[80px] w-full"></div>
-      <div className="relative z-10 mx-auto max-w-[1200px] px-6 pt-8">
+      <div className="relative z-10 mx-auto max-w-300 px-6 pt-8">
         <SectionHeading {...COMPREHENSIVE_INTRO} />
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {COMPREHENSIVE_ITEMS.map((item) => (

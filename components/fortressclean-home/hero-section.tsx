@@ -10,16 +10,18 @@ export function HeroSection() {
       id="intro"
       className="relative overflow-hidden bg-brand-50 pb-32 pt-40"
     >
-      <div className="relative z-10 mx-auto max-w-[1200px] px-6">
+      <div className="relative z-10 mx-auto max-w-300 px-6">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <div className="max-w-2xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-brand-100 px-4 py-1.5 text-sm font-bold text-brand-900">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-brand-100 px-4 py-2 text-sm font-bold text-brand-900">
               <PhosphorIcon
                 icon={Sparkle}
                 weight="fill"
-                className="text-brand-500"
+                className="shrink-0 text-brand-500"
               />
-              종합 환경·홈케어 솔루션
+              <span className="inline-flex translate-y-px items-center leading-none">
+                종합 환경·홈케어 솔루션
+              </span>
             </div>
             <h1 className="mb-6 text-5xl leading-[1.3] font-bold tracking-tight text-gray-900 lg:text-6xl">
               가정부터 시설까지

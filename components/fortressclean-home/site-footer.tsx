@@ -9,7 +9,7 @@ import { PhoneLink } from "./shared";
 export function SiteFooter() {
   return (
     <footer className="border-t border-gray-800 bg-gray-900 py-16 text-gray-400">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-300 px-6">
         <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
             <div className="mb-6 flex items-center gap-3">

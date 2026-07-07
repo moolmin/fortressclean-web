@@ -34,7 +34,7 @@ export function SiteHeader() {
       id="main-header"
       className={`fixed top-0 z-50 w-full border-b border-gray-100 bg-white/95 backdrop-blur-sm transition-all duration-300 ${scrolled ? "header-scrolled" : ""}`}
     >
-      <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6">
+      <div className="mx-auto flex h-20 max-w-300 items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-2">
           <div className="relative size-8 overflow-hidden">
             <Image

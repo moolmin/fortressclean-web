@@ -22,16 +22,18 @@ function GreetingSection() {
       id="greeting"
       className="relative overflow-hidden bg-brand-50 pt-40 pb-32"
     >
-      <div className="relative z-10 mx-auto max-w-[1200px] px-6">
+      <div className="relative z-10 mx-auto max-w-300 px-6">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <div className="reveal active">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-brand-100 px-4 py-1.5 text-sm font-bold text-brand-900">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-brand-100 px-4 py-2 text-sm font-bold text-brand-900">
               <PhosphorIcon
                 icon={HandWaving}
                 weight="fill"
-                className="text-brand-500"
+                className="shrink-0 text-brand-500"
               />
-              대표 인사말
+              <span className="inline-flex translate-y-px items-center leading-none">
+                대표 인사말
+              </span>
             </div>
             <h1 className="mb-8 text-4xl leading-[1.4] font-bold tracking-tight text-gray-900 lg:text-5xl">
               깨끗한 공간을 위한
@@ -116,7 +118,7 @@ function PhilosophySection() {
 
   return (
     <section id="philosophy" className="bg-white py-32">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-300 px-6">
         <div className="reveal mb-20 text-center">
           <span className="mb-3 block text-sm font-bold tracking-wider text-brand-600">
             PHILOSOPHY & VALUES
@@ -186,7 +188,7 @@ function WhySection() {
 
   return (
     <section id="why" className="bg-brand-50 py-32">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-300 px-6">
         <div className="flex flex-col items-center gap-16 lg:flex-row">
           <div
             className="reveal order-2 grid grid-cols-2 gap-4 lg:order-1 lg:w-1/2"

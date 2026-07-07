@@ -105,7 +105,7 @@ export function QuoteGuidePageContent() {
         <SiteHeader />
         <main>
           <section id="quote" className="relative bg-white pt-40 pb-16">
-            <div className="mx-auto max-w-[1200px] px-6 text-center">
+            <div className="mx-auto max-w-300 px-6 text-center">
               <span className="mb-3 block text-sm font-bold tracking-wider text-brand-600">
                 ESTIMATE GUIDE
               </span>
@@ -119,7 +119,7 @@ export function QuoteGuidePageContent() {
           </section>
 
           <section className="bg-gray-50 py-12 lg:py-16">
-            <div className="mx-auto max-w-[1200px] px-6">
+            <div className="mx-auto max-w-300 px-6">
               <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
                 <article className="reveal group relative overflow-hidden rounded-[2rem] border border-gray-100 bg-white p-8 shadow-soft transition-all duration-300 hover:-translate-y-2 hover:shadow-xl lg:p-10">
                   <div className="absolute top-0 right-0 h-32 w-32 scale-90 rounded-bl-[100px] bg-brand-50 opacity-0 transition-all duration-500 group-hover:scale-110 group-hover:opacity-100" />
@@ -204,7 +204,7 @@ export function QuoteGuidePageContent() {
           </section>
 
           <section className="bg-white py-20">
-            <div className="mx-auto max-w-[1200px] px-6">
+            <div className="mx-auto max-w-300 px-6">
               <SectionHeading
                 title="견적은 이런 기준으로 안내됩니다"
                 description="모든 현장의 조건이 다르기 때문에, 서비스 유형과 작업 범위에 맞춰 견적을 안내드립니다."

@@ -15,7 +15,7 @@ import { DetailCard, SectionHeading } from "./shared";
 export function QuoteSection() {
   return (
     <section id="quote" className="bg-gray-50 py-20">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-300 px-6">
         <SectionHeading {...QUOTE_INTRO} className="mb-12" />
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {QUOTE_METHODS.map((method) => (
@@ -53,7 +53,7 @@ export function QuoteSection() {
 export function TestimonialSection() {
   return (
     <section id="reviews" className="bg-gray-50 py-24">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-300 px-6">
         <SectionHeading {...REVIEW_INTRO} />
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {REVIEW_ITEMS.map((review) => (
@@ -96,7 +96,7 @@ export function TestimonialSection() {
 export function GallerySection() {
   return (
     <section id="gallery" className="bg-white py-24">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-300 px-6">
         <SectionHeading {...GALLERY_INTRO} align="left" className="mb-12" />
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {GALLERY_ITEMS.map((item) => (

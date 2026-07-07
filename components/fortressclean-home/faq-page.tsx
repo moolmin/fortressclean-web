@@ -19,7 +19,7 @@ export function FAQPageContent() {
         <SiteHeader />
         <main>
           <section className="pb-28 pt-40">
-            <div className="relative z-10 mx-auto max-w-[1200px] px-6">
+            <div className="relative z-10 mx-auto max-w-300 px-6">
               <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
                 <div className="reveal active max-w-2xl">
                   <h1 className="mb-6 text-5xl leading-[1.25] font-bold tracking-tight text-gray-900 lg:text-6xl">

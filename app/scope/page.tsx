@@ -265,16 +265,18 @@ export default function ScopePage() {
               aria-hidden="true"
               className="scope-orb scope-orb-right absolute right-[10%] bottom-24 h-52 w-52 rounded-full bg-white/10 blur-3xl"
             />
-            <div className="relative z-10 mx-auto max-w-[1200px] px-6">
+            <div className="relative z-10 mx-auto max-w-300 px-6">
               <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
                 <div className="reveal active max-w-2xl">
-                  <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-700 bg-brand-800/50 px-4 py-1.5 text-sm font-bold text-brand-100 backdrop-blur-sm">
+                  <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-700 bg-brand-800/50 px-4 py-2 text-sm font-bold text-brand-100 backdrop-blur-sm">
                     <PhosphorIcon
                       icon={Sparkle}
                       weight="fill"
-                      className="text-brand-300"
+                      className="shrink-0 text-brand-300"
                     />
-                    종합 환경·홈케어 솔루션
+                    <span className="inline-flex translate-y-px items-center leading-none">
+                      종합 환경·홈케어 솔루션
+                    </span>
                   </div>
                   <h1 className="mb-6 text-5xl leading-[1.3] font-bold tracking-tight text-white lg:text-6xl">
                     작업범위
@@ -305,7 +307,7 @@ export default function ScopePage() {
           </section>
 
           <section className="bg-white py-18">
-            <div className="mx-auto max-w-[1200px] px-6">
+            <div className="mx-auto max-w-300 px-6">
               <div className="reveal mb-16 flex flex-col items-center">
                 <h2 className="mb-3 block text-sm font-bold tracking-wider text-brand-600 uppercase">
                   Service Categories
@@ -365,7 +367,7 @@ export default function ScopePage() {
           </section>
 
           <section className="border-t border-gray-100 bg-white py-24">
-            <div className="mx-auto max-w-[1200px] px-6">
+            <div className="mx-auto max-w-300 px-6">
               <div className="reveal mb-12">
                 <h3 className="mb-2 text-3xl font-bold tracking-tight text-gray-900">
                   서비스 범위 요약

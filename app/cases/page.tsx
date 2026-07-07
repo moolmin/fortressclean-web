@@ -123,7 +123,7 @@ async function CasesGallery() {
 
   return (
     <section id="gallery" className="bg-white py-24">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-300 px-6">
         <SectionHeading {...GALLERY_INTRO} align="left" className="mb-12" />
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {items.map((item) => (
@@ -143,14 +143,16 @@ export default function CasesPage() {
         <SiteHeader />
         <main>
           <section className="relative overflow-hidden bg-brand-900 px-6 pt-40 pb-24 text-white">
-            <div className="relative z-10 mx-auto max-w-[1200px]">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-700 bg-brand-800/50 px-4 py-1.5 text-sm font-bold text-brand-100 backdrop-blur-sm">
+            <div className="relative z-10 mx-auto max-w-300">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-700 bg-brand-800/50 px-4 py-2 text-sm font-bold text-brand-100 backdrop-blur-sm">
                 <PhosphorIcon
                   icon={Sparkle}
                   weight="fill"
-                  className="text-brand-300"
+                  className="shrink-0 text-brand-300"
                 />
-                WORK CASES
+                <span className="inline-flex translate-y-px items-center leading-none">
+                  WORK CASES
+                </span>
               </div>
               <h1 className="mb-6 text-5xl leading-[1.3] font-bold tracking-tight text-white lg:text-6xl">
                 작업사례

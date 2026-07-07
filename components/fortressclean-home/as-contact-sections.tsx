@@ -8,7 +8,7 @@ import { PhoneLink } from "./shared";
 export function ASSection() {
   return (
     <section id="as" className="bg-gray-50 py-16">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-300 px-6">
         <div className="reveal relative flex flex-col items-center justify-between gap-12 overflow-hidden rounded-[2.5rem] bg-brand-900 p-10 text-white transition-all duration-500 hover:shadow-2xl hover:shadow-brand-900/30 lg:flex-row lg:p-16">
           <svg
             className="absolute right-0 top-0 h-full text-brand-800 opacity-50"

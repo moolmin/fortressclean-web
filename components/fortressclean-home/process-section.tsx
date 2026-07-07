@@ -79,7 +79,7 @@ export function ProcessSection() {
 
   return (
     <section ref={sectionRef} id="process" className="bg-white py-24">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-300 px-6">
         <SectionHeading {...PROCESS_INTRO} className="reveal" />
         <div className="relative flex flex-col items-center justify-between lg:flex-row">
           <div className="absolute left-[5%] right-[5%] top-12 z-0 hidden h-0.5 bg-gray-100 lg:block" />
