@@ -99,6 +99,7 @@ function CaseCard({ item }: { item: CaseItem }) {
           alt={item.title}
           fill
           sizes="(max-width: 768px) 100vw, 600px"
+          referrerPolicy="no-referrer"
           className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-brand-950/10" />
