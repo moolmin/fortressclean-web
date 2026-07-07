@@ -4,9 +4,9 @@ import FortressCleanHome from "@/components/fortressclean-home";
 import { buildMetadata, getAbsoluteUrl } from "@/src/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "수도권 홈케어·종합청소 전문",
+  title: "서울·경기·인천 수도권 홈케어·입주청소·정기청소·상업공간 종합청소 전문업체",
   description:
-    "가전 홈케어부터 입주청소, 정기청소, 상업공간·건물 청소까지 수도권 현장에 맞춰 책임감 있게 진행하는 포트리스 클린입니다.",
+    "포트리스 클린은 서울·경기·인천 수도권에서 에어컨, 세탁기, 공기청정기, 냉장고 등 가전 홈케어부터 입주청소, 이사청소, 정기청소, 상업공간·건물 청소까지 현장 상황에 맞춰 꼼꼼하고 책임감 있게 진행하는 청소 전문업체입니다.",
   path: "/",
   keywords: [
     "포트리스 클린",

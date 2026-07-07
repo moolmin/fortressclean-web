@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const SITE_NAME = "포트리스 클린";
 export const SITE_NAME_EN = "Fortress Clean";
-export const DEFAULT_OG_IMAGE = "/opengraph-image.png";
+export const DEFAULT_OG_IMAGE = "/opengraph-image.jpg";
 export const DEFAULT_LOCALE = "ko_KR";
 
 export const BUSINESS_INFO = {
@@ -54,6 +54,10 @@ export function getAbsoluteUrl(path = "/") {
   return metadataBase ? new URL(path, metadataBase).toString() : path;
 }
 
+function withSiteName(title: string) {
+  return title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+}
+
 export function buildMetadata({
   title,
   description,
@@ -69,6 +73,7 @@ export function buildMetadata({
 }): Metadata {
   const canonical = getAbsoluteUrl(path);
   const imageUrl = getAbsoluteUrl(image);
+  const socialTitle = withSiteName(title);
 
   return {
     title,
@@ -84,7 +89,7 @@ export function buildMetadata({
       type: "website",
       locale: DEFAULT_LOCALE,
       url: canonical,
-      title,
+      title: socialTitle,
       description,
       siteName: SITE_NAME,
       images: [
@@ -98,7 +103,7 @@ export function buildMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: socialTitle,
       description,
       images: [imageUrl],
     },
