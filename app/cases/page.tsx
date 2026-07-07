@@ -166,9 +166,9 @@ export default function CasesPage() {
               <h1 className="mb-6 text-5xl leading-[1.3] font-bold tracking-tight text-white lg:text-6xl">
                 작업사례
               </h1>
-              <p className="mb-10 max-w-2xl text-xl leading-relaxed font-medium text-brand-100">
+              <p className="mb-10 max-w-2xl text-lg leading-relaxed font-medium text-brand-100 sm:text-xl">
                 에어컨, 세탁기, 주차장, 주방 후드 등 실제 현장에서 진행한
-                <br />
+                <br className="hidden sm:block" />
                 작업 전후 사례를 확인해보세요.
               </p>
             </div>

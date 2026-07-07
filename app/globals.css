@@ -40,6 +40,12 @@ html {
   scroll-padding-top: 100px;
 }
 
+@media (max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+}
+
 .curve-bg {
   background: #ffffff;
   clip-path: ellipse(105% 86% at 50% 100%);

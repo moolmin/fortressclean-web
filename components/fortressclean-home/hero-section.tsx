@@ -23,10 +23,10 @@ export function HeroSection() {
                 종합 환경·홈케어 솔루션
               </span>
             </div>
-            <h1 className="mb-6 text-5xl leading-[1.3] font-bold tracking-tight text-gray-900 lg:text-6xl">
+            <h1 className="mb-6 text-[2rem] leading-[1.28] font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
               가정부터 시설까지
               <br />
-              <span className="hero-highlight-sweep text-brand-900">
+              <span className="hero-highlight-sweep whitespace-nowrap text-brand-900">
                 깨끗하게, 책임 있게
               </span>
             </h1>
