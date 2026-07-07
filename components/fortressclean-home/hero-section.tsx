@@ -23,7 +23,7 @@ export function HeroSection() {
                 종합 환경·홈케어 솔루션
               </span>
             </div>
-            <h1 className="mb-6 text-[2rem] leading-[1.28] font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+            <h1 className="mb-6 text-[2.2rem] leading-[1.28] font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
               가정부터 시설까지
               <br />
               <span className="hero-highlight-sweep whitespace-nowrap text-brand-900">
@@ -52,7 +52,10 @@ export function HeroSection() {
               </div>
               <div className="my-2 flex flex-wrap gap-6">
                 {HERO_HIGHLIGHTS.map((item) => (
-                  <div key={item.label} className="flex items-center gap-2">
+                  <div
+                    key={item.label}
+                    className={`items-center gap-2 ${item.label === "책임감 있는 사후 관리" ? "hidden sm:flex" : "flex"}`}
+                  >
                     <PhosphorIcon
                       icon={item.icon}
                       weight={item.weight}

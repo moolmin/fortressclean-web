@@ -35,7 +35,7 @@ function GreetingSection() {
                 대표 인사말
               </span>
             </div>
-            <h1 className="mb-8 text-4xl leading-[1.4] font-bold tracking-tight text-gray-900 lg:text-5xl">
+            <h1 className="mb-8 text-[2.5rem] leading-[1.35] font-bold tracking-tight text-gray-900 lg:text-5xl">
               깨끗한 공간을 위한
               <br />
               <span className="text-brand-900">든든한 청소 파트너</span>
@@ -218,7 +218,7 @@ function WhySection() {
             <span className="mb-3 block text-sm font-bold tracking-wider text-brand-600">
               CORE STRENGTHS
             </span>
-            <h2 className="mb-6 text-4xl leading-tight font-bold text-gray-900">
+            <h2 className="mb-6 text-[2.5rem] leading-tight font-bold text-gray-900 sm:text-4xl">
               왜 많은 분들이
               <br />
               포트리스 클린을 선택할까요?
