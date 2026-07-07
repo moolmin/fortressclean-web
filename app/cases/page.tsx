@@ -18,45 +18,115 @@ export const metadata: Metadata = buildMetadata({
   keywords: ["청소 작업사례", "에어컨 청소 사례", "세탁기 청소 사례"],
 });
 
-function CaseCard({ item }: { item: (typeof GALLERY_ITEMS)[number] }) {
+const RSS_URL = "https://rss.blog.naver.com/sanha0302.xml";
+
+type CaseItem = {
+  title: string;
+  href: string;
+  category?: string;
+  publishedAt?: string;
+  imageSrc: string;
+};
+
+function readTag(xml: string, tag: string) {
   return (
-    <div className="reveal group overflow-hidden rounded-3xl border border-gray-100 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-      <div className="relative flex h-64 bg-gray-100">
-        <div className="relative h-full w-1/2 overflow-hidden border-r border-white/50">
-          <Image
-            src={item.beforeSrc}
-            alt={item.beforeAlt}
-            fill
-            sizes="(max-width: 768px) 50vw, 300px"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gray-950/18" />
-        </div>
-        <div className="relative h-full w-1/2 overflow-hidden">
-          <Image
-            src={item.afterSrc}
-            alt={item.afterAlt}
-            fill
-            sizes="(max-width: 768px) 50vw, 300px"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-brand-950/10" />
-        </div>
-      </div>
-      <div className="bg-white p-6">
-        <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
-      </div>
-    </div>
+    xml
+      .match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`))?.[1]
+      .replace(/^<!\[CDATA\[|\]\]>$/g, "")
+      .trim() ?? ""
   );
 }
 
-function CasesGallery() {
+function readFirstImage(html: string) {
+  return html.match(/<img[^>]+src=["']([^"']+)["']/i)?.[1] ?? "";
+}
+
+async function getCaseItems(): Promise<CaseItem[]> {
+  try {
+    const response = await fetch(RSS_URL, { next: { revalidate: 3600 } });
+
+    if (!response.ok) {
+      throw new Error("RSS fetch failed");
+    }
+
+    const xml = await response.text();
+    const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)]
+      .map((match) => {
+        const itemXml = match[1];
+        const description = readTag(itemXml, "description");
+
+        return {
+          title: readTag(itemXml, "title"),
+          href: readTag(itemXml, "link"),
+          category: readTag(itemXml, "category"),
+          publishedAt: readTag(itemXml, "pubDate")
+            ? new Intl.DateTimeFormat("ko-KR", {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+              }).format(new Date(readTag(itemXml, "pubDate")))
+            : undefined,
+          imageSrc: readFirstImage(description),
+        };
+      })
+      .filter((item) => item.title && item.href && item.imageSrc);
+
+    if (items.length > 0) {
+      return items;
+    }
+  } catch {
+    // ponytail: RSS 장애 시 빈 페이지 대신 기존 로컬 사례를 보여준다.
+  }
+
+  return GALLERY_ITEMS.map((item) => ({
+    title: item.title,
+    href: "/cases",
+    imageSrc: item.afterSrc.src,
+  }));
+}
+
+function CaseCard({ item }: { item: CaseItem }) {
+  return (
+    <a
+      href={item.href}
+      target="_blank"
+      rel="noreferrer"
+      className="reveal group block overflow-hidden rounded-3xl border border-gray-100 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+    >
+      <div className="relative h-64 bg-gray-100">
+        <Image
+          src={item.imageSrc}
+          alt={item.title}
+          fill
+          sizes="(max-width: 768px) 100vw, 600px"
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-brand-950/10" />
+      </div>
+      <div className="bg-white p-6">
+        {item.category ? (
+          <p className="mb-2 text-xs font-bold tracking-wider text-brand-600">
+            {item.category}
+          </p>
+        ) : null}
+        <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
+        {item.publishedAt ? (
+          <p className="mt-3 text-sm text-gray-400">{item.publishedAt}</p>
+        ) : null}
+      </div>
+    </a>
+  );
+}
+
+async function CasesGallery() {
+  const items = await getCaseItems();
+
   return (
     <section id="gallery" className="bg-white py-24">
       <div className="mx-auto max-w-[1200px] px-6">
         <SectionHeading {...GALLERY_INTRO} align="left" className="mb-12" />
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          {GALLERY_ITEMS.map((item) => (
+          {items.map((item) => (
             <CaseCard key={item.title} item={item} />
           ))}
         </div>
