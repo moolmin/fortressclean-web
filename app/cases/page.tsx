@@ -43,7 +43,7 @@ function readFirstImage(html: string) {
 
 async function getCaseItems(): Promise<CaseItem[]> {
   try {
-    const response = await fetch(RSS_URL, { next: { revalidate: 3600 } });
+    const response = await fetch(RSS_URL);
 
     if (!response.ok) {
       throw new Error("RSS fetch failed");

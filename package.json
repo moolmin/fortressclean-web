@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "deploy": "NEXT_PUBLIC_SITE_URL=https://fortressclean-web.pages.dev next build && wrangler pages deploy out --project-name fortressclean-web --branch main",
     "start": "next start",
     "lint": "eslint"
   },
@@ -22,6 +23,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.107.0"
   }
 }
