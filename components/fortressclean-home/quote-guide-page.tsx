@@ -203,7 +203,7 @@ export function QuoteGuidePageContent() {
             </div>
           </section>
 
-          <section className="bg-white py-20">
+          <section className="bg-white py-28">
             <div className="mx-auto max-w-300 px-6">
               <SectionHeading
                 title="견적은 이런 기준으로 안내됩니다"
@@ -211,7 +211,7 @@ export function QuoteGuidePageContent() {
                 className="mb-12"
               />
 
-              <div className="mb-24 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+              <div className="mb-32 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
                 {QUOTE_FACTORS.map((factor) => (
                   <div
                     key={factor.label}
