@@ -95,7 +95,12 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="ko" className="h-full antialiased" suppressHydrationWarning>
+    <html
+      lang="ko"
+      className="h-full antialiased"
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <body className="min-h-full flex flex-col">
         <JsonLd data={websiteSchema} />
         <JsonLd data={localBusinessSchema} />
