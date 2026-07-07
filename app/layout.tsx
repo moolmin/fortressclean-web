@@ -77,7 +77,7 @@ export default function RootLayout({
     "@id": getAbsoluteUrl("/#localbusiness"),
     name: BUSINESS_INFO.name,
     alternateName: BUSINESS_INFO.alternateName,
-    image: [getAbsoluteUrl("/images/main/1.png")],
+    image: [getAbsoluteUrl("/opengraph-image.png")],
     url: getAbsoluteUrl("/"),
     telephone: BUSINESS_INFO.phone,
     email: BUSINESS_INFO.email,

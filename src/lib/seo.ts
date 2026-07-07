@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const SITE_NAME = "포트리스 클린";
 export const SITE_NAME_EN = "Fortress Clean";
-export const DEFAULT_OG_IMAGE = "/images/main/1.png";
+export const DEFAULT_OG_IMAGE = "/opengraph-image.png";
 export const DEFAULT_LOCALE = "ko_KR";
 
 export const BUSINESS_INFO = {
