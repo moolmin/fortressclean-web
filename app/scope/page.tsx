@@ -227,7 +227,7 @@ function ServiceCard({
         </div>
         <p className="mb-5 text-md leading-relaxed text-gray-500">{desc}</p>
         <div className="mt-auto border-t border-gray-100 pt-5">
-          <ul className="space-y-2.5 text-sm font-medium text-gray-600">
+          <ul className="space-y-2.5 text-base font-medium text-gray-600 md:text-sm">
             {features.map((feature) => (
               <li key={feature} className="flex items-start gap-2">
                 <span
@@ -383,10 +383,10 @@ export default function ScopePage() {
                     key={column.title}
                     className="reveal rounded-2xl border border-gray-200 bg-white p-5"
                   >
-                    <h4 className="mb-4 text-sm font-bold tracking-wider text-brand-900 uppercase">
+                    <h4 className="mb-4 text-base font-bold tracking-wider text-brand-900 uppercase">
                       {column.title}
                     </h4>
-                    <div className="space-y-3 text-sm text-gray-700">
+                    <div className="space-y-3 text-base text-gray-700">
                       {column.items.map((item) => (
                         <div key={item} className="flex items-start gap-2">
                           <PhosphorIcon

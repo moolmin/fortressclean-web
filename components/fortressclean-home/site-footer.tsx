@@ -26,14 +26,14 @@ export function SiteFooter() {
                 포트리스 클린
               </span>
             </div>
-            <p className="max-w-sm text-sm leading-relaxed">
+            <p className="max-w-sm text-base leading-relaxed md:text-sm">
               가전 홈케어부터 종합 환경 청소까지, 포트리스 클린은 정직하고
               꼼꼼한 서비스로 고객님의 쾌적한 생활 공간을 책임집니다.
             </p>
           </div>
           <div>
             <h4 className="mb-4 font-bold text-white">서비스 메뉴</h4>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3 text-base md:text-sm">
               {NAV_ITEMS.map((item) => (
                 <li key={item.href}>
                   <Link
@@ -48,7 +48,7 @@ export function SiteFooter() {
           </div>
           <div>
             <h4 className="mb-4 font-bold text-white">고객센터</h4>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3 text-base md:text-sm">
               <li className="flex items-start gap-2">
                 <PhosphorIcon
                   icon={Phone}
@@ -72,7 +72,7 @@ export function SiteFooter() {
             </ul>
           </div>
         </div>
-        <div className="flex flex-col gap-4 border-t border-gray-800 pt-8 text-sm md:flex-row md:items-start md:justify-between">
+        <div className="flex flex-col gap-4 border-t border-gray-800 pt-8 text-base md:flex-row md:items-start md:justify-between md:text-sm">
           <p>© Fortressclean. All rights reserved.</p>
           <div className="space-y-1 text-gray-500 md:text-right">
             <p>
