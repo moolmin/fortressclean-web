@@ -19,6 +19,8 @@ export const metadata: Metadata = buildMetadata({
 });
 
 const RSS_URL = "https://rss.blog.naver.com/sanha0302.xml";
+const CASE_IMAGE_PLACEHOLDER =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cfilter id='b'%3E%3CfeGaussianBlur stdDeviation='1.2'/%3E%3C/filter%3E%3Cg filter='url(%23b)'%3E%3Crect width='12' height='8' fill='%23e5e7eb'/%3E%3Crect width='7' height='8' fill='%23d1d5db'/%3E%3Crect x='5' y='1' width='7' height='6' fill='%239ca3af' opacity='.45'/%3E%3C/g%3E%3C/svg%3E" as const;
 
 type CaseItem = {
   title: string;
@@ -99,6 +101,7 @@ function CaseCard({ item }: { item: CaseItem }) {
           alt={item.title}
           fill
           sizes="(max-width: 768px) 100vw, 600px"
+          placeholder={CASE_IMAGE_PLACEHOLDER}
           referrerPolicy="no-referrer"
           className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
