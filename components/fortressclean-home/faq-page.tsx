@@ -2,7 +2,12 @@
 
 import { useState } from "react";
 
-import { FAQ_ITEMS, PHONE_NUMBER } from "./content";
+import {
+  EMAIL_ADDRESS,
+  EMAIL_HREF,
+  FAQ_ITEMS,
+  PHONE_NUMBER,
+} from "./content";
 import { Headset, Minus, Plus } from "./icons";
 import { PhosphorIcon } from "./phosphor-icon";
 import { RevealObserver } from "./reveal-observer";
@@ -50,12 +55,18 @@ export function FAQPageContent() {
                       <p className="text-xl font-bold text-gray-900">
                         {PHONE_NUMBER}
                       </p>
+                      <a
+                        href={EMAIL_HREF}
+                        className="break-all font-semibold text-brand-900 underline decoration-brand-200 underline-offset-4"
+                      >
+                        {EMAIL_ADDRESS}
+                      </a>
                     </div>
                   </div>
                   <p className="leading-relaxed text-gray-600">
                     현장 상황에 따라 안내 내용이 달라질 수 있습니다. FAQ에서
-                    해결되지 않는 내용은 전화 상담을 통해 서비스 종류, 일정,
-                    작업 범위를 자세히 안내해드립니다.
+                    해결되지 않는 내용은 전화 또는 이메일 상담을 통해 서비스
+                    종류, 일정, 작업 범위를 자세히 안내해드립니다.
                   </p>
                 </div>
               </div>
