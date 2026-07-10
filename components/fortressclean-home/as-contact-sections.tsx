@@ -78,7 +78,7 @@ export function ContactSection() {
           </p>
           <PhoneLink className="text-4xl font-black tracking-wider text-brand-900 lg:text-5xl" />
           <p className="mt-4 text-sm text-gray-500">
-            상담 시간: 매일 09:00 ~ 20:00 (주말·공휴일 가능)
+            상담 시간: 매일 09:00 ~ 18:00 (주말·공휴일 가능)
           </p>
         </div>
       </div>

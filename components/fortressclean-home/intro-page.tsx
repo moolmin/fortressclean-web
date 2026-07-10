@@ -72,7 +72,7 @@ function GreetingSection() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-[3rem] border-8 border-white bg-gray-200 shadow-2xl">
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-tr from-brand-200 to-gray-100 text-brand-300">
                 <PhosphorIcon icon={Buildings} className="mb-4 text-9xl" />
-                <span className="text-lg font-medium">대표 이미지</span>
+                <span className="text-lg font-medium">대표 이미지 삭제!!!</span>
               </div>
             </div>
             <div className="absolute -right-6 -bottom-6 max-w-xs rounded-3xl bg-white p-6 shadow-xl">
@@ -158,9 +158,9 @@ function WhySection() {
     {
       icon: MapPinLine,
       value: "수도권 방문",
-      label: "서울 · 경기 · 인천",
+      label: "서울 · 경기",
     },
-    { icon: Clock, value: "09:00 - 20:00", label: "매일 상담 가능" },
+    { icon: Clock, value: "09:00 - 18:00", label: "매일 상담 가능" },
     { icon: ShieldCheck, value: "30일", label: "A/S 무상 보증" },
     { icon: ListNumbers, value: "사진·방문", label: "상황별 견적 안내" },
   ] as const;
@@ -168,7 +168,7 @@ function WhySection() {
   const strengths = [
     {
       icon: UsersThree,
-      title: "직영 전문 인력 운영",
+      title: "친환경 세제!!!",
       description:
         "하청에 맡기지 않고, 검증된 인력이 직접 현장을 확인하고 작업합니다.",
     },
@@ -180,7 +180,7 @@ function WhySection() {
     },
     {
       icon: Handshake,
-      title: "30일 안심 A/S",
+      title: "서류 작업 굿굿!!!",
       description:
         "작업 완료 다음 날부터 30일간, 작업 관련 문제를 책임감 있게 확인합니다.",
     },

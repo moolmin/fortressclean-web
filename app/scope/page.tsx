@@ -50,7 +50,7 @@ const HOME_CARE_ITEMS = [
     title: "공기청정기 청소",
     desc: "공기가 지나가는 내부 부품과 필터 주변 먼지를 정리해 쾌적한 사용 환경을 돕습니다.",
     features: [
-      "외부 커버 및 프리필터 세척",
+      "외부 커버 및 필터 세척",
       "내부 송풍 팬 먼지 제거",
       "먼지 센서 주변 클리닝",
       "본체 내·외부 닦아 마감",
@@ -59,14 +59,9 @@ const HOME_CARE_ITEMS = [
   {
     icon: ThermometerCold,
     imageSrc: "/images/scope/homecare-refrigerator.jpg",
-    title: "냉장고 청소",
-    desc: "음식물이 닿는 내부 공간과 고무패킹 오염을 관리해 위생적인 보관 환경을 만듭니다.",
-    features: [
-      "선반 및 서랍장 분리 세척",
-      "내부 오염 및 얼룩 제거",
-      "고무패킹 이물질 청소",
-      "내부 정리 및 마감 클리닝",
-    ],
+    title: "냉장고 청소 (외부 청소하는 이미지로 바꾸기!!!)",
+    desc: "내용 싹다 외부로 바꿔!!!! 내부 내용 뺴셈!!!",
+    features: ["기계실", "외부 먼지 제거", "화재예방", "외부 마감 클리닝"],
   },
 ] as const;
 
@@ -74,13 +69,9 @@ const SPACE_ITEMS = [
   {
     icon: HouseLine,
     imageSrc: "/images/scope/space-home-cleaning.jpg",
-    title: "주거 청소",
-    desc: "거주 중인 공간의 먼지와 생활 오염을 구역별로 나누어 꼼꼼하게 관리합니다.",
-    features: [
-      "욕실 물때 및 환풍기 주변 청소",
-      "주방 후드 및 기름때 제거",
-      "창틀 및 방충망 먼지 제거",
-    ],
+    title: "학교청소 메인이랑 바꾸기!!!",
+    desc: "~~",
+    features: ["친환경 세제", "안전장비", "학교청소 경험 다수"],
   },
   {
     icon: Sparkle,
@@ -88,7 +79,7 @@ const SPACE_ITEMS = [
     title: "입주·이사 청소",
     desc: "입주 전후, 이사 전후 공간에 남은 먼지와 오염을 정리해 깨끗한 시작을 돕습니다.",
     features: [
-      "공사 분진 및 생활 오염 제거",
+      "화장실, 주방, 유리창 등 오염 제거",
       "붙박이장 내부 및 수납공간 청소",
       "전등 커버, 몰딩, 창틀 먼지 제거",
     ],
@@ -110,7 +101,7 @@ const SPACE_ITEMS = [
     title: "상업 공간 청소",
     desc: "카페, 식당, 매장 등 고객 방문이 잦은 공간을 쾌적하게 관리합니다.",
     features: [
-      "집기류 외부 먼지 및 오염 제거",
+      "외부 먼지 및 오염 제거",
       "바닥 재질에 맞는 세정 관리",
       "유리창 및 쇼윈도 오염 관리",
     ],
@@ -132,7 +123,7 @@ const SPACE_ITEMS = [
     title: "시설·단체 청소",
     desc: "학교, 병원, 학원, 군부대, 지하주차장 등 규모 있는 현장도 작업 환경에 맞춰 진행합니다.",
     features: [
-      "대면적 바닥 기계 세척",
+      "친환경 세제 사용",
       "시설 내 집기 및 설비 먼지 제거",
       "폐기물 집하장 및 주변 공간 정리",
     ],
@@ -370,7 +361,7 @@ export default function ScopePage() {
             <div className="mx-auto max-w-300 px-6">
               <div className="reveal mb-12">
                 <h3 className="mb-2 text-3xl font-bold tracking-tight text-gray-900">
-                  서비스 범위 요약
+                  서비스 범위 요약 내용 수정!!!! 알잘딱깔센
                 </h3>
                 <p className="text-md text-gray-500">
                   상담을 통해 현장에 맞는 상세 작업 범위를 확인하실 수 있습니다.

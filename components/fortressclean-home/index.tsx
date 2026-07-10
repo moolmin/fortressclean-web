@@ -30,7 +30,7 @@ export default function FortressCleanHome() {
           <ProcessSection />
           <QuoteSection />
           <GallerySection />
-          <TestimonialSection />
+          {/* <TestimonialSection /> */}
           <ASSection />
           <FAQSection />
           <ContactSection />

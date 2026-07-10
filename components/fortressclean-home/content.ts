@@ -127,7 +127,7 @@ export const FEATURE_ITEMS = [
   {
     icon: BellRinging,
     weight: "fill",
-    title: "사전 안내",
+    title: "친환경 세제",
     description: ["방문 전 일정과", "주의사항을 안내합니다"],
   },
   {
@@ -156,27 +156,27 @@ export const HOME_CARE_SERVICES = [
     title: "에어컨 청소",
     desc: "내부 곰팡이와 먼지를 고압 세척으로 완벽하게 제거하여 맑은 바람을 찾아드립니다.",
     features: [
-      "벽걸이 / 스탠드 / 시스템 에어컨",
-      "필터, 커버, 송풍구 주변 세척",
+      "시스템 에어컨 / 스탠드 / 벽걸이",
+      "냉각핀, 송풍팬, 커버 등 분해 세척",
     ],
   },
   {
     icon: WashingMachine,
     title: "세탁기 관리",
     desc: "눈에 보이지 않는 세탁조 내부 오염과 세제 찌꺼기를 확인하여 세탁 품질을 높입니다.",
-    features: ["통돌이 / 드럼 세탁기", "세탁조, 가스켓, 세제통 세척"],
+    features: ["드럼 세탁기 / 통돌이 / 건조기", "세탁조, 가스켓 등 분해 세척"],
   },
   {
     icon: Fan,
     title: "공기청정기 청소",
     desc: "공기가 지나가는 내부 부품과 필터 주변의 먼지를 정리해 쾌적한 실내 환경을 돕습니다.",
-    features: ["필터 주변 먼지 제거", "내부 팬, 흡입구, 토출구 관리"],
+    features: ["필터 주변 먼지 제거", "내부 팬, 흡입구, 토출구 분해 세척"],
   },
   {
     icon: ThermometerCold,
     title: "냉장고 청소",
-    desc: "음식물이 닿는 내부 공간과 고무패킹 오염을 관리해 위생적인 보관 환경을 만듭니다.",
-    features: ["선반, 서랍, 고무패킹 세척", "내부 오염 및 냄새 관리"],
+    desc: "화재 예방을 위해 냉장고 뒷쪽 기계실 청소",
+    features: ["스팀 세척", "먼지 쌓여서 화재 발생을 예방"],
   },
 ] as const satisfies readonly ServiceItem[];
 
@@ -189,22 +189,10 @@ export const COMPREHENSIVE_INTRO: SectionIntro = {
 
 export const COMPREHENSIVE_ITEMS = [
   {
-    icon: HouseLine,
+    icon: Stairs,
     weight: "fill",
-    title: "주거 청소",
-    desc: "거주 중 쌓인 먼지와 생활 오염을 정리해 쾌적한 생활 공간을 유지합니다.",
-  },
-  {
-    icon: Sparkle,
-    weight: "fill",
-    title: "입주·이사 청소",
-    desc: "입주 전후, 이사 전후 공간의 먼지와 오염을 정리해 깨끗한 시작을 돕습니다.",
-  },
-  {
-    icon: CalendarCheck,
-    weight: "fill",
-    title: "정기 관리 청소",
-    desc: "주기적인 방문 관리로 사무실, 매장, 공용 공간의 청결한 상태를 유지합니다.",
+    title: "시설·단체 청소",
+    desc: "지하주차장·군부대·공장 등 규모 있는 현장도 책임감 있게 진행합니다.",
   },
   {
     icon: OfficeChair,
@@ -213,16 +201,30 @@ export const COMPREHENSIVE_ITEMS = [
     desc: "사무실, 병원, 학원, 상가 등 이용자가 많은 공간을 쾌적하게 관리합니다.",
   },
   {
+    icon: HouseLine,
+    weight: "fill",
+    title: "학교청소!!!!!",
+    desc: "친환경 세제 사용 학생과 교직원의 건강 생각하며 안전하게 작업 진행",
+  },
+  {
+    icon: CalendarCheck,
+    weight: "fill",
+    title: "정기 관리 청소",
+    desc: "주기적인 방문 관리로 사무실, 매장, 공용 공간의 청결한 상태를 유지합니다.",
+  },
+
+  {
     icon: Buildings,
     weight: "fill",
     title: "건물·공용공간 청소",
     desc: "계단, 아파트, 건물 내외부 등 반복 관리가 필요한 공용 공간을 체계적으로 청소합니다.",
   },
+
   {
-    icon: Stairs,
+    icon: Sparkle,
     weight: "fill",
-    title: "시설·단체 청소",
-    desc: "지하주차장·군부대·공장 등 규모 있는 현장도 책임감 있게 진행합니다.",
+    title: "입주·이사 청소",
+    desc: "입주 전후, 이사 전후 공간의 먼지와 오염을 정리해 깨끗한 시작을 돕습니다.",
   },
 ] as const satisfies readonly (IconItem & {
   title: string;
@@ -230,6 +232,7 @@ export const COMPREHENSIVE_ITEMS = [
 })[];
 
 export const COMPREHENSIVE_BADGES = [
+  "친환경 세제 사용",
   "정기 관리 가능",
   "방문 견적 가능",
   "대량 작업 문의 가능",
@@ -247,7 +250,7 @@ export const PROCESS_STEPS = [
   {
     step: "STEP 02",
     icon: Camera,
-    title: "사진·방문 견적",
+    title: "작업 견적",
   },
   {
     step: "STEP 03",
@@ -260,11 +263,15 @@ export const PROCESS_STEPS = [
     weight: "fill",
     title: "방문 작업",
   },
-  { step: "STEP 05", icon: Trash, title: "현장 정리" },
+  {
+    step: "STEP 05",
+    icon: CheckCircle,
+    title: "작업 후 확인",
+  },
   {
     step: "STEP 06",
     icon: CheckCircle,
-    title: "작업 후 확인",
+    title: "사후관리 (아이콘 수정해)!!!",
   },
 ] as const satisfies readonly ProcessStep[];
 
@@ -293,14 +300,14 @@ export const QUOTE_METHODS = [
     badgeClassName: "bg-gray-200 text-gray-700",
     title: "방문 견적 가능",
     description:
-      "종합청소, 정기청소, 건물청소 등은 현장 규모와 오염 상태에 따라 작업 범위가 달라질 수 있어 방문 견적으로 안내드립니다.",
+      " 학교청소, 종합청소, 정기청소 등은 현장 규모와 오염 상태에 따라 작업 범위가 달라질 수 있어 방문 견적으로 안내드립니다.",
     detailTitle: "방문 견적 안내",
     detailText: "일정 조율 후 현장 확인",
   },
 ] as const satisfies readonly QuoteMethod[];
 
 export const GALLERY_INTRO: SectionIntro = {
-  title: "실제 작업 사례",
+  title: "실제 작업 사례 (6개!!!",
   description: "포트리스 클린의 작업 전후 변화를 확인해보세요.",
 };
 
@@ -370,7 +377,7 @@ export const ASSURANCE_ITEMS = [
     icon: MapPinLine,
     weight: "fill",
     title: "서비스 가능 지역",
-    description: "서울 남부 및 경기, 인천 등 수도권역 전역",
+    description: "서울 및 경기 등 수도권역 전역",
     note: "*상세 지역은 상담 시 확인 가능합니다.",
   },
   {
@@ -390,7 +397,7 @@ export const FAQ_INTRO: SectionIntro = {
 export const FAQ_ITEMS = [
   {
     q: "예약은 어떻게 진행하나요?",
-    a: `전화(${PHONE_NUMBER})로 원하시는 서비스와 희망 일정을 알려주시면, 담당자가 확인 후 상담과 예약을 도와드립니다.`,
+    a: `전화(${PHONE_NUMBER})로 원하시는 서비스와 희망 일정을 알려주시면, 담당자가 확인 후 상담과 예약을 도와드립니다. 이메일도돼!!!!`,
   },
   {
     q: "견적은 어떻게 받을 수 있나요?",
@@ -402,7 +409,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "결제는 언제 진행하나요?",
-    a: "작업이 완료된 후 고객님과 함께 현장을 확인하고, 이상이 없을 경우 결제를 진행합니다. 자세한 결제 방식은 상담 시 안내드립니다.",
+    a: "작업이 완료된 후 고객님과 함께 현장을 확인하고, 이상이 없을 경우 결제를 진행합니다. 자세한 결제 방식은 상담 시 안내드립니다. 카드결제 현금결제 세금계산서 발행!!!!",
   },
   {
     q: "주말이나 공휴일에도 작업이 가능한가요?",
@@ -410,7 +417,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "서비스 가능 지역은 어디인가요?",
-    a: "서울 남부 및 경기·인천 등 수도권을 중심으로 방문합니다. 상세 가능 지역은 상담 시 확인해드립니다.",
+    a: "서울 및 경기 등 수도권을 중심으로 방문합니다. 상세 가능 지역은 상담 시 확인해드립니다.",
   },
   {
     q: "추가 비용이 발생할 수 있나요?",

@@ -64,7 +64,7 @@ export function SiteFooter() {
                   className="mt-0.5 text-gray-500"
                 />
                 <span>
-                  매일 09:00 - 20:00
+                  매일 09:00 - 18:00
                   <br />
                   (연중무휴)
                 </span>
