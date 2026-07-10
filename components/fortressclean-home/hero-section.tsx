@@ -1,5 +1,5 @@
-import { PhoneCall, Broom, Sparkle } from "./icons";
-import { HERO_HIGHLIGHTS } from "./content";
+import { PhoneCall, Broom, EnvelopeSimple, Sparkle } from "./icons";
+import { EMAIL_ADDRESS, EMAIL_HREF, HERO_HIGHLIGHTS } from "./content";
 import { HeroImageRotator } from "./hero-image-rotator";
 import { PhosphorIcon } from "./phosphor-icon";
 import { PhoneLink } from "./shared";
@@ -35,19 +35,35 @@ export function HeroSection() {
               공간에 맞는 방식으로 꼼꼼하게 관리합니다.
             </p>
             <div className="flex flex-col gap-5">
-              <div className="flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-900 text-white shadow-lg shadow-brand-900/30">
-                  <PhosphorIcon
-                    icon={PhoneCall}
-                    weight="fill"
-                    className="text-2xl"
-                  />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-gray-500">
-                    예약 및 상담
-                  </p>
-                  <PhoneLink className="text-3xl font-black tracking-wide text-brand-900" />
+              <div>
+                <p className="mb-3 text-sm font-medium text-gray-500">
+                  예약 및 상담 방법
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-900 text-white shadow-lg shadow-brand-900/30">
+                      <PhosphorIcon
+                        icon={PhoneCall}
+                        weight="fill"
+                        className="text-2xl"
+                      />
+                    </div>
+                    <PhoneLink className="text-3xl font-black tracking-wide text-brand-900" />
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2 pl-1 text-base font-medium text-gray-500">
+                    <PhosphorIcon
+                      icon={EnvelopeSimple}
+                      weight="fill"
+                      className="shrink-0 text-base text-brand-600"
+                    />
+                    <span>이메일 상담</span>
+                    <a
+                      href={EMAIL_HREF}
+                      className="break-all font-semibold text-brand-900 underline decoration-brand-200 underline-offset-4"
+                    >
+                      {EMAIL_ADDRESS}
+                    </a>
+                  </div>
                 </div>
               </div>
               <div className="my-2 flex flex-wrap gap-6">

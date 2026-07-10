@@ -11,7 +11,7 @@ export const BUSINESS_INFO = {
   description:
     "포트리스 클린은 에어컨, 세탁기, 공기청정기, 냉장고 청소부터 입주청소, 정기청소, 상업공간·건물 청소까지 제공하는 수도권 전문 청소 서비스입니다.",
   phone: "010-8115-9256",
-  email: "thefortressclean@gmail.com",
+  email: "hardy@fortressclean.com",
   address: "경기도 부천시 원미구 소향로 239",
   region: "경기도",
   locality: "부천시",

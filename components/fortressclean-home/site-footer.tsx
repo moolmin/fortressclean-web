@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Clock, Phone } from "./icons";
-import { NAV_ITEMS } from "./content";
+import { EMAIL_ADDRESS, EMAIL_HREF, NAV_ITEMS } from "./content";
 import { PhosphorIcon } from "./phosphor-icon";
 import { PhoneLink } from "./shared";
 
@@ -77,10 +77,10 @@ export function SiteFooter() {
           <div className="space-y-1 text-gray-500 md:text-right">
             <p>
               <a
-                href="mailto:thefortressclean@gmail.com"
+                href={EMAIL_HREF}
                 className="transition-colors hover:text-white"
               >
-                thefortressclean@gmail.com
+                {EMAIL_ADDRESS}
               </a>
             </p>
             <p>경기도 부천시 원미구 소향로 239</p>

@@ -18,9 +18,7 @@ export function FeaturesSection() {
           {FEATURE_ITEMS.map((item) => (
             <div
               key={item.title}
-              className={`flex flex-col items-center rounded-3xl bg-gray-50 p-6 text-center transition-colors hover:bg-brand-50 ${
-                item.title === "사전 안내" ? "hidden md:flex" : ""
-              }`}
+              className="flex flex-col items-center rounded-3xl bg-gray-50 p-6 text-center transition-colors hover:bg-brand-50"
             >
               <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white text-brand-900 shadow-sm">
                 <PhosphorIcon
@@ -29,8 +27,10 @@ export function FeaturesSection() {
                   className="text-3xl"
                 />
               </div>
-              <h3 className="mb-2 font-bold text-gray-900">{item.title}</h3>
-              <p className="text-sm leading-snug text-gray-500">
+              <h3 className="mb-2 text-lg font-bold text-gray-900">
+                {item.title}
+              </h3>
+              <p className="text-base leading-snug text-gray-500">
                 {item.description[0]}
                 <br />
                 {item.description[1]}

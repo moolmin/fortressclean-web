@@ -11,22 +11,21 @@ import washerBeforeImage from "./case-images/washer-before.jpg";
 
 import type { Icon, IconWeight } from "./icons";
 import {
-  BellRinging,
   Broom,
+  Building,
   Buildings,
   CalendarCheck,
   CalendarPlus,
   Camera,
   CheckCircle,
-  CheckSquareOffset,
   Fan,
+  FileText,
   Headset,
-  HouseLine,
   Image,
+  Leaf,
   MagnifyingGlass,
   MapPinLine,
   OfficeChair,
-  Package,
   ShieldCheck,
   Sparkle,
   Stairs,
@@ -96,6 +95,8 @@ type GalleryItem = {
 
 export const PHONE_NUMBER = "010-8115-9256";
 export const PHONE_HREF = `tel:${PHONE_NUMBER.replaceAll("-", "")}`;
+export const EMAIL_ADDRESS = "hardy@fortressclean.com";
+export const EMAIL_HREF = `mailto:${EMAIL_ADDRESS}`;
 
 export const NAV_ITEMS = [
   { href: "/intro", label: "소개" },
@@ -106,7 +107,6 @@ export const NAV_ITEMS = [
 ] as const;
 
 export const HERO_HIGHLIGHTS = [
-  { icon: ShieldCheck, weight: "fill", label: "직영 전문인력" },
   { icon: CheckCircle, weight: "fill", label: "체계적인 작업 과정" },
   { icon: Headset, weight: "fill", label: "책임감 있는 사후 관리" },
 ] as const satisfies readonly (IconItem & { label: string })[];
@@ -116,31 +116,31 @@ export const FEATURE_ITEMS = [
     icon: MagnifyingGlass,
     weight: "fill",
     title: "꼼꼼한 작업",
-    description: ["보이지 않는 곳까지", "철저하게 청소합니다"],
-  },
-  {
-    icon: Package,
-    weight: "fill",
-    title: "제품 보호",
-    description: ["가전 및 주변 환경을", "안전하게 보호합니다"],
-  },
-  {
-    icon: BellRinging,
-    weight: "fill",
-    title: "친환경 세제",
-    description: ["방문 전 일정과", "주의사항을 안내합니다"],
-  },
-  {
-    icon: CheckSquareOffset,
-    weight: "fill",
-    title: "작업 후 확인",
-    description: ["고객님과 함께", "최종 결과를 확인합니다"],
+    description: ["보이지 않는 곳까지", "세심하게 청소합니다"],
   },
   {
     icon: ShieldCheck,
     weight: "fill",
+    title: "시설물 보호",
+    description: ["가전과 주변 시설을", "안전하게 보호하며 작업합니다"],
+  },
+  {
+    icon: Leaf,
+    weight: "fill",
+    title: "친환경 세제 사용",
+    description: ["공간과 오염에 적합한", "친환경 세제를 사용합니다"],
+  },
+  {
+    icon: FileText,
+    weight: "fill",
+    title: "공공기관 서류 대응",
+    description: ["견적서부터 완료보고서까지", "정확하게 처리합니다"],
+  },
+  {
+    icon: Headset,
+    weight: "fill",
     title: "30일 A/S 보증",
-    description: ["작업 후 문제 발생 시", "확실하게 책임집니다"],
+    description: ["작업 후 문제 발생 시", "책임 있게 대응합니다"],
   },
 ] as const satisfies readonly FeatureItem[];
 
@@ -175,8 +175,11 @@ export const HOME_CARE_SERVICES = [
   {
     icon: ThermometerCold,
     title: "냉장고 청소",
-    desc: "화재 예방을 위해 냉장고 뒷쪽 기계실 청소",
-    features: ["스팀 세척", "먼지 쌓여서 화재 발생을 예방"],
+    desc: "냉장고 외부와 후면 기계실에 쌓인 먼지를 제거해 위생 관리와 화재 예방을 돕습니다.",
+    features: [
+      "외부 표면과 손잡이 스팀 세척",
+      "후면 기계실 먼지 제거로 화재 위험 예방",
+    ],
   },
 ] as const satisfies readonly ServiceItem[];
 
@@ -201,10 +204,10 @@ export const COMPREHENSIVE_ITEMS = [
     desc: "사무실, 병원, 학원, 상가 등 이용자가 많은 공간을 쾌적하게 관리합니다.",
   },
   {
-    icon: HouseLine,
+    icon: Building,
     weight: "fill",
-    title: "학교청소!!!!!",
-    desc: "친환경 세제 사용 학생과 교직원의 건강 생각하며 안전하게 작업 진행",
+    title: "학교·교육시설 청소",
+    desc: "친환경 세제로 교실과 공용공간을 청소해 안전하고 쾌적한 교육 환경을 만듭니다.",
   },
   {
     icon: CalendarCheck,
@@ -250,7 +253,7 @@ export const PROCESS_STEPS = [
   {
     step: "STEP 02",
     icon: Camera,
-    title: "작업 견적",
+    title: "맞춤 견적 안내",
   },
   {
     step: "STEP 03",
@@ -270,8 +273,8 @@ export const PROCESS_STEPS = [
   },
   {
     step: "STEP 06",
-    icon: CheckCircle,
-    title: "사후관리 (아이콘 수정해)!!!",
+    icon: Headset,
+    title: "A/S 및 사후관리",
   },
 ] as const satisfies readonly ProcessStep[];
 
@@ -307,7 +310,7 @@ export const QUOTE_METHODS = [
 ] as const satisfies readonly QuoteMethod[];
 
 export const GALLERY_INTRO: SectionIntro = {
-  title: "실제 작업 사례 (6개!!!",
+  title: "실제 작업 사례",
   description: "포트리스 클린의 작업 전후 변화를 확인해보세요.",
 };
 
@@ -377,7 +380,7 @@ export const ASSURANCE_ITEMS = [
     icon: MapPinLine,
     weight: "fill",
     title: "서비스 가능 지역",
-    description: "서울 및 경기 등 수도권역 전역",
+    description: "서울 및 경기 수도권 전역",
     note: "*상세 지역은 상담 시 확인 가능합니다.",
   },
   {
@@ -397,7 +400,7 @@ export const FAQ_INTRO: SectionIntro = {
 export const FAQ_ITEMS = [
   {
     q: "예약은 어떻게 진행하나요?",
-    a: `전화(${PHONE_NUMBER})로 원하시는 서비스와 희망 일정을 알려주시면, 담당자가 확인 후 상담과 예약을 도와드립니다. 이메일도돼!!!!`,
+    a: `전화(${PHONE_NUMBER}) 또는 이메일(${EMAIL_ADDRESS})로 원하시는 서비스와 희망 일정을 알려주시면, 담당자가 확인 후 상담과 예약을 도와드립니다.`,
   },
   {
     q: "견적은 어떻게 받을 수 있나요?",
@@ -408,8 +411,8 @@ export const FAQ_ITEMS = [
     a: "제품 종류와 오염도에 따라 다르지만, 일반적으로 벽걸이 에어컨은 약 1시간~1시간 30분, 스탠드 에어컨은 약 1시간 30분~2시간, 드럼 세탁기는 약 2~3시간 정도 소요됩니다.",
   },
   {
-    q: "결제는 언제 진행하나요?",
-    a: "작업이 완료된 후 고객님과 함께 현장을 확인하고, 이상이 없을 경우 결제를 진행합니다. 자세한 결제 방식은 상담 시 안내드립니다. 카드결제 현금결제 세금계산서 발행!!!!",
+    q: "결제는 언제 어떻게 진행하나요?",
+    a: "작업 완료 후 고객님과 현장을 함께 확인한 뒤 결제를 진행합니다. 카드 및 현금 결제가 가능하며, 세금계산서도 발행해드립니다. 자세한 결제 방법은 상담 시 안내드립니다.",
   },
   {
     q: "주말이나 공휴일에도 작업이 가능한가요?",

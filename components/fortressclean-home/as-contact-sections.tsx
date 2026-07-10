@@ -1,7 +1,11 @@
 import { Fragment } from "react";
 
-import { Headset } from "./icons";
-import { ASSURANCE_ITEMS } from "./content";
+import { EnvelopeSimple, Headset } from "./icons";
+import {
+  ASSURANCE_ITEMS,
+  EMAIL_ADDRESS,
+  EMAIL_HREF,
+} from "./content";
 import { PhosphorIcon } from "./phosphor-icon";
 import { PhoneLink } from "./shared";
 
@@ -77,6 +81,20 @@ export function ContactSection() {
             예약 및 상담 번호
           </p>
           <PhoneLink className="text-4xl font-black tracking-wider text-brand-900 lg:text-5xl" />
+          <div className="mx-auto mt-6 flex w-fit flex-wrap items-center justify-center gap-2 border-t border-gray-100 pt-5 text-base text-gray-500">
+            <PhosphorIcon
+              icon={EnvelopeSimple}
+              weight="fill"
+              className="text-lg text-brand-600"
+            />
+            <span>이메일 상담</span>
+            <a
+              href={EMAIL_HREF}
+              className="break-all font-semibold text-brand-900 underline decoration-brand-200 underline-offset-4"
+            >
+              {EMAIL_ADDRESS}
+            </a>
+          </div>
           <p className="mt-4 text-sm text-gray-500">
             상담 시간: 매일 09:00 ~ 18:00 (주말·공휴일 가능)
           </p>
