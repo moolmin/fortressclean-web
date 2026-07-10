@@ -5,10 +5,9 @@ import {
   Medal,
   Quotes,
   ShieldCheck,
-  UsersThree,
   Clock,
-  Buildings,
-  Handshake,
+  FileText,
+  Leaf,
   MapPinLine,
 } from "./icons";
 import { PhosphorIcon } from "./phosphor-icon";
@@ -23,8 +22,8 @@ function GreetingSection() {
       className="relative overflow-hidden bg-brand-50 pt-40 pb-32"
     >
       <div className="relative z-10 mx-auto max-w-300 px-6">
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-          <div className="reveal active">
+        <div className="reveal active mx-auto max-w-5xl">
+          <div className="text-center">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-brand-100 px-4 py-2 text-sm font-bold text-brand-900">
               <PhosphorIcon
                 icon={HandWaving}
@@ -35,13 +34,34 @@ function GreetingSection() {
                 대표 인사말
               </span>
             </div>
-            <h1 className="mb-8 text-[2.5rem] leading-[1.35] font-bold tracking-tight text-gray-900 lg:text-5xl">
+            <h1 className="text-[2.5rem] leading-[1.35] font-bold tracking-tight text-gray-900 lg:text-5xl">
               깨끗한 공간을 위한
               <br />
               <span className="text-brand-900">든든한 청소 파트너</span>
             </h1>
+          </div>
+
+          <div className="mt-14 grid gap-10 border-t border-brand-200 pt-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+            <div>
+              <p className="text-xl leading-relaxed font-bold text-gray-900">
+                안녕하십니까,
+                <br />
+                포트리스 클린 대표 김산하입니다.
+              </p>
+              <div className="mt-8 rounded-3xl bg-white p-7 shadow-soft">
+                <PhosphorIcon
+                  icon={Quotes}
+                  weight="fill"
+                  className="mb-4 text-3xl text-brand-300"
+                />
+                <p className="leading-relaxed font-medium text-gray-700">
+                  깨끗한 공간은 보이는 곳보다 보이지 않는 곳을 살피는 마음에서
+                  시작됩니다.
+                </p>
+              </div>
+            </div>
+
             <div className="space-y-6 text-lg leading-relaxed text-gray-600">
-              <p>안녕하십니까, 포트리스 클린 대표 김산하입니다.</p>
               <p>
                 우리가 머무는 공간은 단순한 장소가 아니라, 가족의 일상과 건강이
                 이어지는 소중한 환경입니다. 포트리스 클린은 그 공간이 더
@@ -57,33 +77,6 @@ function GreetingSection() {
                 빠르게 끝내는 청소보다, 믿고 맡길 수 있는 청소를 지향합니다.
                 앞으로도 정직한 마음과 숙련된 기술로 고객님의 공간을 깨끗하게
                 지키는 파트너가 되겠습니다.
-              </p>
-            </div>
-            <div className="mt-10 border-t border-brand-200 pt-8">
-              <p className="mb-1 text-sm text-gray-500">포트리스 클린 대표</p>
-              <p className="text-xl font-bold text-brand-900">김산하</p>
-            </div>
-          </div>
-
-          <div
-            className="reveal relative hidden lg:block"
-            style={{ transitionDelay: "0.3s" }}
-          >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[3rem] border-8 border-white bg-gray-200 shadow-2xl">
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-tr from-brand-200 to-gray-100 text-brand-300">
-                <PhosphorIcon icon={Buildings} className="mb-4 text-9xl" />
-                <span className="text-lg font-medium">대표 이미지 삭제!!!</span>
-              </div>
-            </div>
-            <div className="absolute -right-6 -bottom-6 max-w-xs rounded-3xl bg-white p-6 shadow-xl">
-              <PhosphorIcon
-                icon={Quotes}
-                weight="fill"
-                className="mb-4 text-4xl text-brand-200"
-              />
-              <p className="font-medium leading-relaxed text-gray-700">
-                깨끗한 공간은 보이는 곳보다 보이지 않는 곳을 살피는 마음에서
-                시작됩니다.
               </p>
             </div>
           </div>
@@ -167,22 +160,22 @@ function WhySection() {
 
   const strengths = [
     {
-      icon: UsersThree,
-      title: "친환경 세제!!!",
+      icon: Leaf,
+      title: "친환경 세제 사용",
       description:
-        "하청에 맡기지 않고, 검증된 인력이 직접 현장을 확인하고 작업합니다.",
+        "공간과 오염 특성에 맞는 친환경 세제를 사용해 안전하고 쾌적하게 청소합니다.",
     },
     {
       icon: ListNumbers,
       title: "체계적인 작업 과정",
       description:
-        "상담부터 견적, 작업, 마무리 확인까지 단계별로 꼼꼼하게 진행합니다.",
+        "상담과 견적부터 현장 작업, 최종 확인까지 단계별로 꼼꼼하게 진행합니다.",
     },
     {
-      icon: Handshake,
-      title: "서류 작업 굿굿!!!",
+      icon: FileText,
+      title: "정확한 서류 대응",
       description:
-        "작업 완료 다음 날부터 30일간, 작업 관련 문제를 책임감 있게 확인합니다.",
+        "견적서, 거래명세서, 세금계산서 등 기관과 기업에 필요한 서류를 신속하고 정확하게 처리합니다.",
     },
   ] as const;
 
