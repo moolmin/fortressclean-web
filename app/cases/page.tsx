@@ -71,7 +71,8 @@ async function getCaseItems(): Promise<CaseItem[]> {
           imageSrc: readFirstImage(description),
         };
       })
-      .filter((item) => item.title && item.href && item.imageSrc);
+      .filter((item) => item.title && item.href && item.imageSrc)
+      .slice(0, 6);
 
     if (items.length > 0) {
       return items;
