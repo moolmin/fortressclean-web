@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "deploy": "NEXT_PUBLIC_SITE_URL=https://fortressclean.com next build && wrangler pages deploy out --project-name fortressclean-web --branch main",
+    "deploy": "NEXT_PUBLIC_SITE_URL=https://www.fortressclean.com next build && wrangler pages deploy out --project-name fortressclean-web --branch main",
     "start": "next start",
     "lint": "eslint"
   },
