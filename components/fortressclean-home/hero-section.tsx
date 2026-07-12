@@ -1,4 +1,4 @@
-import { PhoneCall, Broom, EnvelopeSimple, Sparkle } from "./icons";
+import { PhoneCall, Broom, Sparkle } from "./icons";
 import { EMAIL_ADDRESS, EMAIL_HREF, HERO_HIGHLIGHTS } from "./content";
 import { HeroImageRotator } from "./hero-image-rotator";
 import { PhosphorIcon } from "./phosphor-icon";
@@ -39,30 +39,25 @@ export function HeroSection() {
                 <p className="mb-3 text-sm font-medium text-gray-500">
                   예약 및 상담 방법
                 </p>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-900 text-white shadow-lg shadow-brand-900/30">
-                      <PhosphorIcon
-                        icon={PhoneCall}
-                        weight="fill"
-                        className="text-2xl"
-                      />
-                    </div>
-                    <PhoneLink className="text-3xl font-black tracking-wide text-brand-900" />
-                  </div>
-                  <div className="flex flex-wrap items-center gap-2 pl-1 text-base font-medium text-gray-500">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-900 text-white shadow-lg shadow-brand-900/30">
                     <PhosphorIcon
-                      icon={EnvelopeSimple}
+                      icon={PhoneCall}
                       weight="fill"
-                      className="shrink-0 text-base text-brand-600"
+                      className="text-2xl"
                     />
-                    <span>이메일 상담</span>
-                    <a
-                      href={EMAIL_HREF}
-                      className="break-all font-semibold text-brand-900 underline decoration-brand-200 underline-offset-4"
-                    >
-                      {EMAIL_ADDRESS}
-                    </a>
+                  </div>
+                  <div className="min-w-0">
+                    <PhoneLink className="text-3xl font-black tracking-wide text-brand-900" />
+                    <p className="mt-1 text-sm text-gray-500">
+                      이메일 문의 ·{" "}
+                      <a
+                        href={EMAIL_HREF}
+                        className="break-all underline decoration-gray-300 underline-offset-4 transition-colors hover:text-brand-900"
+                      >
+                        {EMAIL_ADDRESS}
+                      </a>
+                    </p>
                   </div>
                 </div>
               </div>
