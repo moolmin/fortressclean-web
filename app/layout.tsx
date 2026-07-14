@@ -39,6 +39,11 @@ export const metadata: Metadata = {
   applicationName: SITE_NAME,
   category: "Cleaning Service",
   referrer: "origin-when-cross-origin",
+  verification: {
+    other: {
+      "naver-site-verification": "978d3366ea8b16f12e626b940024aeed410dcf3f",
+    },
+  },
   robots: {
     index: true,
     follow: true,
