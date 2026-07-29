@@ -21,6 +21,9 @@
 # cloudflare
 /.wrangler/
 
+# local SEO audit cache
+.seo-cache/
+
 # production
 /build
 
